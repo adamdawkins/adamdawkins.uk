@@ -1,0 +1,9 @@
+type Haiku {
+	id: String!
+	date: String!
+	body: String!
+}
+
+type Query {
+	haiku(id: String!): Haiku!
+}
