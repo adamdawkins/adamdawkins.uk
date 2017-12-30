@@ -13,7 +13,7 @@ const Root = () => (
 	<ApolloProvider client={client}>
 		<div>
 			<header>
-				<h1>Base</h1>
+				<h1>Adam Dawkins</h1>
 			</header>
 			<main>
 				<Router>
