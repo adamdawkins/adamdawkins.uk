@@ -17,6 +17,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "front-matter": "^2.3.0",
+    "gpx-for-runners": "^1.0.5",
     "graphql": "^0.11.4",
     "graphql-server-express": "^1.2.0",
     "graphql-tools": "^1.2.3",

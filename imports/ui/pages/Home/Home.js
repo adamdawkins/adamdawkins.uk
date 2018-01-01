@@ -5,11 +5,10 @@ import { logProps } from '../../helpers'
 
 const Home = () => (
 	<div>
-		<h2>On the web</h2>
-		<ul>
-			<li><a href="https://twitter.com/adamdawkins" rel="me">@adamdawkins on Twitter</a></li>
-			<li><a href="https://github.com/adamdawkins" rel="me">Github</a></li>
-		</ul>
+		<p className="h-card">
+			<a className="p-name u-url" href="https://adamdawkins.uk">Adam Dawkins</a>
+		</p>
+		<p>Web Developer at <a href="http://www.dragondrop.uk">Dragon Drop</a>. Thoughts on <a href="https://medium.com/@adamdawkins">other things too</a>.</p>
 	</div>
 )
 

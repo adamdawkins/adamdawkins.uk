@@ -6,3 +6,8 @@ import './seeds'
 
 // Setup Apollo Server
 import './apollo_server'
+
+import micropubEndpoint from '../../api/micropub/endpoint'
+import { WebApp } from 'meteor/webapp'
+
+WebApp.connectHandlers.use('/micropub', micropubEndpoint)

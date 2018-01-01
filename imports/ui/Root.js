@@ -12,9 +12,6 @@ import Home from './pages/Home/Home'
 const Root = () => (
 	<ApolloProvider client={client}>
 		<div>
-			<header>
-				<h1>Adam Dawkins</h1>
-			</header>
 			<main>
 				<Router>
 					<Route exact path="/" component={Home} />
