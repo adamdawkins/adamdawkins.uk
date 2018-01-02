@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "start": "meteor run --settings settings.json --port 3000",
+    "start": "env $(cat .env | xargs) meteor run --settings settings.json --port 3000",
     "mongo": "echo 'mongo --ssl --sslAllowInvalidCertificates [uri]:[port]/[database] -u [username -p[password] is what you need here'",
     "changelog": "./node_modules/.bin/changelog",
     "lint": "eslint ."
@@ -24,9 +24,9 @@
     "marked": "^0.3.9",
     "meteor-node-stubs": "~0.2.4",
     "prop-types": "^15.6.0",
-    "react": "^15.6.2",
-    "react-apollo": "^1.4.16",
-    "react-dom": "^15.6.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.25.1"
   },

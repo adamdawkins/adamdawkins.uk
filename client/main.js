@@ -1,11 +1,11 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { hydrate } from 'react-dom'
 
 import '../imports/startup/client'
-import Root from '../imports/ui/Root'
+import Home from '../imports/ui/pages/Home/Home'
 import '../imports/ui/styles/main.scss'
 
-render(
-	<Root />,
+hydrate(
+	<Home />,
 	document.getElementById('root'),
 )

@@ -3,12 +3,13 @@
 	"settings": {
 		"import/core-modules": [
 			"meteor",
-			"meteor/mongo",
-			"meteor/meteor",
-			"meteor/promise",
 			"meteor/apollo",
+			"meteor/meteor",
+			"meteor/mongo",
+			"meteor/promise",
 			"meteor/react-meteor-data",
-			"meteor/session"
+			"meteor/session",
+			"meteor/webapp"
 		],
 	},
   "rules": {
