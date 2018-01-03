@@ -11,6 +11,10 @@ fragment ActivityEssentials on Activity {
 
 query note($id: String!) {
 	note(id: $id) {
+		id
+		url
+		publishedAt
+		content
 		reposts:activities(type: repost) {
 			...ActivityEssentials
 		}
