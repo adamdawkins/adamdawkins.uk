@@ -1,0 +1,9 @@
+"""
+An [Author]() is ...
+"""
+
+type Author {
+	name: String!
+	url: String
+	photo: String
+}

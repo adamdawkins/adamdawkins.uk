@@ -2,7 +2,8 @@ import marked from 'marked'
 import moment from 'moment'
 import { Meteor } from 'meteor/meteor'
 
-import Notes from '../../api/notes/notes'
+import Notes from './notes'
+import WebMentions from '../webmentions/webmentions'
 
 const notesQuery = () => Notes.find().fetch()
 const noteQuery = (root, { id }) => Notes.findOne(id)
@@ -27,6 +28,10 @@ const Note = {
 		return {
 			syndicateTo: note['mp-syndicate-to'],
 		}
+	},
+	activities({ _id }) {
+		const mentions = WebMentions.find({ target: `https://adamdawkins.uk/notes/${_id}` }).fetch()
+		return mentions
 	},
 }
 

@@ -12,5 +12,7 @@ type Note {
 	syndicates: [Syndicate]
 	categories: [String]
 	url: String!
+	"Activities from others on this Note"
+	activities: [Activity]
 	_micropub: MicropubMeta!
 }

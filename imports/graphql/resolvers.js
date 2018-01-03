@@ -1,4 +1,5 @@
 import { noteQuery, notesQuery, Note } from '../api/notes/resolvers'
+import { Activity } from '../api/activities/resolvers'
 
 const Query = {
 	note: noteQuery,
@@ -7,5 +8,7 @@ const Query = {
 
 export default {
 	Query,
+
+	Activity,
 	Note,
 }

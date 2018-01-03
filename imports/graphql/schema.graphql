@@ -1,5 +1,7 @@
-#import "../api/notes/Note.graphql"
+#import "../api/activities/Activity.graphql"
+#import "../api/authors/Author.graphql"
 #import "../api/micropub/MicropubMeta.graphql"
+#import "../api/notes/Note.graphql"
 
 enum Format {
 	raw

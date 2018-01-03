@@ -1,0 +1,29 @@
+"""
+An `Activity` is an interaction with an entry, or `Note`.
+It could be a repost, like, reply, citation or mention.
+"""
+
+type Activity {
+	type: ActivityType!
+	target: Note!
+	author: Author!
+	publishedAt: String!
+	content(format: Format, repliesOnly: Boolean): String
+}
+
+
+"""
+The various types of activity on an entry
+"""
+
+enum ActivityType {
+	"A [mention](https://indieweb.org/mention) is a post which links to another post without explicitly being in response to it. In contrast, a reply, like, or repost are explicit responses to a post"
+	mention
+
+	"A [reply](https://indieweb.org/reply) is a kind of post that is a text (typically) response to some other post, that makes little or no sense without reading or at least knowing the context of the source post."
+	reply
+
+	"A [repost](https://indieweb.org/repost) on the indieweb is a post that is purely a 100% re-publication of another post."
+	repost
+	like
+}
