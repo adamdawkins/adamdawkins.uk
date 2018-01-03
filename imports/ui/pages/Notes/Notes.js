@@ -6,11 +6,14 @@ import { withLoading } from '../../helpers'
 import allNotesQuery from './allNotes.graphql'
 
 import Note from '../../components/Note'
+import Author from '../../components/Author'
 
 const Notes = ({ notes }) => (
-	<div>
-		<h3>Notes</h3>
-		{notes.map(note => (<Note key={note.id} note={note} />))}
+	<div className="h-feed">
+		<h3 className="p-name">Adam Dawkins' notes</h3>
+		{notes.map(note => (<Note key={note.id} note={note} showAuthor={false} />))}
+		<Author />
+		<p><a className="u-url" href="/notes">Permalink</a></p>
 	</div>
 )
 

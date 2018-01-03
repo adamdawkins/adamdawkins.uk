@@ -2,5 +2,7 @@ query note($id: String!) {
 	note(id: $id) {
 		id
 		content
+		publishedAt
+		url
 	}
 }

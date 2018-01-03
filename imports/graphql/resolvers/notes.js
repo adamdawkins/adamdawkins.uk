@@ -1,5 +1,7 @@
 import marked from 'marked'
 import moment from 'moment'
+import { Meteor } from 'meteor/meteor'
+
 import Notes from '../../api/notes/notes'
 
 const notesQuery = () => Notes.find().fetch()
@@ -12,11 +14,14 @@ const Note = {
 	content({ content }, { format = 'html' }) {
 		return format === 'html' ? marked(content) : content
 	},
-	createdAt({ created_at }) {
+	publishedAt({ created_at }) {
 		return moment(created_at, moment.ISO_8601).format()
 	},
 	categories({ category }) {
 		return category
+	},
+	url({ _id }) {
+		return Meteor.absoluteUrl(`notes/${_id}`)
 	},
 	_micropub(note) {
 		return {
