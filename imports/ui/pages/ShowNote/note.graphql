@@ -1,12 +1,30 @@
+fragment ActivityEssentials on Activity {
+	source
+	url
+	type
+	author {
+		photo
+		name
+		url
+	}
+}
+
 query note($id: String!) {
 	note(id: $id) {
-    id
-		url
-    content
-		publishedAt
-		syndicates {
-			id
-			url
+		reposts:activities(type: repost) {
+			...ActivityEssentials
+		}
+		likes:activities(type: like) {
+			...ActivityEssentials
+		}
+		replies:activities(type: reply) {
+			...ActivityEssentials
+			content
+		}
+		_activityMeta {
+			type
+			count
 		}
 	}
 }
+

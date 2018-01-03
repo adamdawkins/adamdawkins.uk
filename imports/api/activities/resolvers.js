@@ -9,9 +9,18 @@ import WebMentions from '../webmentions/webmentions'
  * It's the webmention collection we're playing with here.
 */
 
-const activitiesQuery = (root, { noteId }) => (
-	WebMentions.find({ target: `https://adamdawkins.uk/notes/${noteId}` }).fetch()
-)
+const activitiesQuery = (root, { noteId, type }) => {
+	const query = {}
+	if (noteId) {
+		query.target = `https://adamdawkins.uk/notes/${noteId}`
+	}
+
+	if (type) {
+		query['activity.type'] = type
+	}
+
+	return WebMentions.find(query).fetch()
+}
 
 const Activity = {
 	target({ target }) {

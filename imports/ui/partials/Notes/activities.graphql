@@ -1,0 +1,14 @@
+query activitiesForNote($id: String, $type: ActivityType) {
+	activities(noteId: $id, type: $type) {
+		source
+		url
+		type
+		author {
+			name
+			photo
+			url
+		}
+		publishedAt
+		content
+	}
+}

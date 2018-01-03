@@ -1,0 +1,9 @@
+li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.facepile .face {
+	float: left;
+	margin-left: 3px;
+}

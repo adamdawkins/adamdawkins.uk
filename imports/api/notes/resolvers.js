@@ -29,10 +29,20 @@ const Note = {
 			syndicateTo: note['mp-syndicate-to'],
 		}
 	},
-	activities({ _id }) {
-		const mentions = WebMentions.find({ target: `https://adamdawkins.uk/notes/${_id}` }).fetch()
-		console.log({mentions})
-		return mentions
+	/* TODO: this query is identical to the activities query in `activities/resolvers`,
+	 * and contains a fair bit of bespoke understanding of the format of the Webmentions collection.
+	 * We should refactor into one place.
+	 * Perhaps a `Repo` of sorts sitting next to the Mongo collection?
+	 */
+	activities({ _id }, { type }) {
+		const query = {
+			target: `https://adamdawkins.uk/notes/${_id}`,
+		}
+		if (type) {
+			query['activity.type'] = type
+		}
+
+		return WebMentions.find(query).fetch()
 	},
 	_activityMeta({ _id }) {
 		const target = `https://adamdawkins.uk/notes/${_id}`

@@ -10,7 +10,8 @@ import NoteContent from '../../components/NoteContent'
 import Author from '../../components/Author'
 import SyndicationLinks from '../../components/SyndicationLinks'
 import PublishedAt from '../../components/PublishedAt'
-import NoteActivities from '../../partials/NoteActivities/NoteActivities'
+import ActivityFacepile from '../../partials/Notes/ActivityFacepile'
+import ActivitySummary from '../../components/ActivitySummary'
 
 const ShowNote = ({ note }) => (
 	<div>
@@ -20,8 +21,13 @@ const ShowNote = ({ note }) => (
 			<footer>
 				<PublishedAt date={note.publishedAt} url={note.url} />
 				<SyndicationLinks note={note} />
+				<ActivitySummary activities={note._activityMeta} />
+				<div style={{display: 'flex', flexDirection: 'column'}}>
+					<ActivityFacepile type="like" activities={note.likes} />
+					<ActivityFacepile type="repost" activities={note.reposts} />
+				</div>
 			</footer>
-			<NoteActivities note={note} />
+
 		</article>
 	</div>
 )

@@ -13,4 +13,5 @@ const Activity = ({ activity }) => (
 	</article>
 )
 
+
 export default Activity

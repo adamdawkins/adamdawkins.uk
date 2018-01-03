@@ -1,4 +1,5 @@
 import React from 'react'
+import propTypes from 'prop-types'
 import moment from 'moment'
 
 const PublishedAt = ({ date, url }) => {
@@ -19,6 +20,11 @@ const PublishedAt = ({ date, url }) => {
 			</a>
 		</p>
 	)
+}
+
+PublishedAt.propTypes = {
+	date: propTypes.string.isRequired,
+	url: propTypes.string.isRequired,
 }
 
 export default PublishedAt

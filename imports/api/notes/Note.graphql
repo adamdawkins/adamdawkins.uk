@@ -13,7 +13,7 @@ type Note {
 	categories: [String]
 	url: String!
 	"Activities from others on this Note"
-	activities: [Activity]
+	activities(type: ActivityType): [Activity]
 	_micropub: MicropubMeta!
 	"Contains the counts for the different types of Activity"
 	_activityMeta: [ActivityMeta]

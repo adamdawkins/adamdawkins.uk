@@ -14,7 +14,7 @@ const NoteListItem = ({ note, showAuthor }) => (
 		<NoteContent note={note} />
 		<footer>
 			<ActivitySummary activities={note._activityMeta} />
-			{note.publishedAt && <PublishedAt note={note} /> }
+			<PublishedAt url={note.url} date={note.publishedAt} />
 			<SyndicationLinks note={note} />
 		</footer>
 	</article>
