@@ -4,7 +4,7 @@ import { hydrate, render } from 'react-dom'
 import '../imports/startup/client'
 import Root from '../imports/ui/Root'
 
-render(
+hydrate(
 	<Root />,
 	document.getElementById('root'),
 )
