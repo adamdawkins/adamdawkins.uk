@@ -21,13 +21,13 @@ query note($id: String!) {
 		likes:activities(type: like) {
 			...ActivityEssentials
 		}
-		replies:activities(type: reply) {
-			...ActivityEssentials
-			content
-		}
 		_activityMeta {
 			type
 			count
+		}
+		syndicates {
+			id
+			url
 		}
 	}
 }

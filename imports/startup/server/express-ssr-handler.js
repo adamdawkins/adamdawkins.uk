@@ -3,6 +3,7 @@ import Express from 'express'
 import 'isomorphic-fetch'
 import { StaticRouter } from 'react-router'
 import { ApolloProvider, renderToStringWithData } from 'react-apollo'
+import Helmet from 'react-helmet'
 
 import { Meteor } from 'meteor/meteor'
 import { WebApp } from 'meteor/webapp'
@@ -31,6 +32,13 @@ app.use((req, res, next) => {
 			} else {
 				const initialState = client.extract()
 				const hydrateApollo = `<script>window.__APOLLO_STATE__=${JSON.stringify(initialState).replace(/</g, '\\u003c')};</script>`
+				const helmet = Helmet.renderStatic()
+				req.dynamicHead = `
+					${helmet.title.toString()}
+					${helmet.meta.toString()}
+					${helmet.link.toString()}
+					${helmet.style.toString()}
+				`
 				req.dynamicBody = `<div id="root">${content}</div> ${hydrateApollo}`
 
 				next()
@@ -38,3 +46,4 @@ app.use((req, res, next) => {
 		})
 })
 WebApp.connectHandlers.use(Meteor.bindEnvironment(app))
+

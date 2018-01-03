@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "start": "env $(cat .env | xargs) meteor run --settings settings.json --port 3000",
+    "start-as-production": "env $(cat .env | xargs) meteor run --settings settings.json --production",
     "mongo": "echo 'mongo --ssl --sslAllowInvalidCertificates [uri]:[port]/[database] -u [username -p[password] is what you need here'",
     "deploy": "meteor-now -d -e NODE_ENV=production -e ROOT_URL=https://adamdawkins.uk -e MONGO_URL=mongodb://ad-micro:squishy-sieve-letdown@aws-us-east-1-portal.17.dblayer.com:10116,aws-us-east-1-portal.18.dblayer.com:10120/adamdawkins",
     "changelog": "./node_modules/.bin/changelog",
@@ -34,6 +35,7 @@
     "react": "^16.2.0",
     "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0",
+    "react-helmet": "^5.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0"
