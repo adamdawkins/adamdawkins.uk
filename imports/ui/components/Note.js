@@ -3,7 +3,10 @@ import { compose, mapProps } from 'recompose'
 
 
 const Note = ({ note }) => (
-	<div dangerouslySetInnerHTML={{ __html: note.content }} style={{borderBottom: '1px solid black', paddingBottom: '2em'}}/> // eslint-disable-line react/no-danger
+	<div style={{borderBottom: '1px solid black', paddingBottom: '2em'}}>
+		<h3>{note.id}</h3>
+		<div dangerouslySetInnerHTML={{ __html: note.content }}/>
+	</div>
 )
 
 /* To render HTML from code, we have to pass it to `dangerouslySetInnerHTML` as `{__html: HTML}`

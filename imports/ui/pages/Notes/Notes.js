@@ -14,7 +14,6 @@ const Notes = ({ notes }) => (
 	</div>
 )
 
-
 const data = graphql(allNotesQuery)
 
 export default compose(
