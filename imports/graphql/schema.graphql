@@ -1,9 +1,48 @@
-type Haiku {
+"""
+A [note](https://indieweb.org/note)
+is a post that is typically short unstructured plain text,
+written & posted quickly, that has its own permalink page.
+"""
+
+type Note {
 	id: String!
-	date: String!
-	body: String!
+	content(format: Format): String!
+	createdAt: String!
+	syndicates: [Syndicate]
+	categories: [String]
+	_micropub: MicropubMeta!
+}
+
+enum Format {
+	raw
+	html
+}
+
+"""
+`MicropubMeta` exists on `Notes`
+and provides a way to abstract info specicifc
+to [Micropub](https://indieweb.org/Micropub).
+"""
+
+type MicropubMeta {
+	"""
+	A list of services I've said I want to syndicate to.
+	e.g. using Quill to post a Note to Twitter.
+	"""
+	syndicateTo: [String!]
+}
+
+"""
+[Syndication](https://indieweb.org/u-syndication)
+is a way to discoverably link from your original posts to syndicated copies.
+on other sites like social media silos.  `Syndicates` are links to these copies.
+"""
+type Syndicate {
+	id: String!
+	url: String!
 }
 
 type Query {
-	haiku(id: String!): Haiku!
+	notes: [Note]!
+	note(id: String!): Note!
 }

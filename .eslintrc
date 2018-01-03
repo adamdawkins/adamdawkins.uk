@@ -21,7 +21,8 @@
     "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
 		"react/jsx-indent": [2, "tab"],
-    "react/jsx-indent-props": [2, "tab"]
+    "react/jsx-indent-props": [2, "tab"],
+		"camelcase": 0
   },
 	"env": {
 		"browser": true,
