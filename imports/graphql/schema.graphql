@@ -19,6 +19,7 @@ type Syndicate {
 }
 
 type Query {
+	activities(noteId: String!): [Activity]!
 	notes: [Note]!
 	note(id: String!): Note!
 }

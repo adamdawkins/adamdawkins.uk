@@ -1,8 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 
-const PublishedAt = ({ note: { publishedAt, url } }) => {
-	const dateMoment = moment(publishedAt, moment.ISO_8601)
+const PublishedAt = ({ date, url }) => {
+	const dateMoment = moment(date, moment.ISO_8601)
 	return (
 		<p>Published&nbsp;
 			<a

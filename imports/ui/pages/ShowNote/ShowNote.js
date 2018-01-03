@@ -10,6 +10,7 @@ import NoteContent from '../../components/NoteContent'
 import Author from '../../components/Author'
 import SyndicationLinks from '../../components/SyndicationLinks'
 import PublishedAt from '../../components/PublishedAt'
+import NoteActivities from '../../partials/NoteActivities/NoteActivities'
 
 const ShowNote = ({ note }) => (
 	<div>
@@ -17,9 +18,10 @@ const ShowNote = ({ note }) => (
 			{<Author />}
 			<NoteContent note={note} />
 			<footer>
-				{note.publishedAt && <PublishedAt note={note} /> }
+				<PublishedAt date={note.publishedAt} url={note.url} />
 				<SyndicationLinks note={note} />
 			</footer>
+			<NoteActivities note={note} />
 		</article>
 	</div>
 )

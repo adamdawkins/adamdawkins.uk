@@ -4,11 +4,13 @@ It could be a repost, like, reply, citation or mention.
 """
 
 type Activity {
+	source: String!
 	type: ActivityType!
 	target: Note!
 	author: Author!
 	publishedAt: String!
 	content(format: Format, repliesOnly: Boolean): String
+	url: String!
 }
 
 

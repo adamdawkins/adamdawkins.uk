@@ -31,6 +31,7 @@ const Note = {
 	},
 	activities({ _id }) {
 		const mentions = WebMentions.find({ target: `https://adamdawkins.uk/notes/${_id}` }).fetch()
+		console.log({mentions})
 		return mentions
 	},
 	_activityMeta({ _id }) {
