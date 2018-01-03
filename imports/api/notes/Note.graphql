@@ -1,0 +1,16 @@
+"""
+A [note](https://indieweb.org/note)
+is a post that is typically short unstructured plain text,
+written & posted quickly, that has its own permalink page.
+"""
+
+type Note {
+	id: String!
+	content(format: Format): String!
+	publishedAt: String!
+	" A list of syndicates where this note has also been published"
+	syndicates: [Syndicate]
+	categories: [String]
+	url: String!
+	_micropub: MicropubMeta!
+}

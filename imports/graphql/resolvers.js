@@ -1,4 +1,4 @@
-import { noteQuery, notesQuery, Note } from './resolvers/notes'
+import { noteQuery, notesQuery, Note } from '../api/notes/resolvers'
 
 const Query = {
 	note: noteQuery,

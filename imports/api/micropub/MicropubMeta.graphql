@@ -1,0 +1,13 @@
+"""
+`MicropubMeta` exists on `Notes`
+and provides a way to abstract info specicifc
+to [Micropub](https://indieweb.org/Micropub).
+"""
+
+type MicropubMeta {
+	"""
+	A list of services I've said I want to syndicate to.
+	e.g. using Quill to post a Note to Twitter.
+	"""
+	syndicateTo: [String!]
+}

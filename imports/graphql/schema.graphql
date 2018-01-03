@@ -1,37 +1,9 @@
-"""
-A [note](https://indieweb.org/note)
-is a post that is typically short unstructured plain text,
-written & posted quickly, that has its own permalink page.
-"""
-
-type Note {
-	id: String!
-	content(format: Format): String!
-	publishedAt: String!
-	" A list of syndicates where this note has also been published"
-	syndicates: [Syndicate]
-	categories: [String]
-	url: String!
-	_micropub: MicropubMeta!
-}
+#import "../api/notes/Note.graphql"
+#import "../api/micropub/MicropubMeta.graphql"
 
 enum Format {
 	raw
 	html
-}
-
-"""
-`MicropubMeta` exists on `Notes`
-and provides a way to abstract info specicifc
-to [Micropub](https://indieweb.org/Micropub).
-"""
-
-type MicropubMeta {
-	"""
-	A list of services I've said I want to syndicate to.
-	e.g. using Quill to post a Note to Twitter.
-	"""
-	syndicateTo: [String!]
 }
 
 """
