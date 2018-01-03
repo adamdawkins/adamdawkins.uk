@@ -1,10 +1,10 @@
 import React from 'react'
-import { hydrate } from 'react-dom'
+import { hydrate, render } from 'react-dom'
 
 import '../imports/startup/client'
-import Home from '../imports/ui/pages/Home/Home'
+import Root from '../imports/ui/Root'
 
-hydrate(
-	<Home />,
+render(
+	<Root />,
 	document.getElementById('root'),
 )

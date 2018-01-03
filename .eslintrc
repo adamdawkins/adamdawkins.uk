@@ -22,7 +22,8 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
 		"react/jsx-indent": [2, "tab"],
     "react/jsx-indent-props": [2, "tab"],
-		"camelcase": 0
+		"camelcase": 0,
+		"no-underscore-dangle": 0
   },
 	"env": {
 		"browser": true,

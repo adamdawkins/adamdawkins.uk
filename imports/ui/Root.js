@@ -1,21 +1,15 @@
 import React from 'react'
 import { ApolloProvider } from 'react-apollo'
-import {
-	BrowserRouter as Router,
-	Route,
-} from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Routes from '../startup/routes'
 
 import { client } from '../apollo/client'
 
-import Home from './pages/Home/Home'
-
 const Root = () => (
 	<ApolloProvider client={client}>
-		<div>
-			<main>
-
-			</main>
-		</div>
+    <Router>
+      <Routes />
+    </Router>
 	</ApolloProvider>
 )
 
