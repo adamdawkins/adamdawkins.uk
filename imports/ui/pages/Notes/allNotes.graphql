@@ -1,6 +1,12 @@
 query allNotes {
   notes{
     id
+		url
     content
+		publishedAt
+		syndicates {
+			id
+			url
+		}
   }
 }

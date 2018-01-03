@@ -3,6 +3,7 @@ import moment from 'moment'
 import { compose } from 'recompose'
 
 import Author from './Author'
+import SyndicationLinks from './SyndicationLinks'
 
 const Note = ({ note, showAuthor }) => (
 	<article className="h-entry" style={{borderBottom: '1px solid black', paddingBottom: '2em'}}>
@@ -10,6 +11,7 @@ const Note = ({ note, showAuthor }) => (
 		<div className="e-content p-name" dangerouslySetInnerHTML={{ __html: note.content }}/>
 		<footer>
 			{note.publishedAt && <PublishedAt note={note} /> }
+			<SyndicationLinks note={note} />
 		</footer>
 	</article>
 )
