@@ -1,5 +1,5 @@
 query allNotes {
-  notes{
+  notes {
     id
 		url
     content
@@ -8,5 +8,9 @@ query allNotes {
 			id
 			url
 		}
+    _activityMeta {
+      type
+      count
+    }
   }
 }
