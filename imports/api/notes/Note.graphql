@@ -15,4 +15,11 @@ type Note {
 	"Activities from others on this Note"
 	activities: [Activity]
 	_micropub: MicropubMeta!
+	"Contains the counts for the different types of Activity"
+	_activityMeta: [ActivityMeta]
+}
+
+type ActivityMeta {
+	type: ActivityType!
+	count: Int!
 }

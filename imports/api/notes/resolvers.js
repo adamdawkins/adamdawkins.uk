@@ -33,6 +33,20 @@ const Note = {
 		const mentions = WebMentions.find({ target: `https://adamdawkins.uk/notes/${_id}` }).fetch()
 		return mentions
 	},
+	_activityMeta({ _id }) {
+		const target = `https://adamdawkins.uk/notes/${_id}`
+		// TODO: tie this to the schema somehow
+		const types = [
+			'repost',
+			'like',
+			'reply',
+			'mention',
+		]
+		return types.map(type => ({
+			type,
+			count: WebMentions.find({ target, 'activity.type': type }, { fields: { _id: 1 } }).count(),
+		}))
+	},
 }
 
 export {
