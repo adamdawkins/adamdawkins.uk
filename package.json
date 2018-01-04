@@ -32,7 +32,6 @@
     "meteor-node-stubs": "^0.3.2",
     "moment": "^2.20.1",
     "prop-types": "^15.6.0",
-    "qs": "^6.5.1",
     "react": "^16.2.0",
     "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0",

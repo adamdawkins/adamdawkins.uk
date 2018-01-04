@@ -52,5 +52,6 @@ app.use((req, res, next) => {
 })
 WebApp.connectHandlers.use(Meteor.bindEnvironment(app))
 WebApp.connectHandlers.use(bodyParser.json())
+WebApp.connectHandlers.use(bodyParser.urlencoded({ extended: false }))
 WebApp.connectHandlers.use('/webmentions', Meteor.bindEnvironment(postWebMention))
 WebApp.connectHandlers.use('/micropub', Meteor.bindEnvironment(micropub))

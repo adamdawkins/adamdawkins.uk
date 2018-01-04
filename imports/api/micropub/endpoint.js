@@ -1,10 +1,23 @@
-import qs from 'qs'
-
 import { Meteor } from 'meteor/meteor'
 import { HTTP } from 'meteor/http'
 
 import createNoteMutation from './createNote.graphql'
 import { runQuery } from '../../graphql'
+
+// get's note from the JSON Body of a micropub request
+const getNoteFromJSONBody = ({ properties: props }) => {
+	const note = {}
+	const keys = Object.keys(props)
+	keys.forEach((key) => {
+		if (key === 'category') {
+			note.categories = props[key]
+		} else {
+			note[key] = props[key][0]
+		}
+	})
+
+	return note
+}
 
 const indieAuthToken = async (Authorization) => {
 	const { statusCode, data } = await HTTP.get('https://tokens.indieauth.com/token', {
@@ -44,27 +57,24 @@ const micropubPost = async (req, res, next) => {
 	}
 
 	await authenticate(req, res, next)
-
-	let body = ''
-	req.on('data', Meteor.bindEnvironment((data) => {
-		body += data
-	}));
-
-	req.on('end', Meteor.bindEnvironment(async () => {
-		const { content, category, photo } = qs.parse(body)
-		const note = { content }
+	let note
+	if (req.headers['content-type'] === 'application/json') {
+		note = getNoteFromJSONBody(req.body)
+	} else {
+		const { content, category, photo } = req.body
+		note = { content }
 		if (category) {
 			note.categories = category
 		}
 		if (photo) {
 			note.photo = photo
 		}
-		const { data: { note: { url } } } = await createNote(note)
-		res.statusCode = 201
-		res.setHeader('Location', url)
-		return res.send()
-	}));
-	return null
+	}
+
+	const { data: { note: { url } } } = await createNote(note)
+	res.statusCode = 201
+	res.setHeader('Location', url)
+	return res.send()
 }
 
 export default micropubPost
