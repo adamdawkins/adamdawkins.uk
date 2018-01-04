@@ -5,9 +5,18 @@ import { Meteor } from 'meteor/meteor'
 import Notes from './notes'
 import WebMentions from '../webmentions/webmentions'
 import { propertyFieldsByType } from '../activities/resolvers'
+import { merge } from '../../utils'
 
 const notesQuery = () => Notes.find().fetch()
 const noteQuery = (root, { id }) => Notes.findOne(id)
+
+const createNoteMutation = (root, { note }) => {
+	// TODO: authenticate this somehow, who says you're allowed to call this?
+	const publishedAt = note.publishedAt ? moment(note.publishedAt).toDate() : new Date()
+	const noteId = Notes.insert(merge(note, { publishedAt }))
+
+	return Notes.findOne(noteId)
+}
 
 const Note = {
 	id({ _id }) {
@@ -16,8 +25,8 @@ const Note = {
 	content({ content }, { format = 'html' }) {
 		return format === 'html' ? marked(content) : content
 	},
-	publishedAt({ created_at }) {
-		return moment(created_at, moment.ISO_8601).format()
+	publishedAt({ publishedAt }) {
+		return moment(publishedAt, moment.ISO_8601).format()
 	},
 	categories({ category }) {
 		return category
@@ -63,5 +72,6 @@ const Note = {
 export {
 	noteQuery,
 	notesQuery,
+	createNoteMutation,
 	Note,
 }

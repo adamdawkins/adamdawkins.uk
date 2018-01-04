@@ -18,8 +18,17 @@ type Syndicate {
 	url: String!
 }
 
+enum Silo {
+	twitter
+	facebook
+}
+
 type Query {
 	activities(noteId: String, type: ActivityType): [Activity]!
 	notes: [Note]!
 	note(id: String!): Note!
+}
+
+type Mutation {
+	createNote(note: NoteInput!): Note!
 }

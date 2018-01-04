@@ -23,3 +23,14 @@ type ActivityMeta {
 	type: ActivityType!
 	count: Int!
 }
+
+"""
+The input you can enter to create a `Note`
+"""
+
+input NoteInput {
+	content: String!
+	publishedAt: String
+	syndicateTo: [Silo]
+	categories: [String]
+}
