@@ -79,14 +79,16 @@ const micropubPost = async (req, res, next) => {
 
 
 const micropubGet = async (req, res, next) => {
+	let result
 	if (req.method !== 'GET') {
 		return next()
 	}
 	await authenticate(req, res, next)
-	if (req.query.q === 'config') {
+	const { query: { q } } = req
+	if (q === 'config' || q === 'syndicate-to') {
 		res.setHeader('content-type', 'application/json')
 		res.statusCode = 200
-		res.send({
+		result = res.send({
 			'syndicate-to': [
 				{
 					uid: 'twitter',
@@ -95,6 +97,8 @@ const micropubGet = async (req, res, next) => {
 			],
 		})
 	}
+
+	return result
 }
 
 export { micropubPost, micropubGet }
