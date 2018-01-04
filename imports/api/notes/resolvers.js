@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor'
 
 import Notes from './notes'
 import WebMentions from '../webmentions/webmentions'
+import { propertyFieldsByType } from '../activities/resolvers'
 
 const notesQuery = () => Notes.find().fetch()
 const noteQuery = (root, { id }) => Notes.findOne(id)
@@ -39,7 +40,7 @@ const Note = {
 			target: `https://adamdawkins.uk/notes/${_id}`,
 		}
 		if (type) {
-			query['activity.type'] = type
+			query['post.wm-property'] = propertyFieldsByType[type]
 		}
 
 		return WebMentions.find(query).fetch()
@@ -51,11 +52,10 @@ const Note = {
 			'repost',
 			'like',
 			'reply',
-			'mention',
 		]
 		return types.map(type => ({
 			type,
-			count: WebMentions.find({ target, 'activity.type': type }, { fields: { _id: 1 } }).count(),
+			count: WebMentions.find({ target, 'post.wm-property': propertyFieldsByType[type] }, { fields: { _id: 1 } }).count(),
 		}))
 	},
 }

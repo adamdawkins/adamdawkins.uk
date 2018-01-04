@@ -1,5 +1,6 @@
-import React from 'react'
 import Express from 'express'
+import bodyParser from 'body-parser'
+import React from 'react'
 import 'isomorphic-fetch'
 import { StaticRouter } from 'react-router'
 import { ApolloProvider, renderToStringWithData } from 'react-apollo'
@@ -10,6 +11,8 @@ import { WebApp } from 'meteor/webapp'
 
 import apolloClient from '../../apollo/client'
 import Routes from '../routes'
+
+import { postWebMention } from '../../api/webmentions/server/routes'
 
 const app = Express()
 app.use((req, res, next) => {
@@ -46,4 +49,5 @@ app.use((req, res, next) => {
 		})
 })
 WebApp.connectHandlers.use(Meteor.bindEnvironment(app))
-
+WebApp.connectHandlers.use(bodyParser.json())
+WebApp.connectHandlers.use('/webmentions', Meteor.bindEnvironment(postWebMention))

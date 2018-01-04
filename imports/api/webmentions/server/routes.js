@@ -10,8 +10,8 @@ const postWebMention = (req, res, next) => {
 	}
 
 	const webMention = omit(req.body, 'secret')
-	WebMentions.insert(webMention)
-
+	const id = WebMentions.insert(webMention)
+	console.log(`Inserted WebMention with id ${id}`)
 	return res.status(201).send('WebMention created')
 }
 
