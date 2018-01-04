@@ -61,10 +61,10 @@ const micropubPost = async (req, res, next) => {
 	if (req.headers['content-type'] === 'application/json') {
 		note = getNoteFromJSONBody(req.body)
 	} else {
-		const { content, category, photo } = req.body
+		const { content, 'category[]': categories, photo } = req.body
 		note = { content }
-		if (category) {
-			note.categories = category
+		if (categories) {
+			note.categories = categories
 		}
 		if (photo) {
 			note.photo = photo
