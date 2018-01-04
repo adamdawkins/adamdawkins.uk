@@ -77,4 +77,24 @@ const micropubPost = async (req, res, next) => {
 	return res.send()
 }
 
-export default micropubPost
+
+const micropubGet = async (req, res, next) => {
+	if (req.method !== 'GET') {
+		return next()
+	}
+	await authenticate(req, res, next)
+	if (req.query.q === 'config') {
+		res.setHeader('content-type', 'application/json')
+		res.statusCode = 200
+		res.send({
+			'syndicate-to': [
+				{
+					uid: 'twitter',
+					name: 'https://twitter.com/adamdawkins',
+				},
+			],
+		})
+	}
+}
+
+export { micropubPost, micropubGet }
