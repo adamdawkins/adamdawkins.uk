@@ -16,6 +16,7 @@ query note($id: String!) {
 		publishedAt
 		content
 		categories
+		photo
 		reposts:activities(type: repost) {
 			...ActivityEssentials
 		}

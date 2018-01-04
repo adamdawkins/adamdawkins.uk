@@ -7,6 +7,8 @@ written & posted quickly, that has its own permalink page.
 type Note {
 	id: String!
 	content(format: Format): String!
+	"A URL to a photo provided to the post"
+	photo: String
 	publishedAt: String!
 	" A list of syndicates where this note has also been published"
 	syndicates: [Syndicate]
@@ -33,4 +35,5 @@ input NoteInput {
 	publishedAt: String
 	syndicateTo: [Silo]
 	categories: [String]
+	photo: String
 }

@@ -51,10 +51,13 @@ const micropubPost = async (req, res, next) => {
 	}));
 
 	req.on('end', Meteor.bindEnvironment(async () => {
-		const { content, category } = qs.parse(body)
+		const { content, category, photo } = qs.parse(body)
 		const note = { content }
 		if (category) {
 			note.categories = category
+		}
+		if (photo) {
+			note.photo = photo
 		}
 		const { data: { note: { url } } } = await createNote(note)
 		res.statusCode = 201

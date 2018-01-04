@@ -18,6 +18,7 @@ const ShowNote = ({ note }) => (
 		<article className="h-entry">
 			{<Author />}
 			<NoteContent note={note} />
+			{note.photo && (<img src={note.photo} alt="{note.content}" />)}
 			<footer>
 				<PublishedAt date={note.publishedAt} url={note.url} />
 				<SyndicationLinks note={note} />
