@@ -13,6 +13,8 @@ import apolloClient from '../../apollo/client'
 import Routes from '../routes'
 
 import { postWebMention } from '../../api/webmentions/server/routes'
+import micropub from '../../api/micropub/endpoint'
+
 
 const app = Express()
 app.use((req, res, next) => {
@@ -51,3 +53,4 @@ app.use((req, res, next) => {
 WebApp.connectHandlers.use(Meteor.bindEnvironment(app))
 WebApp.connectHandlers.use(bodyParser.json())
 WebApp.connectHandlers.use('/webmentions', Meteor.bindEnvironment(postWebMention))
+WebApp.connectHandlers.use('/micropub', Meteor.bindEnvironment(micropub))

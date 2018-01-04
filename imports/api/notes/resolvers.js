@@ -28,9 +28,6 @@ const Note = {
 	publishedAt({ publishedAt }) {
 		return moment(publishedAt, moment.ISO_8601).format()
 	},
-	categories({ category }) {
-		return category
-	},
 	url({ _id }) {
 		return Meteor.absoluteUrl(`notes/${_id}`)
 	},

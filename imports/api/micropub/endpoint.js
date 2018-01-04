@@ -1,35 +1,67 @@
+import qs from 'qs'
+
 import { Meteor } from 'meteor/meteor'
 import { HTTP } from 'meteor/http'
 
-const indieAuthToken = async (bearer) => {
+import createNoteMutation from './createNote.graphql'
+import { runQuery } from '../../graphql'
+
+const indieAuthToken = async (Authorization) => {
 	const { statusCode, data } = await HTTP.get('https://tokens.indieauth.com/token', {
 		headers: {
 			Accept: 'application/json',
-			Authorization: bearer,
+			Authorization,
 		},
 	})
-
 	if (statusCode !== 200) {
-		throw new Meteor.Error(statusCode, 'Error from IndieAuth')
+		throw new Meteor.Error(statusCode, 'Something wrong with IndieAuth')
 	}
 
 	return data
 }
 
-const micropub = (req, res) => {
+const authenticate = async (req, res) => {
+	try {
+		const tokenInfo = await indieAuthToken(req.headers.authorization)
+
+		// TODO: more authentication to include client_id?
+		if (tokenInfo.issued_by !== 'https://tokens.indieauth.com/token') {
+			res.writeHead(403)
+			return res.send('Forbidden')
+		}
+	} catch (err) {
+		res.statusCode = 401
+		return res.send('Something went wrong')
+	}
+	return true
+}
+
+const createNote = async note => runQuery(createNoteMutation, { note })
+
+const micropubPost = async (req, res, next) => {
+	if (req.method !== 'POST') {
+		return next()
+	}
+
+	await authenticate(req, res, next)
+
 	let body = ''
 	req.on('data', Meteor.bindEnvironment((data) => {
 		body += data
 	}));
 
 	req.on('end', Meteor.bindEnvironment(async () => {
-		const { headers, method } = req
-
-		const tokenInfo = await indieAuthToken(headers.authorization)
-		console.log({ tokenInfo })
-
-		res.writeHead(200);
+		const { content, category } = qs.parse(body)
+		const note = { content }
+		if (category) {
+			note.categories = category
+		}
+		const { data: { note: { url } } } = await createNote(note)
+		res.statusCode = 201
+		res.setHeader('Location', url)
+		return res.send()
 	}));
+	return null
 }
 
-export default micropub
+export default micropubPost
