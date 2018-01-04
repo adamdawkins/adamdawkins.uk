@@ -22,10 +22,15 @@ const ShowNote = ({ note }) => (
 				<PublishedAt date={note.publishedAt} url={note.url} />
 				<SyndicationLinks note={note} />
 				<ActivitySummary activities={note._activityMeta} />
-				<div style={{display: 'flex', flexDirection: 'column'}}>
+				<div style={{ display: 'flex', flexDirection: 'column' }}>
 					<ActivityFacepile type="like" activities={note.likes} />
 					<ActivityFacepile type="repost" activities={note.reposts} />
 				</div>
+				{ note.categories && (
+					<div>
+						Posted in {note.categories.map(cat => (<a key={cat} href={`/notes/categories/${cat}`} style={{ marginRight: '.5em' }}>{cat}</a>))}
+					</div>
+				)}
 			</footer>
 
 		</article>

@@ -15,6 +15,7 @@ query note($id: String!) {
 		url
 		publishedAt
 		content
+		categories
 		reposts:activities(type: repost) {
 			...ActivityEssentials
 		}
