@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor'
 import Notes from './notes'
 import WebMentions from '../webmentions/webmentions'
 import { propertyFieldsByType } from '../activities/resolvers'
-import { merge } from '../../utils'
+import { merge, isFilledArray } from '../../utils'
 
 const notesQuery = () => Notes.find().fetch()
 const noteQuery = (root, { id }) => Notes.findOne(id)
@@ -31,11 +31,15 @@ const Note = {
 	url({ _id }) {
 		return Meteor.absoluteUrl(`notes/${_id}`)
 	},
-	_micropub(note) {
-		return {
-			syndicateTo: note['mp-syndicate-to'],
+	syndicateTargets({ syndicateTo }) {
+		let targets = []
+		if (isFilledArray(syndicateTo)) {
+			targets = syndicateTo.map(platform => `https://brid.gy/publish/${platform}`)
 		}
+
+		return targets
 	},
+
 	/* TODO: this query is identical to the activities query in `activities/resolvers`,
 	 * and contains a fair bit of bespoke understanding of the format of the Webmentions collection.
 	 * We should refactor into one place.

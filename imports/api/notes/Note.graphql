@@ -7,16 +7,23 @@ written & posted quickly, that has its own permalink page.
 type Note {
 	id: String!
 	content(format: Format): String!
+
 	"A URL to a photo provided to the post"
 	photo: String
 	publishedAt: String!
+
 	" A list of syndicates where this note has also been published"
 	syndicates: [Syndicate]
+
+	"A list of URLs to syndicate to, these must appear in the Note to verify our intent to publish"
+	syndicateTargets: [String]
 	categories: [String]
 	url: String!
+
 	"Activities from others on this Note"
 	activities(type: ActivityType): [Activity]
 	_micropub: MicropubMeta!
+
 	"Contains the counts for the different types of Activity"
 	_activityMeta: [ActivityMeta]
 }
@@ -33,7 +40,7 @@ The input you can enter to create a `Note`
 input NoteInput {
 	content: String!
 	publishedAt: String
-	syndicateTo: [Silo]
+	syndicateTo: [String]
 	categories: [String]
 	photo: String
 }

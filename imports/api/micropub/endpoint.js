@@ -61,8 +61,7 @@ const micropubPost = async (req, res, next) => {
 	if (req.headers['content-type'] === 'application/json') {
 		note = getNoteFromJSONBody(req.body)
 	} else {
-		const { content, category, 'category[]': categories, photo } = req.body
-
+		const { content, category, 'category[]': categories, photo, 'mp-syndicate-to[]': syndicateTo } = req.body
 		note = { content }
 
 		note.categories = categories || [category]
@@ -70,9 +69,15 @@ const micropubPost = async (req, res, next) => {
 		if (photo) {
 			note.photo = photo
 		}
+
+		if (syndicateTo) {
+			// syndicateTo is somethings a string, `concat` guarantees an array
+			note.syndicateTo = [].concat(syndicateTo)
+		}
 	}
 
 	const { data: { note: { url } } } = await createNote(note)
+
 	res.statusCode = 201
 	res.setHeader('Location', url)
 	return res.send()
