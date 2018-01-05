@@ -3,6 +3,7 @@ import { HTTP } from 'meteor/http'
 
 import createNoteMutation from './createNote.graphql'
 import { runQuery } from '../../graphql'
+import sendWebMention from '../webmentions/sendWebMention'
 
 // get's note from the JSON Body of a micropub request
 const getNoteFromJSONBody = ({ properties: props }) => {
@@ -76,7 +77,16 @@ const micropubPost = async (req, res, next) => {
 		}
 	}
 
-	const { data: { note: { url } } } = await createNote(note)
+	const { data: { note: { url, syndicateTargets } } } = await createNote(note)
+
+	await syndicateTargets.forEach(async (target) => {
+		try {
+			const result = await sendWebMention('https://brid.gy/publish/webmention', { target, source: url })
+			console.log({target, result})
+		} catch (err) {
+			console.error(err.stack)
+		}
+	})
 
 	res.statusCode = 201
 	res.setHeader('Location', url)
