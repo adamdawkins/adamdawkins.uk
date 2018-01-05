@@ -31,6 +31,7 @@ query note($id: String!) {
 			id
 			url
 		}
+		syndicateTargets
 	}
 }
 

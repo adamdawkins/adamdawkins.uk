@@ -11,6 +11,7 @@ import Author from '../../components/Author'
 import SyndicationLinks from '../../components/SyndicationLinks'
 import PublishedAt from '../../components/PublishedAt'
 import ActivityFacepile from '../../partials/Notes/ActivityFacepile'
+import SyndicateTargets from '../../partials/Notes/SyndicateTargets'
 import ActivitySummary from '../../components/ActivitySummary'
 
 const ShowNote = ({ note }) => (
@@ -33,8 +34,8 @@ const ShowNote = ({ note }) => (
 					</div>
 				)}
 			</footer>
-
 		</article>
+		<SyndicateTargets note={note} />
 	</div>
 )
 
