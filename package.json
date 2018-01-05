@@ -6,6 +6,7 @@
     "start": "env $(cat .env | xargs) meteor run --settings settings.json --port 3000",
     "start-as-production": "env $(cat .env | xargs) meteor run --settings settings.json --production",
     "mongo": "mongo aws-us-east-1-portal.17.dblayer.com:10116/dev_adamdawkins -u dev -pferrah",
+    "mongo-production": "mongo aws-us-east-1-portal.17.dblayer.com:10116/adamdawkins -u ad-micro -p squishy-sieve-letdown",
     "deploy": "meteor-now -d -e NODE_ENV=production -e ROOT_URL=https://adamdawkins.uk -e MONGO_URL=mongodb://ad-micro:squishy-sieve-letdown@aws-us-east-1-portal.17.dblayer.com:10116,aws-us-east-1-portal.18.dblayer.com:10120/adamdawkins -e WEBMENTION_IO_SECRET=steak-quonset-thwart",
     "changelog": "./node_modules/.bin/changelog",
     "lint": "eslint ."
