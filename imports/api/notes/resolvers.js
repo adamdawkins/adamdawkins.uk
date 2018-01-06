@@ -7,7 +7,14 @@ import WebMentions from '../webmentions/webmentions'
 import { propertyFieldsByType } from '../activities/resolvers'
 import { merge, isFilledArray } from '../../utils'
 
-const notesQuery = () => Notes.find({}, {sort: { publishedAt: -1 } }).fetch()
+const notesQuery = (root, { limit = 20 }) => {
+	const options = {
+		sort: { publishedAt: -1 },
+		limit,
+	}
+
+	return Notes.find({}, options).fetch()
+}
 const noteQuery = (root, { id }) => Notes.findOne(id)
 
 const createNoteMutation = (root, { note }) => {

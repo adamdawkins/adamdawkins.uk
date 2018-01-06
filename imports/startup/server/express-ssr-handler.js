@@ -5,6 +5,7 @@ import 'isomorphic-fetch'
 import { StaticRouter } from 'react-router'
 import { ApolloProvider, renderToStringWithData } from 'react-apollo'
 import Helmet from 'react-helmet'
+import compression from 'compression'
 
 import { Meteor } from 'meteor/meteor'
 import { WebApp } from 'meteor/webapp'
@@ -17,6 +18,7 @@ import { micropubGet, micropubPost } from '../../api/micropub/endpoint'
 
 const app = Express()
 
+app.use(compression())
 app.use((req, res, next) => {
 	const client = apolloClient(req)
 	const context = {}

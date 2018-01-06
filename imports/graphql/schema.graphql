@@ -25,7 +25,7 @@ enum Silo {
 
 type Query {
 	activities(noteId: String, type: ActivityType): [Activity]!
-	notes: [Note]!
+	notes(limit: Int): [Note]!
 	note(id: String!): Note!
 }
 
