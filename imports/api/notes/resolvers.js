@@ -7,7 +7,7 @@ import WebMentions from '../webmentions/webmentions'
 import { propertyFieldsByType } from '../activities/resolvers'
 import { merge, isFilledArray } from '../../utils'
 
-const notesQuery = (root, { limit = 20 }) => {
+const notesQuery = (root, { limit = 100 }) => {
 	const options = {
 		sort: { publishedAt: -1 },
 		limit,
