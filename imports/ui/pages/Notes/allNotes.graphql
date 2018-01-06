@@ -1,16 +1,12 @@
 query allNotes {
-  notes {
-    id
+	notes {
+		id
 		url
-    content
+		content
 		publishedAt
 		syndicates {
 			id
 			url
 		}
-    _activityMeta {
-      type
-      count
-    }
-  }
+	}
 }
