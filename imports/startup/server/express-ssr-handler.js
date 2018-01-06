@@ -46,7 +46,7 @@ app.use((req, res, next) => {
 					${helmet.link.toString()}
 					${helmet.style.toString()}
 				`
-				req.dynamicBody = `<div id="root"><style>#root { background: red }</style> ${content}</div> ${hydrateApollo}`
+				req.dynamicBody = `<div id="root">${content}</div> ${hydrateApollo}`
 
 				next()
 			}
