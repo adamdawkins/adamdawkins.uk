@@ -17,5 +17,4 @@ ecmascript@0.9.0              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.3.0            # Server-side component of the `meteor shell` command
 swydo:graphql
 apollo
-fourseven:scss
 http

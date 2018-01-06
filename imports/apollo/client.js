@@ -24,6 +24,7 @@ const apolloClient = (req) => {
 		ssrMode: Meteor.isServer,
 		link: createHttpLink(linkOptions),
 		cache,
+		shouldBatch: Meteor.isServer,
 	})
 }
 

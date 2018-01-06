@@ -15,8 +15,8 @@ import Routes from '../routes'
 import { postWebMention } from '../../api/webmentions/server/routes'
 import { micropubGet, micropubPost } from '../../api/micropub/endpoint'
 
-
 const app = Express()
+
 app.use((req, res, next) => {
 	const client = apolloClient(req)
 	const context = {}
@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 					${helmet.link.toString()}
 					${helmet.style.toString()}
 				`
-				req.dynamicBody = `<div id="root">${content}</div> ${hydrateApollo}`
+				req.dynamicBody = `<div id="root"><style>#root { background: red }</style> ${content}</div> ${hydrateApollo}`
 
 				next()
 			}
