@@ -12,7 +12,7 @@ const engine = new Engine({
 	engineConfig: {
 		apiKey: 'service:adamdawkins-5245:myRT4xxSzvEYWkXC9UYRZg',
 		logging: {
-			level: 'DEBUG', // DEBUG, INFO, WARN or ERROR
+			level: 'WARN', // DEBUG, INFO, WARN or ERROR
 		},
 	},
 	graphqlPort: PORT,
