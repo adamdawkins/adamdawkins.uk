@@ -1,14 +1,20 @@
 body {
 	font-size: 24px;
+  background-image: url('../background.jpg');
+  background-size: cover;
+  color: rgba(0,0,0,.8)
 }
 
-/* Don't break a line within an anchor */
-a {
-	white-space: nowrap;
+.title a {
+  color: rgba(0,0,0,.8) !important;
 }
 
-/* Add an arrow to the end of external links */
-a[data-external="true"]::after {
+p {
+	max-width: 35em;
+}
+
+/* Add an arrow to the end of external links  in text */
+p > a[data-external="true"]::after {
 	content: "\2197";
 	margin-left: .2em;
 	font-size: .5em;
@@ -21,6 +27,38 @@ a[data-external="true"]::after {
 	font-family: sans-serif;
 }
 
-.small {
+/* A smaller font size */
+.Fz\(small\) {
 	font-size: .7em;
+}
+
+.Mt\(space\) {
+  margin-top: 2em
+}
+
+
+
+/* Overrides of Lit stuff */
+
+.card {
+  background: rgba(255, 252, 243, .85);
+  border-radius: .025em;
+}
+
+.facepile {
+	list-style-type: none;
+	margin: 0;
+}
+
+.facepile .face {
+	float: left;
+	margin: 0;
+	padding: 0;
+	margin-left: 3px;
+}
+
+.card img {
+	max-width: 100%;
+	height: auto;
+	margin: inherit auto;
 }

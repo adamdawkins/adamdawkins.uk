@@ -22,7 +22,7 @@ const iconForType = (type) => {
 }
 
 const ActivityCount = ({ type, count }) => (
-	<div style={{ margin: '0 1em', fontSize: '1.2em' }} title={`${type}s`}>
+	<div style={{ margin: '0 1em', fontSize: '.8em', display: 'flex', alignItems: 'center', fontFamily: 'monospace' }} title={`${type}s`}>
 		<i className={`${iconForType(type)} fa-pull-left`} />
 		<span>{count}</span>
 	</div>

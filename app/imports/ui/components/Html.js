@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Html = ({content, classes}) => (
-	<div className={classes} dangerouslySetInnerHTML={{__html: content}} />
+const Html = ({content, classes, style}) => (
+	<div className={classes} style={style} dangerouslySetInnerHTML={{__html: content}} />
 )
 
 export default Html

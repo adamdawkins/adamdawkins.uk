@@ -8,9 +8,13 @@ import query from './activities.graphql'
 import Facepile from '../../components/Facepile'
 
 const ActivityFacepile = ({ type, activities }) => (
-	<div style={{display: 'block', width: '100%'}}>
-		<ActivityIcon classes="fa-pull-left" type={type} />
+	<div className="row Mt(space)">
+		<div className="col 1">
+		<ActivityIcon type={type} />
+	</div>
+	<div className="col 11">
 		<Facepile activities={activities} />
+	</div>
 	</div>
 )
 
