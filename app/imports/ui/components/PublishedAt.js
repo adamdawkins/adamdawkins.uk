@@ -5,7 +5,7 @@ import moment from 'moment'
 const PublishedAt = ({ date, url }) => {
 	const dateMoment = moment(date, moment.ISO_8601)
 	return (
-		<p>Published&nbsp;
+		<p className="Ff(ss) small">Published&nbsp;
 			<a
 				className="u-url"
 				href={url}

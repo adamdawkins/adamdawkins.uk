@@ -9,7 +9,7 @@ import NoteListItem from '../../components/NoteListItem'
 import Author from '../../components/Author'
 
 const Notes = ({ notes }) => (
-	<div className="h-feed">
+	<div className="c h-feed">
 		<h3 className="p-name">Adam's notes</h3>
 		{notes.map(note => (<NoteListItem key={note.id} note={note} showAuthor={false} />))}
 		<Author />

@@ -68,32 +68,32 @@ pre {
 }
 
 h6 {
-    font: 300 1em var(--font);
+    font: 400 1em var(--font);
     margin: .5em 0;
 }
 
 h5 {
-    font: 300 1.3em var(--font);
+    font: 400 1.3em var(--font);
     margin: .5em 0;
 }
 
 h3 {
-    font: 300 2em var(--font);
+    font: 400 2em var(--font);
     margin: .5em 0;
 }
 
 h4 {
-    font: 300 1.5em var(--font);
+    font: 400 1.5em var(--font);
     margin: .5em 0;
 }
 
 h2 {
-    font: 300 2.2em var(--font);
+    font: 400 2.2em var(--font);
     margin: .5em 0;
 }
 
 h1 {
-    font: 300 2.5em var(--font);
+    font: 400 2.5em var(--font);
     margin: .5em 0;
 }
 

@@ -13,3 +13,14 @@ a[data-external="true"]::after {
 	margin-left: .2em;
 	font-size: .5em;
 }
+
+/* atomic stuff */
+
+/* font-family: sans-serif; */
+.Ff\(ss\) {
+	font-family: sans-serif;
+}
+
+.small {
+	font-size: .7em;
+}
