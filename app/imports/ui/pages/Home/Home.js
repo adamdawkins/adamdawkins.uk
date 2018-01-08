@@ -1,11 +1,17 @@
 import React from 'react'
 import { compose } from 'recompose'
+import AdamCard from '../../partials/AdamCard'
 
 const Home = () => (
-	<div className="h-card">
-		<h1><a className="p-name u-url" href="https://adamdawkins.uk">Adam Dawkins</a></h1>
-		<p className="p-note">Web Developer at <a className="org url fn" href="http://www.dragondrop.uk">Dragon Drop</a>. Thoughts on <a href="https://medium.com/@adamdawkins" data-external="true">other things too</a>.</p>
-		<p>Email me at <a className="u-email" href="mailto:adam@dragondrop.uk" rel="me">adam@dragondrop.uk</a></p>
+	<div className="c">
+		<div className="row">
+			<h1>Adam Dawkins</h1>
+		</div>
+		<div className="row">
+			<div className="col 6">
+				<AdamCard />
+			</div>
+		</div>
 	</div>
 )
 

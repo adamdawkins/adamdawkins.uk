@@ -1,0 +1,15 @@
+body {
+	font-size: 24px;
+}
+
+/* Don't break a line within an anchor */
+a {
+	white-space: nowrap;
+}
+
+/* Add an arrow to the end of external links */
+a[data-external="true"]::after {
+	content: "\2197";
+	margin-left: .2em;
+	font-size: .5em;
+}
