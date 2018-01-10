@@ -4,7 +4,7 @@ const AdamCard = () => (
 	<div className="card h-card">
 		<div className="row">
 			<div className="col 4">
-				<a className="u-url u-uid" href="/">
+				<a className="u-url u-uid" href="https://adamdawkins.uk" rel="me">
 					<img className="u-photo" src="/profile.png" alt="Adam Dawkins" />
 				</a>
 			</div>
@@ -12,7 +12,7 @@ const AdamCard = () => (
 				<p className="p-note">Hi, I'm <span className="p-name">Adam<span style={{display: 'none' }}>Dawkins</span></span>.
 					I'm a web developer &amp; co-founder at <a className="org url fn" href="http://www.dragondrop.uk">Dragon Drop</a>. </p>
 				<p>I write about development, politics, and faith in my <a href="https://medium.com/@adamdawkins" rel="me">articles</a>.
-					I keep my <a href="/notes">notes here</a> and on <a href="https://www.twitter.com/adamdawkins">Twitter</a>.
+					I keep my <a href="/notes">notes here</a> and on <a href="https://www.twitter.com/adamdawkins" rel="me">Twitter</a>.
 					Email me at <a className="u-email" href="mailto:adam@dragondrop.uk" rel="me">adam@dragondrop.uk</a></p>
 			</div>
 		</div>
