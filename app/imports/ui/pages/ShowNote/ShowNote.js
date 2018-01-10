@@ -45,6 +45,7 @@ const ShowNote = ({ note }) => (
 					</div>
 					)}
 				</footer>
+				<a href="/" className="u-author" rel="author" />
 			</article>
 			<SyndicateTargets note={note} />
     </div>
@@ -61,7 +62,7 @@ const ShowNote = ({ note }) => (
 )
 
 ShowNote.propTypes = {
-	note: propType(query).isRequired,
+	note: propType(query),
 }
 
 const data = graphql(query, {
