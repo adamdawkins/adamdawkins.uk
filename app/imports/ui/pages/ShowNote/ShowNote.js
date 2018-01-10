@@ -29,7 +29,7 @@ const ShowNote = ({ note }) => (
             <div className="col 6">
               <PublishedAt date={note.publishedAt} url={note.url} />
             </div>
-            <div clasName="col 6">
+            <div className="col 6">
             <SyndicationLinks note={note} />
             </div>
           </div>
