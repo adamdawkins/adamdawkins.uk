@@ -72,7 +72,7 @@ const micropubPost = async (req, res, next) => {
 		}
 
 		if (syndicateTo) {
-			// syndicateTo is somethings a string, `concat` guarantees an array
+			// syndicateTo is sometimes a string, `concat` guarantees an array
 			note.syndicateTo = [].concat(syndicateTo)
 		}
 	}
