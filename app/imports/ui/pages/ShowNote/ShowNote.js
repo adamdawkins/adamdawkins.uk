@@ -46,6 +46,7 @@ const ShowNote = ({ note }) => (
 					)}
 				</footer>
 				<a href="/" className="u-author" rel="author" />
+				<data class="p-bridgy-omit-link" value="maybe" />
 			</article>
 			<SyndicateTargets note={note} />
     </div>
