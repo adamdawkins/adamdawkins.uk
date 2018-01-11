@@ -10,9 +10,15 @@ const postWebMention = (req, res, next) => {
 	}
 
 	const webMention = omit(req.body, 'secret')
+	try {
 	const id = WebMentions.insert(webMention)
 	console.log(`Inserted WebMention with id ${id}`)
 	return res.status(201).send('WebMention created')
+	} catch (err) {
+		console.error("Something went wrong creating a web mention, probably a dupe")
+		console.error(err.stack)
+		return res.status(500).send('')
+	}
 }
 
 export {
