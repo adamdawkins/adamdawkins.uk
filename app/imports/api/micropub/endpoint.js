@@ -121,6 +121,10 @@ const micropubGet = async (req, res, next) => {
 					uid: 'twitter',
 					name: 'https://twitter.com/adamdawkins',
 				},
+				{
+					uid: 'facebook',
+					name: 'https://facebook.com/adamdawkins',
+				},
 			],
 		})
 	}
