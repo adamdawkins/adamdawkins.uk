@@ -1,3 +1,11 @@
+## [Version 0.0.3](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.3) (2018-1-11)
+
+### Bug fixes
+
+- Add now-logs for real time log output: [`4463268`](https://github.com/adamdawkins/adamdawkins.uk/commit/4463268)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.0.2...v0.0.3)
+
 ## [Version 0.0.2](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.2) (2018-1-11)
 
 ### Bug fixes
