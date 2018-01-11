@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor'
 import { HTTP } from 'meteor/http'
 
 import createNoteMutation from './createNote.graphql'
+import updateNote from './updateNote.graphql'
 import { runQuery } from '../../graphql'
 import sendWebMention from '../webmentions/sendWebMention'
 
@@ -77,12 +78,21 @@ const micropubPost = async (req, res, next) => {
 		}
 	}
 
-	const { data: { note: { url, syndicateTargets } } } = await createNote(note)
+	const { data: { note: {id, url, syndicateTargets } } } = await createNote(note)
 
 	await syndicateTargets.forEach(async (target) => {
 		try {
 			const result = await sendWebMention('https://brid.gy/publish/webmention', { target, source: url })
-			console.log(result.data)
+			const syndicateId = target.match(/\w*$/)[0]
+			runQuery(updateNote, { note: {
+				id,
+				syndicates: [
+					{
+						id: syndicateId,
+						url: result.data.url,			
+					},
+				],
+			}})
 		} catch (err) {
 			console.error(err.stack)
 		}

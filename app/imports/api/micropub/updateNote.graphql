@@ -1,0 +1,5 @@
+mutation updateNote($note: UpdateNoteInput!) {
+	updateNote(note: $note) {
+		id
+	}
+}
