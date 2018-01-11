@@ -1,3 +1,11 @@
+## [Version 0.0.4](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.4) (2018-1-11)
+
+### Bug fixes
+
+- Wrap webmention creation in try / catch: [`88d381b`](https://github.com/adamdawkins/adamdawkins.uk/commit/88d381b)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.0.3...v0.0.4)
+
 ## [Version 0.0.3](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.3) (2018-1-11)
 
 ### Bug fixes
