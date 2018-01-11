@@ -82,7 +82,7 @@ const micropubPost = async (req, res, next) => {
 	await syndicateTargets.forEach(async (target) => {
 		try {
 			const result = await sendWebMention('https://brid.gy/publish/webmention', { target, source: url })
-			console.log({target, result})
+			console.log(result.data)
 		} catch (err) {
 			console.error(err.stack)
 		}
