@@ -1,3 +1,12 @@
+## [Version 0.0.2](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.2) (2018-1-11)
+
+### Bug fixes
+
+- Fix background image to bottom (thanks John): [`828e62c`](https://github.com/adamdawkins/adamdawkins.uk/commit/828e62c)
+- Fix: facepile images: [`192bee8`](https://github.com/adamdawkins/adamdawkins.uk/commit/192bee8)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.0.1...v0.0.2)
+
 ## [Version 0.0.1](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.1) (2018-1-11)
 
 ### New features
