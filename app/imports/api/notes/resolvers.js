@@ -25,6 +25,16 @@ const createNoteMutation = (root, { note }) => {
 	return Notes.findOne(noteId)
 }
 
+const updateNoteMutation = (root, { note }) => {
+	const _id = note.id
+	delete note.id
+	Notes.update({ _id }, {		
+		$set: note,
+	})
+
+	return Notes.findOne(_id)
+}
+
 const Note = {
 	id({ _id }) {
 		return _id
@@ -81,5 +91,6 @@ export {
 	noteQuery,
 	notesQuery,
 	createNoteMutation,
+	updateNoteMutation,
 	Note,
 }

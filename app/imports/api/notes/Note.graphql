@@ -44,3 +44,13 @@ input NoteInput {
 	categories: [String]
 	photo: String
 }
+
+input UpdateNoteInput {
+	id: String!
+	syndicates: [SyndicateInput]!
+}
+
+input SyndicateInput {
+	id: String!
+	url: String!
+}

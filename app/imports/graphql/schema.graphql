@@ -31,4 +31,5 @@ type Query {
 
 type Mutation {
 	createNote(note: NoteInput!): Note!
+	updateNote(note: UpdateNoteInput!): Note!
 }

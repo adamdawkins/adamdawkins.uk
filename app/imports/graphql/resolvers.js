@@ -1,4 +1,4 @@
-import { noteQuery, notesQuery, createNoteMutation, Note } from '../api/notes/resolvers'
+import { noteQuery, notesQuery, createNoteMutation, Note, updateNoteMutation } from '../api/notes/resolvers'
 import { Activity, activitiesQuery } from '../api/activities/resolvers'
 
 const Query = {
@@ -9,6 +9,7 @@ const Query = {
 
 const Mutation = {
 	createNote: createNoteMutation,
+	updateNote: updateNoteMutation,
 }
 
 export default {
