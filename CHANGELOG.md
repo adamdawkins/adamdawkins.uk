@@ -1,3 +1,11 @@
+## [Version 0.0.5](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.5) (2018-1-11)
+
+### Bug fixes
+
+- Add id to createNote query result to fix syndicate urls: [`13b2c13`](https://github.com/adamdawkins/adamdawkins.uk/commit/13b2c13)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.0.4...v0.0.5)
+
 ## [Version 0.0.4](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.4) (2018-1-11)
 
 ### Bug fixes
