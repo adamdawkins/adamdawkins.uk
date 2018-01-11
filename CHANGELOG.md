@@ -1,3 +1,11 @@
+## [Version 0.0.6](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.6) (2018-1-11)
+
+### New features
+
+- Add Facebook to possible syndicate endpoints: [`ee87a69`](https://github.com/adamdawkins/adamdawkins.uk/commit/ee87a69)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.0.5...v0.0.6)
+
 ## [Version 0.0.5](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.5) (2018-1-11)
 
 ### Bug fixes
