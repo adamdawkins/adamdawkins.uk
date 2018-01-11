@@ -9,3 +9,6 @@ import './apollo_server'
 
 // Setup Express SSR
 import './express-ssr-handler'
+
+// realtime now logs
+import './now-logs'
