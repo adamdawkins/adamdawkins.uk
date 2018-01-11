@@ -67,5 +67,10 @@ p > a[data-external="true"]::after {
 .card img {
 	max-width: 100%;
 	height: auto;
-	margin: inherit auto;
+	margin: 0 auto;
+}
+
+.face img {
+	width: 36px;
+	height: 36px;
 }
