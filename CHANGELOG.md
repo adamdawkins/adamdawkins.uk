@@ -1,3 +1,11 @@
+## [Version 0.0.7](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.7) (2018-1-11)
+
+### Bug fixes
+
+- stop the background repeating: [`47f0af9`](https://github.com/adamdawkins/adamdawkins.uk/commit/47f0af9)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.0.6...v0.0.7)
+
 ## [Version 0.0.6](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.6) (2018-1-11)
 
 ### New features
