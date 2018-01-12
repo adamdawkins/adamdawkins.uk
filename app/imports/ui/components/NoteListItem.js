@@ -7,6 +7,8 @@ import SyndicationLinks from './SyndicationLinks'
 import NoteContent from './NoteContent'
 import PublishedAt from './PublishedAt'
 
+import { logProps } from '../helpers'
+
 const NoteListItem = ({ note, showAuthor }) => (
 	<article className="h-entry card">
 		{showAuthor && <Author />}
@@ -28,4 +30,5 @@ NoteListItem.propTypes = {
 }
 
 export default compose(
+	logProps('NoteListItem'),
 )(NoteListItem)

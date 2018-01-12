@@ -6,8 +6,8 @@ import SyndicationLink from './SyndicationLink'
 const SyndicationLinks = ({ note: { syndicates } }) => (
 	<p>
 		Also on {syndicates.map(link => (
-			<span key={link.id}>
-				<SyndicationLink name={link.id} url={link.url} />,
+			<span key={link.platform}>
+				<SyndicationLink name={link.platform} url={link.url} />,
 			</span>
 		))}
 	</p>

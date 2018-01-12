@@ -51,6 +51,6 @@ input UpdateNoteInput {
 }
 
 input SyndicateInput {
-	id: String!
+	platform: String!
 	url: String!
 }

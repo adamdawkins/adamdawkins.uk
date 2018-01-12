@@ -5,7 +5,7 @@ query allNotes {
 		content
 		publishedAt
 		syndicates {
-			id
+			platform
 			url
 		}
 	}

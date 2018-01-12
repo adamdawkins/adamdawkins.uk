@@ -83,13 +83,13 @@ const micropubPost = async (req, res, next) => {
 	await syndicateTargets.forEach(async (target) => {
 		try {
 			const result = await sendWebMention('https://brid.gy/publish/webmention', { target, source: url })
-			const syndicateId = target.match(/\w*$/)[0]
-			console.log(`published note ${id} to ${syndicateId} (${result.data.url})`)
+			const platform = target.match(/\w*$/)[0]
+			console.log(`published note ${id} to ${platform} (${result.data.url})`)
 			runQuery(updateNote, { note: {
 				id,
 				syndicates: [
 					{
-						id: syndicateId,
+						platform,
 						url: result.data.url,			
 					},
 				],

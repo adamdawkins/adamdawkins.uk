@@ -1,4 +1,4 @@
-import { noteQuery, notesQuery, createNoteMutation, Note, updateNoteMutation } from '../api/notes/resolvers'
+import { noteQuery, notesQuery, createNoteMutation, Note, updateNoteMutation, deleteNoteMutation } from '../api/notes/resolvers'
 import { Activity, activitiesQuery } from '../api/activities/resolvers'
 
 const Query = {
@@ -10,6 +10,7 @@ const Query = {
 const Mutation = {
 	createNote: createNoteMutation,
 	updateNote: updateNoteMutation,
+	deleteNote: deleteNoteMutation,
 }
 
 export default {
@@ -18,4 +19,7 @@ export default {
 
 	Activity,
 	Note,
+	Syndicate: {
+		platform: ({ id, platform }) => platform ? platform : id
+	},
 }

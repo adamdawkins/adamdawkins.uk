@@ -25,15 +25,15 @@ const createNoteMutation = (root, { note }) => {
 	return Notes.findOne(noteId)
 }
 
-const updateNoteMutation = (root, { note }) => {
-	const _id = note.id
-	delete note.id
-	Notes.update({ _id }, {		
-		$set: note,
+const updateNoteMutation = (root, { note: {id, syndicates } }) => {
+	Notes.update({ _id: id }, {		
+		$addToSet: syndicates,
 	})
 
 	return Notes.findOne(_id)
 }
+
+const deleteNoteMutation = (root, { id } ) => Notes.remove(id)
 
 const Note = {
 	id({ _id }) {
@@ -92,5 +92,6 @@ export {
 	notesQuery,
 	createNoteMutation,
 	updateNoteMutation,
+	deleteNoteMutation,
 	Note,
 }

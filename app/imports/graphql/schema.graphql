@@ -14,7 +14,7 @@ is a way to discoverably link from your original posts to syndicated copies.
 on other sites like social media silos.  `Syndicates` are links to these copies.
 """
 type Syndicate {
-	id: String!
+	platform: String!
 	url: String!
 }
 
@@ -32,4 +32,5 @@ type Query {
 type Mutation {
 	createNote(note: NoteInput!): Note!
 	updateNote(note: UpdateNoteInput!): Note!
+	deleteNote(id: String!): Int!
 }
