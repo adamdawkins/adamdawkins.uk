@@ -1,0 +1,10 @@
+fragment ActivityEssentials on Activity {
+	source
+	url
+	type
+	author {
+		photo
+		name
+		url
+	}
+}

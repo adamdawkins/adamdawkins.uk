@@ -15,5 +15,4 @@ const Home = () => (
 	</div>
 )
 
-export default compose(
-)(Home)
+export default compose()(Home)

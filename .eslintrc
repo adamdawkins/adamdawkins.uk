@@ -23,8 +23,10 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
 		"react/jsx-indent": [2, "tab"],
     "react/jsx-indent-props": [2, "tab"],
+		"react/no-unescaped-entities": 0,
 		"camelcase": 0,
-		"no-underscore-dangle": 0
+		"no-underscore-dangle": 0,
+		"max-len": [1, 200, 4]
   },
 	"env": {
 		"browser": true,

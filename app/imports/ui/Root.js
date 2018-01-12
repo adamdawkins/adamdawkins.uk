@@ -7,9 +7,9 @@ import apolloClient from '../apollo/client'
 
 const Root = () => (
 	<ApolloProvider client={apolloClient()}>
-    <Router>
-      <Routes />
-    </Router>
+		<Router>
+			<Routes />
+		</Router>
 	</ApolloProvider>
 )
 

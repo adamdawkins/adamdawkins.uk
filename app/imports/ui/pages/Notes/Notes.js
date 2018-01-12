@@ -1,4 +1,5 @@
 import React from 'react'
+import { propType } from 'graphql-anywhere'
 import { graphql } from 'react-apollo'
 import { compose, flattenProp, pure } from 'recompose'
 
@@ -16,6 +17,10 @@ const Notes = ({ notes }) => (
 		<p><a className="u-url" href="/notes">Permalink</a></p>
 	</div>
 )
+
+Notes.propTypes = {
+	notes: propType(allNotesQuery).isRequired,
+}
 
 const data = graphql(allNotesQuery)
 

@@ -10,11 +10,17 @@
     "mongo-production": "mongo aws-us-east-1-portal.17.dblayer.com:10116/adamdawkins -u ad-micro -p squishy-sieve-letdown",
     "deploy": "cd ./app; meteor-now -d -e NODE_ENV=production -e ROOT_URL=https://adamdawkins.uk -e MONGO_URL=mongodb://ad-micro:squishy-sieve-letdown@aws-us-east-1-portal.17.dblayer.com:10116,aws-us-east-1-portal.18.dblayer.com:10120/adamdawkins -e WEBMENTION_IO_SECRET=steak-quonset-thwart",
     "changelog": "./node_modules/.bin/changelog",
-    "lint": "cd app; npm run lint"
+    "lint": "eslint app"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.4",
+    "babel-eslint": "^8.2.1",
     "changelog.md": "^1.1.0",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.2",
     "gulp-postcss": "^7.0.1",
