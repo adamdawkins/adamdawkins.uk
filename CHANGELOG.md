@@ -1,3 +1,11 @@
+## [Version 0.0.9](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.9) (2018-1-12)
+
+### Bug fixes
+
+- Fix syndicate schema on note page: [`0429db0`](https://github.com/adamdawkins/adamdawkins.uk/commit/0429db0)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.0.8...v0.0.9)
+
 ## [Version 0.0.8](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.8) (2018-1-12)
 
 ### Bug fixes
