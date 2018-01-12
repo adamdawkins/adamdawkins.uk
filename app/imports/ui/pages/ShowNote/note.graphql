@@ -28,7 +28,7 @@ query note($id: String!) {
 			count
 		}
 		syndicates {
-			id
+			platform
 			url
 		}
 		syndicateTargets
