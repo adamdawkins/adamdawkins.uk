@@ -1,3 +1,11 @@
+## [Version 0.0.8](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.8) (2018-1-12)
+
+### Bug fixes
+
+- Fix various bugs with syndication links: [`5c127a4`](https://github.com/adamdawkins/adamdawkins.uk/commit/5c127a4)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.0.7...v0.0.8)
+
 ## [Version 0.0.7](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.7) (2018-1-11)
 
 ### Bug fixes
