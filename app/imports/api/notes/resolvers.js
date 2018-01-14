@@ -25,15 +25,15 @@ const createNoteMutation = (root, { note }) => {
 	return Notes.findOne(noteId)
 }
 
-const updateNoteMutation = (root, { note: {id, syndicates } }) => {
-	Notes.update({ _id: id }, {		
-		$addToSet: syndicates,
+const updateNoteMutation = (root, { note: { id, syndicates } }) => {
+	Notes.update({ _id: id }, {
+		$addToSet: { syndicates: { $each: syndicates } },
 	})
 
-	return Notes.findOne(_id)
+	return Notes.findOne(id)
 }
 
-const deleteNoteMutation = (root, { id } ) => Notes.remove(id)
+const deleteNoteMutation = (root, { id }) => Notes.remove(id)
 
 const Note = {
 	id({ _id }) {
