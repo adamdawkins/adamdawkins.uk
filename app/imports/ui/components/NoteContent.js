@@ -1,5 +1,5 @@
 import React from 'react'
-import propTypes, { shapeOf } from 'prop-types'
+import propTypes, { shape } from 'prop-types'
 
 import Html from './Html'
 
@@ -8,7 +8,7 @@ const NoteContent = ({ note: { content } }) => (
 )
 
 NoteContent.propTypes = {
-	note: shapeOf({
+	note: shape({
 		content: propTypes.string.isRequired,
 	}).isRequired,
 }
