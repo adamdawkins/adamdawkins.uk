@@ -1,7 +1,7 @@
 {
   "name": "adam-dawkins",
   "private": true,
-  "version": "0.0.9",
+  "version": "0.0.10",
   "scripts": {
     "start": "cd ./app; env $(cat .env | xargs) meteor run --settings settings.json --port 3000",
     "start-as-production": "cd ./app; env $(cat .env | xargs) meteor run --settings settings.json --production",

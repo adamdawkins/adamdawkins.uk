@@ -1,3 +1,13 @@
+## [Version 0.0.10](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.10) (2018-1-14)
+
+### Bug fixes
+
+- Fix `class=`: [`f0f9ff6`](https://github.com/adamdawkins/adamdawkins.uk/commit/f0f9ff6)
+- Fix syntax error: [`067928f`](https://github.com/adamdawkins/adamdawkins.uk/commit/067928f)
+- Fix update of Syndicate URLs: [`f0f0ff0`](https://github.com/adamdawkins/adamdawkins.uk/commit/f0f0ff0)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.0.9...v0.0.10)
+
 ## [Version 0.0.9](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.0.9) (2018-1-12)
 
 ### Bug fixes
