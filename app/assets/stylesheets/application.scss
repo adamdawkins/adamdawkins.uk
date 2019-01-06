@@ -1,3 +1,26 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bio {
+  border: 3px solid black;
+  border-radius: .5rem;
+  max-width: 280px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+    margin-right: 1em;
+  }
+
+  &-body {
+    padding: 1rem;
+  }
+}
 .indiemark {
   .completed {
     text-decoration: line-through;
