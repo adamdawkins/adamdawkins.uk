@@ -1,3 +1,16 @@
+## [Version 0.4.1](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.1) (2019-1-10)
+
+### New features
+
+- ✅ Add posts and notes with sequence: [`44a29c6`](https://github.com/adamdawkins/adamdawkins.uk/commit/44a29c6)
+- Add and show notes: [`cd204a8`](https://github.com/adamdawkins/adamdawkins.uk/commit/cd204a8)
+
+### Bug fixes
+
+- ♻️  Remove all the comments from rails_helper: [`8921639`](https://github.com/adamdawkins/adamdawkins.uk/commit/8921639)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.4.0...v0.4.1)
+
 ## [Version 0.4.0](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.0) (2019-1-9)
 
 ### New features
