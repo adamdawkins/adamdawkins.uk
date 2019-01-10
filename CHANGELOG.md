@@ -1,3 +1,12 @@
+## [Version 0.4.6](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.6) (2019-1-10)
+
+### Bug fixes
+
+- ✅ Add header: [`1a52bf0`](https://github.com/adamdawkins/adamdawkins.uk/commit/1a52bf0)
+- ✅ Add data-id references to IndieMark Items...: [`51a69a0`](https://github.com/adamdawkins/adamdawkins.uk/commit/51a69a0)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.4.5...v0.4.6)
+
 ## [Version 0.4.5](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.5) (2019-1-10)
 
 ### New features
