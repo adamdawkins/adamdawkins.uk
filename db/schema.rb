@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_10_210559) do
+ActiveRecord::Schema.define(version: 2019_01_10_233437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -54,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_01_10_210559) do
     t.integer "sequence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
     t.index ["permalink"], name: "index_posts_on_permalink", unique: true
   end
 
