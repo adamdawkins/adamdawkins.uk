@@ -1,0 +1,4 @@
+<div class="<%= indie_mark_item.completed? ? 'completed' : ''%>">
+  <h3><% if indie_mark_item.completed? %>✔️<% end %><%= indie_mark_item.title %></h3>
+  <p><%= indie_mark_item.details %></p>
+</div>

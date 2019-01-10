@@ -1,0 +1,14 @@
+<h1>Indiemark</h1>
+<blockquote cite="https://indieweb.org/IndieMark">
+  <p>
+<a href="https://indieweb.org/IndieMark#Level_1">IndieMark</a> is a set of metrics for measuring the indieweb-ness of a site, and a step-by-step approach to incrementally adopting indieweb features on your site.</p>
+</blockquote>
+
+<p>This is the Indiemark checklist for adamdawkins.uk</p>
+
+<% @levels.each do |level| %>
+  <h2><%= level.name %> (<%= level.score%>/1.0)</h2>
+  <div class="indiemark">
+    <%= render level.indie_mark_items %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module IndiemarksHelper
+end

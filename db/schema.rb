@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_233544) do
+ActiveRecord::Schema.define(version: 2019_01_10_210559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "indie_mark_items", force: :cascade do |t|
+    t.string "title"
+    t.text "details"
+    t.datetime "completed_at"
+    t.decimal "score"
+    t.bigint "indie_mark_level_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["indie_mark_level_id"], name: "index_indie_mark_items_on_indie_mark_level_id"
+  end
+
+  create_table "indie_mark_levels", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_indie_mark_levels_on_slug", unique: true
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "type"
@@ -26,4 +57,5 @@ ActiveRecord::Schema.define(version: 2019_01_09_233544) do
     t.index ["permalink"], name: "index_posts_on_permalink", unique: true
   end
 
+  add_foreign_key "indie_mark_items", "indie_mark_levels"
 end
