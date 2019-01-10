@@ -1,3 +1,11 @@
+## [Version 0.4.7](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.7) (2019-1-10)
+
+### Bug fixes
+
+- 🐞 Fix SyntaxError on IndeMarkupItems: [`1ae501e`](https://github.com/adamdawkins/adamdawkins.uk/commit/1ae501e)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.4.6...v0.4.7)
+
 ## [Version 0.4.6](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.6) (2019-1-10)
 
 ### Bug fixes
