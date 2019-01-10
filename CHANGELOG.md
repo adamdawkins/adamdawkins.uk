@@ -1,3 +1,16 @@
+## [Version 0.4.5](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.5) (2019-1-10)
+
+### New features
+
+- ✅ Add Apple icons: [`71a6b20`](https://github.com/adamdawkins/adamdawkins.uk/commit/71a6b20)
+- ✅ Add meta tag for easier add to homescreen on Android: [`0d4b128`](https://github.com/adamdawkins/adamdawkins.uk/commit/0d4b128)
+
+### Bug fixes
+
+- ♻️: [`f6649d7`](https://github.com/adamdawkins/adamdawkins.uk/commit/f6649d7)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.4.4...v0.4.5)
+
 ## [Version 0.4.4](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.4) (2019-1-10)
 
 ### Bug fixes
