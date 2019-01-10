@@ -1,3 +1,11 @@
+## [Version 0.4.3](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.3) (2019-1-10)
+
+### New features
+
+- ✅ Add IndieMark model for keeping track of score: [`63ddedf`](https://github.com/adamdawkins/adamdawkins.uk/commit/63ddedf)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.4.2...v0.4.3)
+
 ## [Version 0.4.2](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.2) (2019-1-10)
 
 ### Bug fixes
