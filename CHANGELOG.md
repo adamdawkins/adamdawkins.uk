@@ -1,3 +1,11 @@
+## [Version 0.4.4](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.4) (2019-1-10)
+
+### Bug fixes
+
+- ♻️  Add score to individual IndieMark items: [`728b343`](https://github.com/adamdawkins/adamdawkins.uk/commit/728b343)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.4.3...v0.4.4)
+
 ## [Version 0.4.3](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.3) (2019-1-10)
 
 ### New features
