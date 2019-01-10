@@ -1,3 +1,12 @@
+## [Version 0.4.2](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.2) (2019-1-10)
+
+### Bug fixes
+
+- 🐞 Correct note published date time to be ISO-8601: [`6d2e2b2`](https://github.com/adamdawkins/adamdawkins.uk/commit/6d2e2b2)
+- 📖 Update IndieMark status: [`161eb18`](https://github.com/adamdawkins/adamdawkins.uk/commit/161eb18)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.4.1...v0.4.2)
+
 ## [Version 0.4.1](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.1) (2019-1-10)
 
 ### New features
