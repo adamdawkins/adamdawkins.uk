@@ -58,6 +58,8 @@ GEM
     factory_bot_rails (4.11.1)
       factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
+    faker (1.9.1)
+      i18n (>= 0.7)
     ffi (1.9.25)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
@@ -200,6 +202,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   data_migrate
   factory_bot_rails
+  faker
   friendly_id (~> 5.2.4)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

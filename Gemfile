@@ -24,6 +24,7 @@ group :development do
 end
 
 group :test do
+  gem 'faker'
   gem 'rspec-rails'
   gem 'shoulda-matchers', '4.0.0.rc1'
 end
