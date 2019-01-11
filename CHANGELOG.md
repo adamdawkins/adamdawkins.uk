@@ -1,3 +1,11 @@
+## [Version 0.5.1](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.5.1) (2019-1-11)
+
+### New features
+
+- 🚀 Force SSL in production: [`cb0b048`](https://github.com/adamdawkins/adamdawkins.uk/commit/cb0b048)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.5.0...v0.5.1)
+
 ## [Version 0.5.0](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.5.0) (2019-1-11)
 
 ### Breaking changes
