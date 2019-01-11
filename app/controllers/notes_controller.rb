@@ -5,7 +5,7 @@ class NotesController < ApplicationController
   end
 
   def show
-    @note = Note.where(published_at: @published_date.all_day, sequence: params[:sequence])
+    @note = Note.where(published_at: @published_date.all_day, slug: params[:slug])
   end
 
   private
