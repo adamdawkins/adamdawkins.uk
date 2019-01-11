@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   describe "validation" do
     it { is_expected.to validate_presence_of :content }
-  
+
     # We're getting round this by actually looping through the stack of candidates
     # describe "slug validation" do
-    #   before do 
+    #   before do
     #     create(:post, published_at: 1.day.ago, slug: "the-same-slug")
     #   end
     #   it "requires slugs to be unique for posts on the same day" do
@@ -42,11 +42,11 @@ RSpec.describe Post, type: :model do
         post = create(:post, title: nil, content: "This is the content")
         expect(post.slug).to eq 'this-is-the-content'
       end
-       it "truncates long" do
-         post = create(:post, content: Faker::Lorem.characters(500))
+      it "truncates long" do
+        post = create(:post, content: Faker::Lorem.characters(500))
 
-         expect(post.slug.length).to eq 150
-       end
+        expect(post.slug.length).to eq 150
+      end
     end
 
     context "when the slug has changed" do
@@ -57,12 +57,12 @@ RSpec.describe Post, type: :model do
         expect(post.slug).to eq "slug-2"
       end
 
-       it "cleans the slug" do
-         post = create(:post, slug: "slug")
-         post.update(slug: "slug 2")
+      it "cleans the slug" do
+        post = create(:post, slug: "slug")
+        post.update(slug: "slug 2")
 
-         expect(post.slug).to eq "slug-2"
-       end
+        expect(post.slug).to eq "slug-2"
+      end
     end
 
     context "when the slug hasn't changed, but other attributes have" do
@@ -73,7 +73,7 @@ RSpec.describe Post, type: :model do
         expect(post.slug).to eq "slug"
       end
     end
-    
+
     context "when the slug isn't unique for the day" do
       it "tries the next candidate" do
         old_post = create(:post, slug: 'slug', published_at: 2.days.ago)

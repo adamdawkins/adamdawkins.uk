@@ -9,10 +9,11 @@ class NotesController < ApplicationController
   end
 
   private
-  def set_published_date
-    @published_date = Date.new(params[:year].to_i,
-                               params[:month].to_i,
-                               params[:day].to_i
-                              )
-  end
+
+    def set_published_date
+      @published_date = Date.new(params[:year].to_i,
+                                 params[:month].to_i,
+                                 params[:day].to_i
+                                )
+    end
 end
