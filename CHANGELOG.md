@@ -1,3 +1,21 @@
+## [Version 0.5.0](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.5.0) (2019-1-11)
+
+### Breaking changes
+
+- ⚠️ Change Post contents database column to content: [`7c96e90`](https://github.com/adamdawkins/adamdawkins.uk/commit/7c96e90)
+- ⚠️ Re-write URL structure for Posts: [`955870d`](https://github.com/adamdawkins/adamdawkins.uk/commit/955870d)
+
+### New features
+
+- ✅ Add Article model, and title to Posts: [`5bb74d0`](https://github.com/adamdawkins/adamdawkins.uk/commit/5bb74d0)
+- ✅ Ensure notes do not have a title: [`4d683a1`](https://github.com/adamdawkins/adamdawkins.uk/commit/4d683a1)
+
+### Bug fixes
+
+- 🐞 Render notes at new slug-based URLs: [`37708e6`](https://github.com/adamdawkins/adamdawkins.uk/commit/37708e6)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.4.7...v0.5.0)
+
 ## [Version 0.4.7](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.4.7) (2019-1-10)
 
 ### Bug fixes
