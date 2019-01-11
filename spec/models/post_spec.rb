@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  it { is_expected.to validate_presence_of :contents }
+  it { is_expected.to validate_presence_of :content }
 
   describe "sequence" do
     context "when the post has been published" do

@@ -12,7 +12,7 @@ RSpec.describe "Notes Requests", type: :request do
       expect(response.body).to include("h-card")
     end
      it "shows published notes" do
-      FactoryBot.create(:note, contents: "Contents", published_at: Time.now)
+      FactoryBot.create(:note, content: "Contents", published_at: Time.now)
       get "/"
 
       expect(response.body).to include("Contents")
