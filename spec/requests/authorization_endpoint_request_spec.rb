@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/LineLength
 require 'rails_helper'
 
 RSpec.describe 'AuthorizationEndpoint', type: :request do

@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   describe "validation" do
     it { is_expected.to validate_presence_of :content }
-  
     # We're getting round this by actually looping through the stack of candidates
     # describe "slug validation" do
     #   before do 
@@ -42,11 +41,11 @@ RSpec.describe Post, type: :model do
         post = create(:post, title: nil, content: "This is the content")
         expect(post.slug).to eq 'this-is-the-content'
       end
-       it "truncates long" do
-         post = create(:post, content: Faker::Lorem.characters(500))
+      it "truncates long" do
+        post = create(:post, content: Faker::Lorem.characters(500))
 
-         expect(post.slug.length).to eq 150
-       end
+        expect(post.slug.length).to eq 150
+      end
     end
 
     context "when the slug has changed" do
@@ -73,7 +72,7 @@ RSpec.describe Post, type: :model do
         expect(post.slug).to eq "slug"
       end
     end
-    
+
     context "when the slug isn't unique for the day" do
       it "tries the next candidate" do
         old_post = create(:post, slug: 'slug', published_at: 2.days.ago)

@@ -2,7 +2,9 @@ require "securerandom"
 
 class SlugValidator < ActiveModel::Validator
   def validate(record)
-    record.errors[:slug] << 'needs to be unique on the published date' if record.new_record? && record.slug_already_exists?
+    if record.new_record? && record.slug_already_exists?
+      record.errors[:slug] << 'needs to be unique on the published date'
+    end
   end
 end
 
@@ -26,15 +28,10 @@ class Post < ApplicationRecord
   end
 
   def slug_candidates
-    [ ->(post) {
-        post.slug
-      },
-      ->(post) {
-        post.title
-      },
-      ->(post) {
-        post.content[0, 150] if post.content.present?
-      },
+    [ ->(post) { post.slug },
+      ->(post) { post.title },
+      ->(post) { post.content[0, 150] if post.content.present?  },
+      ->(post) { "#{SecureRandom.hex(4)} #{post.content}"[0, 150] }
     ]
   end
 
@@ -46,34 +43,27 @@ class Post < ApplicationRecord
 
   private
 
-    def clean_slug!(slug)
+    def clean_slug!
+      return if slug.nil?
       blank     = ''
       separator = '-'
-      if self.slug
-        self.slug = slug.downcase
-          .gsub(/\(|\)|\[|\]\.|'|"|“|”|‘|’/, blank)
-          .gsub(/&amp;/,         blank)
-          .gsub(/\W|_|\s|-+/,    separator)
-          .gsub(/^-+/,           blank)
-          .gsub(/-+$/,           blank)
-          .gsub(/-+/,            separator)
-      end
+      self.slug = slug.downcase
+        .gsub(/\(|\)|\[|\]\.|'|"|“|”|‘|’/, blank)
+        .gsub(/&amp;/,         blank)
+        .gsub(/\W|_|\s|-+/,    separator)
+        .gsub(/^-+/,           blank)
+        .gsub(/-+$/,           blank)
+        .gsub(/-+/,            separator)
     end
 
     def generate_slug
       candidate_index = 0
-      self.slug = slug_candidates[candidate_index].call(self) if slug.blank?
-      clean_slug!(slug)
-
       while slug.nil? || slug_already_exists?
-        candidate_index += 1
-        if candidate_index == slug_candidates.length
-          self.slug = "#{slug} #{SecureRandom.hex(4)}"
-        else
-          self.slug = slug_candidates[candidate_index].call(self)
-        end
+        self.slug = slug_candidates[candidate_index].call(self)
 
-        clean_slug!(slug)
+        candidate_index += 1 if candidate_index < slug_candidates.length - 1
+        clean_slug!
       end
+      clean_slug!
     end
 end

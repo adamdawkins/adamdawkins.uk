@@ -7,7 +7,7 @@ RSpec.describe 'Token Endpoint', type: :request do
   # client_id - The client's URL, which MUST match the client_id used in the authorization request.
   # redirect_uri - The client's redirect URL, which MUST match the initial authorization request.
   # me - The user's profile URL as originally used in the authorization request
-  
+
   it "verifies that the authorization code is valid"
   it "verifies that token request and code match on client_id, me and redirect_uri"
   it "verifies than the authorization code request contains at least one scope"
@@ -27,4 +27,3 @@ RSpec.describe 'Token Endpoint', type: :request do
     it "returns the me url"
   end
 end
-
