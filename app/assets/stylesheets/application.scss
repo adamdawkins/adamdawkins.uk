@@ -26,6 +26,7 @@ input, textarea {
   font-size: 1em;
 }
 
+[role="button"],
 button,
 input[type="submit"]
 {
@@ -36,6 +37,7 @@ input[type="submit"]
   box-shadow: 4px 4px 0 #222;
   border-radius: 5px;
   padding: .5em;
+  text-decoration: none;
 }
 
 .action-bar {

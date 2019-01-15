@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :adam do
     resources :notes
+    put "notes/:id/publish", to: "notes#publish", as: "publish_note"
   end
 
   resources :articles, only: :index
