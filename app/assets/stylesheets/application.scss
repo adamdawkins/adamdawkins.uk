@@ -21,3 +21,23 @@
     text-decoration: line-through;
   }
 }
+
+input, textarea {
+  font-size: 1em;
+}
+
+button,
+input[type="submit"]
+{
+  background: #83ffcd;
+  color: #222;
+  font-size: 1em;
+  outline: 0;
+  box-shadow: 4px 4px 0 #222;
+  border-radius: 5px;
+  padding: .5em;
+}
+
+.action-bar {
+  text-align: right;
+}

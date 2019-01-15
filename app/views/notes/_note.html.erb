@@ -5,9 +5,11 @@
   <div class="p-name e-content"><%= note.content %></div>
   <footer>
   </footer>
-  <%= link_to long_note_path(note.params), class: "u-url" do %>
-    <time class="dt-published" datetime="<%= note.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
-      <%= note.published_at.strftime("%a, %b %-d, %Y %l:%M%P %R") %>
-    </time>
+  <% if note.published? %>
+    <%= link_to long_note_path(note.params), class: "u-url" do %>
+      <time class="dt-published" datetime="<%= note.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
+        <%= note.published_at.strftime("%a, %b %-d, %Y %l:%M%P %R") %>
+      </time>
+    <% end %>
   <% end %>
 </article>

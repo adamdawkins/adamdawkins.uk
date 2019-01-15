@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'notes#index'
 
   get 'login', to: 'sessions#new'
+  get 'adam', to: 'adam/notes#new'
 
   resources :sessions, only: [:new, :create, :destroy]
 

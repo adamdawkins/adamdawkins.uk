@@ -1,0 +1,9 @@
+<div class="action-bar">
+  <% unless @note.published? %>
+    <button class="primary">Publish</button>
+  <% end %>
+</div>
+<h1>Preview</h1>
+<%= render "notes/note", { note: @note } %>
+
+
