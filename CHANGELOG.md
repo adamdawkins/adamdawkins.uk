@@ -1,3 +1,26 @@
+## [Version 0.6.0](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.6.0) (2019-1-15)
+
+### Breaking changes
+
+- ⚠️  Change Post contents database column to content: [`fbff31f`](https://github.com/adamdawkins/adamdawkins.uk/commit/fbff31f)
+- ⚠️  Re-write URL structure for Posts: [`68cd32b`](https://github.com/adamdawkins/adamdawkins.uk/commit/68cd32b)
+
+### New features
+
+- ✅ Add authentication: [`743f5ca`](https://github.com/adamdawkins/adamdawkins.uk/commit/743f5ca)
+- ✅ Create notes in /adam area: [`0375301`](https://github.com/adamdawkins/adamdawkins.uk/commit/0375301)
+- ✅ Publish notes: [`15680d8`](https://github.com/adamdawkins/adamdawkins.uk/commit/15680d8)
+- ✅ Add link to new note on notes page: [`ae8c47b`](https://github.com/adamdawkins/adamdawkins.uk/commit/ae8c47b)
+- ✅ Add publish option to new post form: [`91e58bf`](https://github.com/adamdawkins/adamdawkins.uk/commit/91e58bf)
+
+### Bug fixes
+
+- 🐞 Fix rejected login: [`24aa225`](https://github.com/adamdawkins/adamdawkins.uk/commit/24aa225)
+- 🐞 Fix <footer> in Notes: [`996eb45`](https://github.com/adamdawkins/adamdawkins.uk/commit/996eb45)
+- ♻️  Refactor into note.publish! and note.publish: [`600c293`](https://github.com/adamdawkins/adamdawkins.uk/commit/600c293)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.5.1...v0.6.0)
+
 ## [Version 0.5.1](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.5.1) (2019-1-11)
 
 ### New features
