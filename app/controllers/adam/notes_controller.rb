@@ -10,6 +10,12 @@ class Adam::NotesController < AdamController
   def create
     @note = Note.new(note_params)
 
+    puts params[:publish]
+    if params[:publish]
+      puts "Publishing..."
+      @note.published_at = Time.now
+    end
+
     if @note.save
       redirect_to adam_notes_path, notice: "Note created successfully"
     end
