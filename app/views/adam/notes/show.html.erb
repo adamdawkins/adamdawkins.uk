@@ -1,6 +1,11 @@
 <div class="action-bar">
   <% unless @note.published? %>
     <%= form_tag adam_publish_note_path(@note), method: :put do %>
+      <%= label_tag :send_to_twitter do %>
+        <%= check_box_tag :send_to_twitter %>
+        Send to Twitter?
+      <% end %>
+
       <%= submit_tag "Publish" %>
     <% end %>
   <% end %>

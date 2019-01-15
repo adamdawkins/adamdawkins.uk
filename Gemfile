@@ -10,6 +10,7 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'twitter'
 gem 'sass-rails'
 
 group :development, :test do

@@ -1,9 +1,18 @@
 <%= form_for @note, url: adam_notes_path do |f| %>
   <%= f.text_area :content, autofocus: true, rows: 5, style: "width: 100%;" %>
+  <div>
   <%= label_tag :publish do %>
     <%= check_box_tag :publish %>
     Publish
   <% end %>
+  </div>
+
+  <div>
+  <%= label_tag :send_to_twitter do %>
+    <%= check_box_tag :send_to_twitter %>
+    Send to Twitter?
+  <% end %>
+  </div>
   <div style="margin-top: 1em">
     <%= f.submit %>
   </div>
