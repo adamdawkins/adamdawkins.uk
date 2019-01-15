@@ -3,9 +3,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-      puts Rails.application.credentials.adam[:password]
-      puts params[:password]
-
     if params[:password] === Rails.application.credentials.adam[:password]
       session[:logged_in] = Rails.application.credentials.adam[:username]
       redirect_path = session[:pre_auth_path] || root_url
