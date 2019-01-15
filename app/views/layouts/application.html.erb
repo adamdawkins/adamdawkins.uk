@@ -18,6 +18,9 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <h1>Logged in menu</h1>
+    <% end %>
     <header>
       <ul>
         <li><%= link_to "Home", root_path %></li>

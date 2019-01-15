@@ -1,0 +1,2 @@
+module AdamHelper
+end

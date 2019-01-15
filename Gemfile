@@ -13,6 +13,7 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'factory_bot_rails'
 end
 
@@ -24,6 +25,10 @@ group :development do
 end
 
 group :test do
+  gem 'capybara', '>= 2.7'
+  gem 'chromedriver-helper'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'faker'
   gem 'rspec-rails'
   gem 'shoulda-matchers', '4.0.0.rc1'
