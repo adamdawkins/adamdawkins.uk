@@ -1,3 +1,11 @@
+## [Version 0.6.1](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.6.1) (2019-1-15)
+
+### New features
+
+- ♻️ Move username/password to secure credentials instead of ENV: [`718ee5a`](https://github.com/adamdawkins/adamdawkins.uk/commit/718ee5a)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.6.0...v0.6.1)
+
 ## [Version 0.6.0](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.6.0) (2019-1-15)
 
 ### Breaking changes
