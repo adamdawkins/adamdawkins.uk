@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_path = session[:pre_auth_path] || root_url
       redirect_to redirect_path
     else
-      flash[:notice] = 'Wrong!'
+      render :new, notice: "Wrong!"
     end
 
   end
