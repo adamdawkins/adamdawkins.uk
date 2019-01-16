@@ -7,7 +7,7 @@ html {
 body {
   max-width: 40rem;
   margin: auto;
-  line-height: 2rem;
+  line-height: 1.5rem;
   font-size: 1.25rem;
 }
 
@@ -98,9 +98,4 @@ a {
 
 a[href^="http"] {
 	text-decoration: underline dotted;
-}
-
-body > footer {
-  border-top: 5px solid #E96856;
-  padding: 1.5rem;
 }
