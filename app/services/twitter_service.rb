@@ -6,9 +6,11 @@ TwitterClient = Twitter::REST::Client.new do |config|
 end
 
 class TwitterService
-  def self.post(note)  
-    res = TwitterClient.update(note)
-    puts "response from twitter"
-    pp res.url.to_str
+  def self.post(post)  
+    response = TwitterClient.update(post.content)
+
+    twitter_silo = Silo.find_by(name: "Twitter")
+
+    post.syndicates.create(silo: twitter_silo, url: response.url.to_str)
   end
 end

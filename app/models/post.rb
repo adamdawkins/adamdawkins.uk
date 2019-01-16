@@ -11,7 +11,11 @@ end
 class Post < ApplicationRecord
   validates_presence_of :content
   validates_with SlugValidator
+  
+  has_many :syndicates
+
   before_validation :generate_slug
+
 
   scope :published, -> { where("published_at IS NOT NULL").order("published_at DESC") }
 

@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_11_005452) do
+ActiveRecord::Schema.define(version: 2019_01_15_235323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -57,5 +60,24 @@ ActiveRecord::Schema.define(version: 2019_01_11_005452) do
     t.string "slug"
   end
 
+  create_table "silos", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "syndicates", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "silo_id"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_syndicates_on_post_id"
+    t.index ["silo_id"], name: "index_syndicates_on_silo_id"
+  end
+
   add_foreign_key "indie_mark_items", "indie_mark_levels"
+  add_foreign_key "syndicates", "posts"
+  add_foreign_key "syndicates", "silos"
 end
