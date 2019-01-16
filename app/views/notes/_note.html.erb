@@ -1,18 +1,25 @@
 <article class="h-entry note">
-  <div class="p-name e-content"><%= note.content %></div>
-  <footer>
   <% if note.published? %>
-    <%= link_to long_note_path(note.params), class: "u-url" do %>
-      <time class="dt-published" datetime="<%= note.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
-        <%= note.published_at.strftime("%a, %b %-d, %Y %l:%M%P %R") %>
+    <%= link_to long_note_path(note.params), class: "u-url quiet" do %>
+      <time class="block-time dt-published" datetime="<%= note.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
+        <% if note.published_at.today? %>
+          <%= time_ago_in_words(note.published_at) %> ago
+          <span style="font-weight: normal; margin-left: 1em;"><%= note.published_at.strftime("%R") %></span>
+        <% else %>
+          <%= note.published_at.strftime("%a %-d %b %Y %R %Z") %>
+        <% end %>
       </time>
     <% end %>
-    <div class="syndication">
-      <% note.syndicates.each do |syndicate| %>
-        <p>Also posted to <%= link_to syndicate.silo.name, syndicate.url, rel: "external syndication", class: "u-syndication" %>
-    <% end %>
-    </div>
-    <a class="u-author" href="/"></a>
   <% end %>
-  </footer>
+  <p class="p-name e-content"><%= note.content %></p>
+  <% if note.syndicates.any? %>
+    <footer>
+      <div class="syndication">
+        <% note.syndicates.each do |syndicate| %>
+          <p>Also posted to <%= link_to syndicate.silo.name, syndicate.url, rel: "external syndication", class: "u-syndication" %>
+      <% end %>
+      </div>
+    </footer>
+  <% end %>
+  <a class="u-author" href="/"></a>
 </article>
