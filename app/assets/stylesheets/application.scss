@@ -3,16 +3,21 @@ html {
   font-weight: 400;
   background-color: #f7f3f0;
 }
-
-main {
-  padding: 0.5rem;
-}
-
 body {
   max-width: 40rem;
   margin: auto;
   line-height: 2rem;
   font-size: 1.25rem;
+}
+
+html, body {
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 480px) { 
+  html, body {
+    padding: 1.5rem;
+  }
 }
 
 img {
@@ -27,11 +32,6 @@ h1 {
   font-size: 3rem;
   font-weight: 900; // Unica Extra Black
 }
-
-header {
-  padding: 1rem 0.5rem;
-}
-
 
 header > h1 {
   font-size: 3rem;
@@ -52,6 +52,11 @@ h1, h2, h3, p {
   margin-bottom: 2rem;
 }
 
+.lead {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
 p > strong {
   font-weight: 600; // Unica Bold, as opposed to heavy
 }
@@ -62,12 +67,7 @@ figcaption {
   font-style: italic;
 }
 
-main, header {
-  padding: 0.5rem;
-}
-
-@media screen and (min-width:500px) {
-  main, header {
-    padding: 1.5rem;
-  }
+a.silent {
+  color: black;
+  text-decoration: none;
 }
