@@ -1,3 +1,14 @@
+## [Version 0.6.4](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.4) (2019-1-16)
+
+### New features
+
+- ✅ A starting point for styling: [`8c01d38`](https://github.com/adamdawkins/adamdawkins.uk/commit/8c01d38)
+- Add text-based bio to homepage: [`f9789a2`](https://github.com/adamdawkins/adamdawkins.uk/commit/f9789a2)
+- ✅ Update note styling: [`0491dd5`](https://github.com/adamdawkins/adamdawkins.uk/commit/0491dd5)
+- ✅ Complete first round of styling: [`385f395`](https://github.com/adamdawkins/adamdawkins.uk/commit/385f395)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.6.3...v0.6.4)
+
 ## [Version 0.6.3](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.6.3) (2019-1-16)
 
 ### Bug fixes
