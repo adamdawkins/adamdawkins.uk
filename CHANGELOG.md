@@ -1,3 +1,11 @@
+## [Version 0.6.3](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.6.3) (2019-1-16)
+
+### Bug fixes
+
+- 🚀 require master key in production: [`4eed4eb`](https://github.com/adamdawkins/adamdawkins.uk/commit/4eed4eb)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.6.2...v0.6.3)
+
 ## [Version 0.6.2](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.6.2) (2019-1-16)
 
 ### New features
