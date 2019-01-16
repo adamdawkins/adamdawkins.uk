@@ -1,3 +1,12 @@
+## [Version 0.6.2](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.6.2) (2019-1-16)
+
+### New features
+
+- ✅ Add ability to Tweet copies of notes: [`efef882`](https://github.com/adamdawkins/adamdawkins.uk/commit/efef882)
+- ✅ Add syndicate URLs to originals of tweets: [`65b2938`](https://github.com/adamdawkins/adamdawkins.uk/commit/65b2938)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.6.1...v0.6.2)
+
 ## [Version 0.6.1](https://github.com/adamdawkins/adamdawkins.uk/tree/v0.6.1) (2019-1-15)
 
 ### New features
