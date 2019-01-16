@@ -1,46 +1,73 @@
-.bio {
-  border: 3px solid black;
-  border-radius: .5rem;
-  max-width: 280px;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  overflow: hidden;
+html {
+  font-family: "neue-haas-unica", sans-serif;
+  font-weight: 400;
+  background-color: #f7f3f0;
+}
 
-  img {
-    max-width: 100%;
-    margin-right: 1em;
+main {
+  padding: 0.5rem;
+}
+
+body {
+  max-width: 40rem;
+  margin: auto;
+  line-height: 2rem;
+  font-size: 1.25rem;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900; // Unica Extra Black
+}
+
+header {
+  padding: 1rem 0.5rem;
+}
+
+
+header > h1 {
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3, .sub-title { 
+  font-size: 1.5rem;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+p > strong {
+  font-weight: 600; // Unica Bold, as opposed to heavy
+}
+
+figcaption {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-style: italic;
+}
+
+main, header {
+  padding: 0.5rem;
+}
+
+@media screen and (min-width:500px) {
+  main, header {
+    padding: 1.5rem;
   }
-
-  &-body {
-    padding: 1rem;
-  }
-}
-.indiemark {
-  .completed {
-    text-decoration: line-through;
-  }
-}
-
-input, textarea {
-  font-size: 1em;
-}
-
-[role="button"],
-button,
-input[type="submit"]
-{
-  background: #83ffcd;
-  color: #222;
-  font-size: 1em;
-  outline: 0;
-  box-shadow: 4px 4px 0 #222;
-  border-radius: 5px;
-  padding: .5em;
-  text-decoration: none;
-}
-
-.action-bar {
-  padding: 1em .5rem;
-  text-align: right;
 }
