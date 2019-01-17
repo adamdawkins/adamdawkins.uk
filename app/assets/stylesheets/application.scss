@@ -99,3 +99,7 @@ a {
 a[href^="http"] {
 	text-decoration: underline dotted;
 }
+
+blockquote p {
+  font-style: italic;
+}
