@@ -1,3 +1,13 @@
+## [Version 0.6.5](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.5) (2019-1-17)
+
+### New features
+
+- ✅ Add bio to bottom of every page: [`4dbfc54`](https://github.com/adamdawkins/adamdawkins.uk/commit/4dbfc54)
+- ✅ Style blockquotes: [`7ee00a8`](https://github.com/adamdawkins/adamdawkins.uk/commit/7ee00a8)
+- ✅ Add link to indiemark: [`447bdf1`](https://github.com/adamdawkins/adamdawkins.uk/commit/447bdf1)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.6.4...v0.6.5)
+
 ## [Version 0.6.4](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.4) (2019-1-16)
 
 ### New features
