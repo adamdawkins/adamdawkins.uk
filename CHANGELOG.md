@@ -1,3 +1,12 @@
+## [Version 0.6.8](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.8) (2019-1-17)
+
+### Bug fixes
+
+- ♻️  Tidy up styling of post-type circles: [`6675cac`](https://github.com/adamdawkins/adamdawkins.uk/commit/6675cac)
+- ✅ Add completed / incomplete styling for Indiemark: [`c67f9f8`](https://github.com/adamdawkins/adamdawkins.uk/commit/c67f9f8)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.6.7...v0.6.8)
+
 ## [Version 0.6.7](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.7) (2019-1-17)
 
 ### Bug fixes
