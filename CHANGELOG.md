@@ -1,3 +1,11 @@
+## [Version 0.6.6](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.6) (2019-1-17)
+
+### Bug fixes
+
+- 🐞 Fix for using * in notes to Twitter...: [`9244cce`](https://github.com/adamdawkins/adamdawkins.uk/commit/9244cce)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.6.5...v0.6.6)
+
 ## [Version 0.6.5](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.5) (2019-1-17)
 
 ### New features
