@@ -1,3 +1,11 @@
+## [Version 0.6.7](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.7) (2019-1-17)
+
+### Bug fixes
+
+- 🐞 Fix the fix, .gsub does not mutate: [`8697f97`](https://github.com/adamdawkins/adamdawkins.uk/commit/8697f97)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.6.6...v0.6.7)
+
 ## [Version 0.6.6](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.6) (2019-1-17)
 
 ### Bug fixes
