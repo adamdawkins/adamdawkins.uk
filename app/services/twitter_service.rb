@@ -7,7 +7,9 @@ end
 
 class TwitterService
   def self.post(post)  
-    response = TwitterClient.update(post.content)
+    tweet = post.content
+    tweet.gsub('*', '＊')
+    response = TwitterClient.update(tweet)
 
     twitter_silo = Silo.find_by(name: "Twitter")
 
