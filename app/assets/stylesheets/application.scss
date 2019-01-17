@@ -69,7 +69,6 @@ figcaption {
 }
 
 
-@import "notes";
 
 section {
   padding: 1.5rem 0;
@@ -103,3 +102,6 @@ a[href^="http"] {
 blockquote p {
   font-style: italic;
 }
+
+@import "notes";
+@import "indiemark";

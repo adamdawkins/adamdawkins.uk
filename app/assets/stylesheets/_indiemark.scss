@@ -1,0 +1,7 @@
+.indiemark-item {
+  opacity: .5;
+
+  &.completed {
+    opacity: 1;
+  }
+}
