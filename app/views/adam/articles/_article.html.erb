@@ -2,7 +2,7 @@
   <%= link_to article.title, adam_article_path(article) %>
   (
   <% if article.published? %>
-    <%= link_to "published", article %>
+    <%= link_to "published", long_post_path(article.params) %>
   <% else %>
     Draft
   <% end %>
