@@ -1,0 +1,10 @@
+<article class="article">
+  <%= link_to article.title, adam_article_path(article) %>
+  (
+  <% if article.published? %>
+    <%= link_to "published", article %>
+  <% else %>
+    Draft
+  <% end %>
+  )
+</article>

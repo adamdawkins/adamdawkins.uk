@@ -8,12 +8,14 @@ Rails.application.routes.draw do
 
   namespace :adam do
     resources :notes
+    resources :articles
     put "notes/:id/publish", to: "notes#publish", as: "publish_note"
+    put "articles/:id/publish", to: "articles#publish", as: "publish_article"
   end
 
   resources :articles, only: :index
 
-  get ':year/:month/:day/:slug', to: 'notes#show', as: :long_note
+  get ':year/:month/:day/:slug', to: 'posts#show', as: :long_post
   get 'indiemark', to: 'indiemarks#index'
 
   resources :notes

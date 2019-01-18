@@ -19,6 +19,19 @@ class Post < ApplicationRecord
 
   scope :published, -> { where("published_at IS NOT NULL").order("published_at DESC") }
 
+  def published?
+    published_at.present?
+  end
+
+  def publish
+    self.published_at = Time.now
+  end
+
+  def publish!
+    publish
+    save
+  end
+
   def long_url_params
     [self.published_at.year,
      self.published_at.strftime('%m'),

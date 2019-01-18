@@ -1,0 +1,9 @@
+<div class="action-bar">
+  <% unless @article.published? %>
+    <%= form_tag adam_publish_article_path(@article), method: :put do %>
+      <%= submit_tag "Publish" %>
+    <% end %>
+  <% end %>
+</div>
+<h1 class="title"><%= @article.title %></h1>
+<%= Kramdown::Document.new(@article.content).to_html.html_safe %>

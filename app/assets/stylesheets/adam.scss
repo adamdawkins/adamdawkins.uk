@@ -1,0 +1,19 @@
+body {
+	max-width: 100%;
+}
+
+input, textarea {
+  line-height: 1.5rem;
+  font-size: 1.25rem;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+
+textarea {
+	
+	&.textarea--article {
+		height: 80vh;
+	}
+}
+
