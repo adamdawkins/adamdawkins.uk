@@ -1,3 +1,22 @@
+## [Version 0.7.0](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.0) (2019-1-21)
+
+### Breaking changes
+
+- Add articles, port shared things from notes to posts: [`20bba8c`](https://github.com/adamdawkins/adamdawkins.uk/commit/20bba8c)
+
+### New features
+
+- ✅  Add Medium rel=me link to bio: [`01e812d`](https://github.com/adamdawkins/adamdawkins.uk/commit/01e812d)
+- ✅ Add h-feed to homepage: [`8508055`](https://github.com/adamdawkins/adamdawkins.uk/commit/8508055)
+- Add shortlinks: [`12e8c0a`](https://github.com/adamdawkins/adamdawkins.uk/commit/12e8c0a)
+
+### Bug fixes
+
+- ♻️ Link from article to post path: [`e2712c5`](https://github.com/adamdawkins/adamdawkins.uk/commit/e2712c5)
+- 🐞 Fix redirect to post URL from note: [`f5e4ed6`](https://github.com/adamdawkins/adamdawkins.uk/commit/f5e4ed6)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.6.8...v0.7.0)
+
 ## [Version 0.6.8](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.6.8) (2019-1-17)
 
 ### Bug fixes
