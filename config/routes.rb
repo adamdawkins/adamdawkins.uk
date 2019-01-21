@@ -1,24 +1,30 @@
 Rails.application.routes.draw do
-  root to: 'notes#index'
-
-  get 'login', to: 'sessions#new'
-  get 'adam', to: 'adam/notes#new'
-
-  resources :sessions, only: [:new, :create, :destroy]
-
-  namespace :adam do
-    resources :notes
-    resources :articles
-    put "notes/:id/publish", to: "notes#publish", as: "publish_note"
-    put "articles/:id/publish", to: "articles#publish", as: "publish_article"
+  constraints host: ENV['SHORT_URL'] do
+    get '/:id' => 'short_domains#post'
+    match "/(*path)", to: redirect {|p, req| "//#{ENV['FULL_URL']}#{req.fullpath}"}, via: [:get, :head]
   end
 
-  resources :articles, only: :index
+  constraints host: ENV['FULL_URL'] do
+    root to: 'notes#index'
 
-  get ':year/:month/:day/:slug', to: 'posts#show', as: :long_post
-  get 'indiemark', to: 'indiemarks#index'
+    get 'login', to: 'sessions#new'
+    get 'adam', to: 'adam/notes#new'
 
-  resources :notes
+    namespace :adam do
+      resources :notes
+      resources :articles
+      put "notes/:id/publish", to: "notes#publish", as: "publish_note"
+      put "articles/:id/publish", to: "articles#publish", as: "publish_article"
+    end
 
-  get '*page', to: 'pages#show'
+    resources :sessions, only: [:new, :create, :destroy]
+
+    get ':year/:month/:day/:slug', to: 'posts#show', as: :long_post
+    get 'indiemark', to: 'indiemarks#index'
+
+    resources :articles, only: :index
+    resources :notes
+
+    get '*page', to: 'pages#show'
+  end
 end
