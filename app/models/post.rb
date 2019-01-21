@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   validates_presence_of :content
   validates_with SlugValidator
 
-  has_many :syndicates
+  has_many :syndicates, dependent: :destroy
 
   before_validation :generate_slug
 
