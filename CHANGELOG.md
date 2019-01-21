@@ -1,3 +1,11 @@
+## [Version 0.7.4](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.4) (2019-1-21)
+
+### New features
+
+- ✅ Create a shared Posts homepage for notes and articles: [`a3bf9d2`](https://github.com/adamdawkins/adamdawkins.uk/commit/a3bf9d2)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.3...v0.7.4)
+
 ## [Version 0.7.3](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.3) (2019-1-21)
 
 ### New features
