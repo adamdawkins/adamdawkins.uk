@@ -1,4 +1,5 @@
 <div class="action-bar">
+  <%= link_to "Edit", edit_adam_article_path(@article) %>
   <% unless @article.published? %>
     <%= form_tag adam_publish_article_path(@article), method: :put do %>
       <%= submit_tag "Publish" %>

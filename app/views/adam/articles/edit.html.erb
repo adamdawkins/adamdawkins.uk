@@ -1,0 +1,18 @@
+<%= form_for @article, url: adam_article_path(@article), method: :put do |f| %>
+  <%= f.text_field :title, autofocus: true, placeholder: "Title" %>
+  <%= f.text_area :content, class:"textarea--article" %>
+  <div>
+    <% if @article.published? %>
+      <%= f.datetime_field  :published_at %>
+    <% else %>
+      <%= label_tag :publish do %>
+        <%= check_box_tag :publish %>
+        Publish
+      <% end %>
+    <% end %>
+  </div>
+
+  <div style="margin-top: 1em">
+    <%= f.submit %>
+  </div>
+<% end %>

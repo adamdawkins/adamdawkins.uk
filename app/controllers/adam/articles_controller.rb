@@ -1,10 +1,19 @@
 class Adam::ArticlesController < AdamController
+  before_action :set_article, only: [:show, :publish, :edit, :update]
   def index
     @articles = Article.all
   end
 
   def new
     @article = Article.new
+  end
+
+  def edit
+  end
+
+  def update
+    @article.update(article_params)
+    redirect_to adam_article_path(@article), notice: "Article updated successfully"
   end
 
   def create
@@ -18,12 +27,7 @@ class Adam::ArticlesController < AdamController
     end
   end
 
-  def show
-    set_article
-  end
-
   def publish
-    set_article
     if @article.publish!
       redirect_to long_post_path(@article.params), notice: "Article published successfully"
     end
@@ -36,6 +40,6 @@ class Adam::ArticlesController < AdamController
     end
 
     def article_params
-      params.require(:article).permit(:title, :content)
+      params.require(:article).permit(:title, :content, :published_at)
     end
 end
