@@ -1,3 +1,12 @@
+## [Version 0.7.2](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.2) (2019-1-21)
+
+### Bug fixes
+
+- ♻️ Delete syndicates with posts: [`3b63967`](https://github.com/adamdawkins/adamdawkins.uk/commit/3b63967)
+- 🐞 Fix max tweet length and truncation: [`6c4d41f`](https://github.com/adamdawkins/adamdawkins.uk/commit/6c4d41f)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.1...v0.7.2)
+
 ## [Version 0.7.1](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.1) (2019-1-21)
 
 ### New features
