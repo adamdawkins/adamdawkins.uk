@@ -1,0 +1,6 @@
+<div class="h-feed">
+  <%= render "shared/text_bio" %>
+  <h1>Latest</h1>
+  <p>You're seeing everything. You can view just my <%= link_to "articles", articles_path %> or <%= link_to "notes", notes_path %>.</p>
+  <%= render @posts %>
+</div>

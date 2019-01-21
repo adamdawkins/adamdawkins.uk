@@ -1,4 +1,4 @@
-<article class="h-entry note">
+<article class="h-entry post post--note">
   <% if note.published? %>
     <%= link_to long_post_path(note.params), class: "u-url quiet" do %>
       <time class="block-time dt-published" datetime="<%= note.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
@@ -12,14 +12,14 @@
     <% end %>
   <% end %>
   <p class="p-name e-content"><%= note.content %></p>
-  <% if note.syndicates.any? %>
-    <footer>
-      <div class="syndication">
-        <% note.syndicates.each do |syndicate| %>
-          <p>Also posted to <%= link_to syndicate.silo.name, syndicate.url, rel: "external syndication", class: "u-syndication" %>
-      <% end %>
-      </div>
-    </footer>
-  <% end %>
-  <a class="u-author" href="/"></a>
+    <% if note.syndicates.any? %>
+      <footer>
+        <div class="syndication">
+          <% note.syndicates.each do |syndicate| %>
+            <p>Also posted to <%= link_to syndicate.silo.name, syndicate.url, rel: "external syndication", class: "u-syndication" %>
+        <% end %>
+        </div>
+      </footer>
+    <% end %>
+    <a class="u-author" href="/"></a>
 </article>

@@ -1,0 +1,27 @@
+<article class="h-entry post post--article">
+  <%= link_to long_post_path(article.params), class: "u-url quiet" do %>
+    <time class="block-time dt-published" datetime="<%= article.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
+      <% if article.published_at.today? %>
+        <%= time_ago_in_words(article.published_at) %> ago
+        <span style="font-weight: normal; margin-left: 1em;"><%= article.published_at.strftime("%R") %></span>
+      <% else %>
+        <%= article.published_at.strftime("%a %-d %b %Y %R %Z") %>
+      <% end %>
+    </time>
+  <% end %>
+  <div class="p-name e-content">
+    <h3 class="post__title"><%= link_to article.title, long_post_path(article.params), class: "underline" %></h3>
+    <%= blurb(article) %>
+    <%= link_to "Read on", long_post_path(article.params), class: 'post__cta' %>
+  </div>
+  <% if article.syndicates.any? %>
+    <footer>
+      <div class="syndication">
+        <% article.syndicates.each do |syndicate| %>
+          <p>Also articleed to <%= link_to syndicate.silo.name, syndicate.url, rel: "external syndication", class: "u-syndication" %>
+      <% end %>
+      </div>
+    </footer>
+  <% end %>
+  <a class="u-author" href="/"></a>
+</article>

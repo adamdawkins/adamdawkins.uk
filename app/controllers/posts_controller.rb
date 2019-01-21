@@ -6,6 +6,10 @@ class PostsController < ApplicationController
     render "#{@post.type.downcase.pluralize}/show"
   end
 
+  def index
+    @posts = Post.published
+  end
+
   private
 
     def set_published_date

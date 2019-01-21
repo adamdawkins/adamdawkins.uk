@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   constraints host: ENV['FULL_URL'] do
-    root to: 'notes#index'
+    root to: 'posts#index'
 
     get 'login', to: 'sessions#new'
     get 'adam', to: 'adam/notes#new'
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     get 'indiemark', to: 'indiemarks#index'
 
     resources :articles, only: :index
-    resources :notes
+    resources :notes, only: :index
 
     get '*page', to: 'pages#show'
   end
