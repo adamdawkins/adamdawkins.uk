@@ -1,3 +1,11 @@
+## [Version 0.7.1](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.1) (2019-1-21)
+
+### New features
+
+- ✅ Truncate Tweet with link to original on long notes: [`dce024a`](https://github.com/adamdawkins/adamdawkins.uk/commit/dce024a)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.0...v0.7.1)
+
 ## [Version 0.7.0](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.0) (2019-1-21)
 
 ### Breaking changes
