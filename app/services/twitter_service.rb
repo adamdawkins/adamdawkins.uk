@@ -12,14 +12,11 @@ class TwitterService
     tweet = post.content
     tweet.gsub!('*', '＊')
     if (tweet.length > MAX_TWEET_LENGTH)
-      pp "too long"
-      pp post.id
-      url = "#{ENV['SHORT_URL']}/#{post.id}"
-      pp url
-      cut_off = MAX_TWEET_LENGTH - url.length - 4 # the 4 is 3 elipses dots + a space or return
-      tweet = "#{tweet[0..cut_off]}...\r#{url}"
+      url = "https://#{ENV['SHORT_URL']}/#{post.id}"
+      cut_off = MAX_TWEET_LENGTH - 23 - 4 - 10 # extra 10, don't know why it's needed yet
+      tweet = "#{tweet[0..(cut_off - 1)]}... #{url}"
     end
-    response = TwitterClient.update(tweet)
+    response = TwitterClient.update(tweet, tweet_mode: 'extended')
 
     twitter_silo = Silo.find_by(name: "Twitter")
 
