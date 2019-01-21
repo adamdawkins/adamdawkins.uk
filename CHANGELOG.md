@@ -1,3 +1,11 @@
+## [Version 0.7.3](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.3) (2019-1-21)
+
+### New features
+
+- ✅ Add edit article feature: [`5eea3d3`](https://github.com/adamdawkins/adamdawkins.uk/commit/5eea3d3)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.2...v0.7.3)
+
 ## [Version 0.7.2](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.2) (2019-1-21)
 
 ### Bug fixes
