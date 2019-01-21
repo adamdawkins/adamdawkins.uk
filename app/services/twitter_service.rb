@@ -6,7 +6,7 @@ TwitterClient = Twitter::REST::Client.new do |config|
 end
 
 class TwitterService
-  def self.post(post)  
+  def self.post(post)
     tweet = post.content
     tweet.gsub!('*', '＊')
     response = TwitterClient.update(tweet)

@@ -31,7 +31,7 @@ class Adam::NotesController < AdamController
   end
 
   private
-    
+
     def set_note
       @note = Note.find(params[:id])
     end
