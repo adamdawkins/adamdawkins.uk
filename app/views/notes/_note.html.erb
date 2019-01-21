@@ -1,6 +1,6 @@
 <article class="h-entry note">
   <% if note.published? %>
-    <%= link_to long_note_path(note.params), class: "u-url quiet" do %>
+    <%= link_to long_post_path(note.params), class: "u-url quiet" do %>
       <time class="block-time dt-published" datetime="<%= note.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
         <% if note.published_at.today? %>
           <%= time_ago_in_words(note.published_at) %> ago
