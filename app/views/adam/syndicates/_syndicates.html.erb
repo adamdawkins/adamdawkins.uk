@@ -1,0 +1,17 @@
+<div>
+  <h3>Syndicates</h3>
+  <ul>
+    <% post.syndicates.each do |syn| %>
+      <li>
+        <%= link_to syn.silo.name, syn.url %>
+        <%= simple_form_for(syn, url: adam_syndicate_path(syn), method: :delete) do |f|%>
+          <%= f.submit "Delete" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <%= simple_form_for(Syndicate.new, url: adam_post_syndicates_path(post)) do |f| %>
+    <%= f.association :silo %>
+    <%= f.input :url %>
+  <% end %>
+</div>

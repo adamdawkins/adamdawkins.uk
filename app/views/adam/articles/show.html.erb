@@ -6,22 +6,6 @@
     <% end %>
   <% end %>
 </div>
-<div>
-  <h3>Syndicates</h3>
-  <ul>
-    <% @article.syndicates.each do |syn| %>
-      <li>
-        <%= link_to syn.silo.name, syn.url %>
-        <%= simple_form_for(syn, url: adam_syndicate_path(syn), method: :delete) do |f|%>
-          <%= f.submit "Delete" %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-  <%= simple_form_for(@article.syndicates.build, url: adam_post_syndicates_path(@article)) do |f| %>
-    <%= f.association :silo %>
-    <%= f.input :url %>
-  <% end %>
-</div>
+<%= render "adam/syndicates/syndicates", post: @article %>
 <h1 class="title"><%= @article.title %></h1>
 <%= Kramdown::Document.new(@article.content).to_html.html_safe %>
