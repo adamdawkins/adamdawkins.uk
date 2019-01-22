@@ -1,3 +1,20 @@
+## [Version 0.7.5](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.5) (2019-1-22)
+
+### New features
+
+- ✅ Add syndicate form, re-organize adam section: [`c8fb81c`](https://github.com/adamdawkins/adamdawkins.uk/commit/c8fb81c)
+- ✅ Add syndicates to article page, and remove from articles in list: [`61871d5`](https://github.com/adamdawkins/adamdawkins.uk/commit/61871d5)
+
+### Bug fixes
+
+- 🐞 Add nbsp to Dragon Drop: [`288d73a`](https://github.com/adamdawkins/adamdawkins.uk/commit/288d73a)
+- ♻️  Add syndicates in a way that does not break existing note partial: [`704b7c7`](https://github.com/adamdawkins/adamdawkins.uk/commit/704b7c7)
+- ♻️  Improve display of multiple syndicates in posts: [`c98af64`](https://github.com/adamdawkins/adamdawkins.uk/commit/c98af64)
+- 🐞 Add microformats to article page: [`4d0719b`](https://github.com/adamdawkins/adamdawkins.uk/commit/4d0719b)
+- ♻️  Improve microfomats on Articles in list: [`593493d`](https://github.com/adamdawkins/adamdawkins.uk/commit/593493d)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.4...v0.7.5)
+
 ## [Version 0.7.4](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.4) (2019-1-21)
 
 ### New features
