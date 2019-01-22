@@ -5,6 +5,8 @@ class Adam::PostsController < AdamController
 
   def show
     @post = Post.find(params[:id])
+    @next_post = Post.published.next(@post)
+    @previous_post = Post.published.previous(@post)
     redirect_to "/adam/#{@post.type.downcase.pluralize}/#{@post.id}"
   end
 end

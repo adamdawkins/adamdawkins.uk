@@ -19,6 +19,14 @@ class Post < ApplicationRecord
 
   scope :published, -> { where("published_at IS NOT NULL").order("published_at DESC") }
 
+  def self.next(post)
+    where('published_at > ?', post.published_at).first
+  end
+
+  def self.previous(post)
+    where('published_at < ?', post.published_at).last
+  end
+
   def published?
     published_at.present?
   end
