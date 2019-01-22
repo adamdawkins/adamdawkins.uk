@@ -1,0 +1,7 @@
+<% if post.syndicates.any? %>
+  <div class="syndication">
+    <p>Also posted to <% post.syndicates.each_with_index do |syndicate, index| %>
+    <%= link_to syndicate.silo.name, syndicate.url, rel: "external syndication", class: "u-syndication" -%><%= (index < post.syndicates.size - 1) ? ',' : '' %>
+  <% end %>
+  </div>
+<% end %>
