@@ -18,7 +18,7 @@ module PostsHelper
         content.gsub!(address, autolink_tag(uri, display_text))
       end
     end
-    content
+    content.html_safe
   end
 
   def strip_protocol(url)

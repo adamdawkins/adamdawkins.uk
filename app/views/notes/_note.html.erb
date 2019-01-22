@@ -11,7 +11,7 @@
       </time>
     <% end %>
   <% end %>
-  <p class="p-name e-content"><%= note.content %></p>
+  <p class="p-name e-content"><%= note_content(note) %></p>
     <% if note.syndicates.any? %>
       <footer>
         <%= render "syndicates", post: note %>
