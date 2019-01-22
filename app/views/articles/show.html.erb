@@ -1,7 +1,22 @@
-<h1 class="title"><%= @post.title %></h1>
-<%= Kramdown::Document.new(@post.content).to_html.html_safe %>
-<footer>
-  <small style="color: #666">
-    <%= render "syndicates", post: @post %>
-  </small>
-</footer>
+<article class="h-entry">
+  <%= link_to long_post_path(@post.params), class: "u-url quiet" do %>
+    <time class="block-time dt-published" datetime="<%= @post.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
+      <% if @post.published_at.today? %>
+        <%= time_ago_in_words(@post.published_at) %> ago
+        <span style="font-weight: normal; margin-left: 1em;"><%= @post.published_at.strftime("%R") %></span>
+      <% else %>
+        <%= @post.published_at.strftime("%a %-d %b %Y %R %Z") %>
+      <% end %>
+    </time>
+  <% end %>
+  <h1 class="title p-name"><%= @post.title %></h1>
+  <div class="e-content">
+    <%= Kramdown::Document.new(@post.content).to_html.html_safe %>
+  </div>
+  <footer>
+    <small style="color: #666">
+      <%= render "syndicates", post: @post %>
+    </small>
+    <a rel="author" class="u-author" href="/"></a>
+  </footer>
+</article>
