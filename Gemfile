@@ -13,6 +13,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'twitter'
 gem 'sass-rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'dotenv-rails'
