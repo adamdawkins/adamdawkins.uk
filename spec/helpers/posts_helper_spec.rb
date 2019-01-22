@@ -1,15 +1,22 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the PostsHelper. For example:
-#
-# describe PostsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe PostsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # tests copied from https://github.com/kylewm/cassis-autolink-py/blob/master/cassistest.py
+  describe "auto_link" do
+    context "Twitter usernames" do
+      it "adds links to @usernames" do
+        expect(helper.auto_link("@adamdawkins")).to eq '<a class="auto-link h-x-username" href="https://twitter.com/adamdawkins">@adamdawkins</a>'
+      end
+      it "preserves whitespace around username" do
+        expect(helper.auto_link(" @adamdawkins ")).to eq ' <a class="auto-link h-x-username" href="https://twitter.com/adamdawkins">@adamdawkins</a> '
+      end
+      it "links next to another word" do
+        expect(helper.auto_link("hi @adamdawkins")).to eq 'hi <a class="auto-link h-x-username" href="https://twitter.com/adamdawkins">@adamdawkins</a>'
+      end
+
+      it "skips no name" do
+        expect(helper.auto_link("@")).to eq '@'
+      end
+    end
+  end
 end
