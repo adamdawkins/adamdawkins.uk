@@ -18,5 +18,15 @@ RSpec.describe PostsHelper, type: :helper do
         expect(helper.auto_link("@")).to eq '@'
       end
     end
+
+    context "URL" do
+      it "turns named links into URLs" do
+        expect(helper.auto_link("dragondrop.uk")).to eq '<a class="auto-link" href="http://dragondrop.uk">dragondrop.uk</a>'
+      end
+
+      it "strips protocol from displayed text" do
+        expect(helper.auto_link("https://dragondrop.uk")).to eq '<a class="auto-link" href="https://dragondrop.uk">dragondrop.uk</a>'
+      end
+    end
   end
 end

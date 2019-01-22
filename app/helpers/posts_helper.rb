@@ -6,17 +6,36 @@ module PostsHelper
   end
 
   def auto_link(content)
-    links = content.scan(auto_link_regex)
-    links.each do |link|
-      if link.start_with?("@")
-        # Twitter
-        content.gsub!(link, twitter_link(link))
+    addresses = content.scan(auto_link_regex)
+    addresses.each do |address|
+      uri = web_address_to_uri(address)
+      display_text = address
+
+      if address[0] == "@"
+        content.gsub!(address, autolink_tag(uri, display_text, "h-x-username"))
+      else
+        display_text = strip_protocol(display_text)
+        content.gsub!(address, autolink_tag(uri, display_text))
       end
     end
     content
   end
 
-  def twitter_link(username)
-    content_tag :a, username, class: "auto-link h-x-username", href: "https://twitter.com/#{username[1..-1]}"
+  def strip_protocol(url)
+    url.gsub(/http(s)?:\/\//, '')
+  end
+
+  def autolink_tag(url, text, classes = nil)
+    html_class = "auto-link"
+    html_class << " #{classes}" if classes
+    content_tag :a, text, class: html_class, href: url
+  end
+
+  def web_address_to_uri(wa)
+    return wa if (wa.start_with?('http://') || wa.start_with?('https://'))
+
+    return "https://twitter.com/#{wa[1..-1]}" if wa[0] == '@'
+
+    "http://" + wa
   end
 end
