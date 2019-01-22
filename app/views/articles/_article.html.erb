@@ -14,14 +14,5 @@
     <%= blurb(article) %>
     <%= link_to "Read on", long_post_path(article.params), class: 'post__cta' %>
   </div>
-  <% if article.syndicates.any? %>
-    <footer>
-      <div class="syndication">
-        <% article.syndicates.each do |syndicate| %>
-          <p>Also articleed to <%= link_to syndicate.silo.name, syndicate.url, rel: "external syndication", class: "u-syndication" %>
-      <% end %>
-      </div>
-    </footer>
-  <% end %>
   <a class="u-author" href="/"></a>
 </article>

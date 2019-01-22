@@ -1,2 +1,7 @@
 <h1 class="title"><%= @post.title %></h1>
 <%= Kramdown::Document.new(@post.content).to_html.html_safe %>
+<footer>
+  <small style="color: #666">
+    <%= render "syndicates", post: @post %>
+  </small>
+</footer>
