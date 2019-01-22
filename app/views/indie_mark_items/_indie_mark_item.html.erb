@@ -1,4 +1,7 @@
 <div class="indiemark-item <%= indie_mark_item.completed? ? 'completed' : ''%>" data-item-id="<%= indie_mark_item.id %>">
   <h3><%= indie_mark_item.title %> <% if indie_mark_item.completed? %>(<%= indie_mark_item.score %>pts)<% end %></h3>
+  <% if indie_mark_item.completed? %>
+    <pre><%=indie_mark_item.completed_at.strftime("%Y-%m-%d") %></pre>
+  <% end %>
   <p><%= indie_mark_item.details %></p>
 </div>
