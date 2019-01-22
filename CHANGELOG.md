@@ -1,3 +1,19 @@
+## [Version 0.7.6](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.6) (2019-1-22)
+
+### New features
+
+- ✅ Add completion date to IndieMark page: [`d73a8b5`](https://github.com/adamdawkins/adamdawkins.uk/commit/d73a8b5)
+- ✅ Add auto_link helper to parse twitter usernames: [`fe6dcd7`](https://github.com/adamdawkins/adamdawkins.uk/commit/fe6dcd7)
+- ✅ Add parsing of URLs to post helper: [`9478e4d`](https://github.com/adamdawkins/adamdawkins.uk/commit/9478e4d)
+- ✅ Add auto-linking to notes: [`ce414a7`](https://github.com/adamdawkins/adamdawkins.uk/commit/ce414a7)
+
+### Bug fixes
+
+- ♻️  Manually update IndieMark score on homepage: [`599bbc1`](https://github.com/adamdawkins/adamdawkins.uk/commit/599bbc1)
+- ♻️  Remove underline from links in notes: [`e75f506`](https://github.com/adamdawkins/adamdawkins.uk/commit/e75f506)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.5...v0.7.6)
+
 ## [Version 0.7.5](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.5) (2019-1-22)
 
 ### New features
