@@ -36,6 +36,9 @@ $article_color: #E96856;
 
 	&--note {
 		border-top: 1px solid $note_color;
+		a {
+			text-decoration: none;
+		}
 	}
 
   &.is-draft {
