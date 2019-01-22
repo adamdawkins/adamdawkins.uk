@@ -8,9 +8,13 @@ Rails.application.routes.draw do
     root to: 'posts#index'
 
     get 'login', to: 'sessions#new'
-    get 'adam', to: 'adam/notes#new'
+    get 'adam', to: 'adam/posts#index'
 
     namespace :adam do
+      resources :syndicates, only: :destroy
+      resources :posts do
+        resources :syndicates, only: :create
+      end
       resources :notes
       resources :articles
       put "notes/:id/publish", to: "notes#publish", as: "publish_note"
