@@ -8,6 +8,8 @@ Rails.application.configure do
 
   config.active_support.deprecation = :notify
 
+  config.assets.compile = false
+
   config.cache_classes = true
 
   config.consider_all_requests_local = false
