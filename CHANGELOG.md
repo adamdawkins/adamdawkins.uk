@@ -1,3 +1,12 @@
+## [Version 0.7.10](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.10) (2019-1-23)
+
+### Bug fixes
+
+- 🚀 Disable asset compilation in production...: [`b59a698`](https://github.com/adamdawkins/adamdawkins.uk/commit/b59a698)
+- ✍  Update indiemark score: [`dc838ae`](https://github.com/adamdawkins/adamdawkins.uk/commit/dc838ae)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.9...v0.7.10)
+
 ## [Version 0.7.9](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.9) (2019-1-23)
 
 ### Bug fixes
