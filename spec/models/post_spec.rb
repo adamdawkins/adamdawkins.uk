@@ -75,7 +75,7 @@ RSpec.describe Post, type: :model do
 
     context "when the slug isn't unique for the day" do
       it "tries the next candidate" do
-        old_post = create(:post, slug: 'slug', published_at: 2.days.ago)
+        create(:post, slug: 'slug', published_at: 2.days.ago)
         post = create(:post, slug: 'slug', title: 'title', published_at: 2.days.ago)
 
         expect(post.slug).to eq 'title'

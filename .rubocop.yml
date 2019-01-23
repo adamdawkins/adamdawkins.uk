@@ -71,6 +71,7 @@ Metrics/LineLength:
     - '**/**/*.jbuilder'
     - 'test/controllers/*'
     - 'features/step_definitions/*'
+    - 'spec/**/*'
   # The IgnoreCopDirectives option causes the LineLength rule to ignore cop
   # directives like '# rubocop: enable ...' when calculating a line's length.
   IgnoreCopDirectives: false
