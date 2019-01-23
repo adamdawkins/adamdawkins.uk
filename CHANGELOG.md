@@ -1,3 +1,11 @@
+## [Version 0.7.9](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.9) (2019-1-23)
+
+### Bug fixes
+
+- 🐞 Fix error on notes page...: [`875898d`](https://github.com/adamdawkins/adamdawkins.uk/commit/875898d)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.8...v0.7.9)
+
 ## [Version 0.7.8](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.8) (2019-1-23)
 
 ### Bug fixes
