@@ -18,6 +18,10 @@ class Adam::NotesController < AdamController
     set_note
   end
 
+  def index
+    @notes = Note.all
+  end
+
   def publish
     set_note
     if @note.publish!
