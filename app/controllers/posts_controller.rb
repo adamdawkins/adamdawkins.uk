@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.published
+    @posts_by_day = Post.published.group_by { |p| p.published_at.to_date }
   end
 
   private
