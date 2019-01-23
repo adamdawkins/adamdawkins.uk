@@ -28,5 +28,10 @@ RSpec.describe PostsHelper, type: :helper do
         expect(helper.auto_link("https://dragondrop.uk")).to eq '<a class="auto-link" href="https://dragondrop.uk">dragondrop.uk</a>'
       end
     end
+    context "gif" do
+      it "turns the link into an image" do
+        expect(helper.auto_link("https://media.giphy.com/media/giphy.gif")).to eq '<a class="auto-link" href="https://media.giphy.com/media/giphy.gif"><img src="https://media.giphy.com/media/giphy.gif" /></a>'
+      end
+    end
   end
 end
