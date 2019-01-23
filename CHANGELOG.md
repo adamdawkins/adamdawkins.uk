@@ -1,3 +1,11 @@
+## [Version 0.7.8](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.8) (2019-1-23)
+
+### Bug fixes
+
+- 🐞 Fix error where article does not contain a paragraph: [`68594e1`](https://github.com/adamdawkins/adamdawkins.uk/commit/68594e1)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.7...v0.7.8)
+
 ## [Version 0.7.7](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.7) (2019-1-23)
 
 ### New features
