@@ -1,3 +1,17 @@
+## [Version 0.7.7](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.7) (2019-1-23)
+
+### New features
+
+- ✅ Add day headings to home feed: [`52f1e1e`](https://github.com/adamdawkins/adamdawkins.uk/commit/52f1e1e)
+- ✅ Add image embedding to notes: [`842fc0f`](https://github.com/adamdawkins/adamdawkins.uk/commit/842fc0f)
+
+### Bug fixes
+
+- 🐞 Fix notes page in Admin area: [`f229993`](https://github.com/adamdawkins/adamdawkins.uk/commit/f229993)
+- ♻️  Re-direct to admin/posts after creating a note: [`aa7500f`](https://github.com/adamdawkins/adamdawkins.uk/commit/aa7500f)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.6...v0.7.7)
+
 ## [Version 0.7.6](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.6) (2019-1-22)
 
 ### New features
