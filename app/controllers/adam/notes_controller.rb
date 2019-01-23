@@ -10,7 +10,7 @@ class Adam::NotesController < AdamController
 
     if @note.save
       TwitterService.post(@note) if params[:publish] && params[:send_to_twitter]
-      redirect_to adam_notes_path, notice: "Note created successfully"
+      redirect_to adam_posts_path, notice: "Note created successfully"
     end
   end
 
