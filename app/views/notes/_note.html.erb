@@ -14,7 +14,7 @@
   <p class="p-name e-content"><%= note_content(note) %></p>
     <% if note.syndicates.any? %>
       <footer>
-        <%= render "syndicates", post: note %>
+        <%= render "posts/syndicates", post: note %>
       </footer>
     <% end %>
     <a class="u-author" href="/"></a>
