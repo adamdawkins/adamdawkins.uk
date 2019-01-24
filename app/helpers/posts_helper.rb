@@ -34,8 +34,17 @@ module PostsHelper
     content.gsub!(address, autolink_tag(uri, display_text, classes))
   end
 
+  def replace_hashtags(content)
+    content.scan(/(?:^|\s)(#\w+)/).each do |match|
+      hashtag = match[0]
+      uri = "https://twitter.com/hashtag/#{hashtag[1..-1]}"
+      content.gsub!(hashtag, autolink_tag(uri, hashtag))
+    end
+  end
+
   def auto_link(content)
     addresses(content).each { |a| replace_address(content, a) }
+    replace_hashtags(content)
     content.html_safe
   end
 

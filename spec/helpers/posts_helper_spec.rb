@@ -33,5 +33,16 @@ RSpec.describe PostsHelper, type: :helper do
         expect(helper.auto_link("https://media.giphy.com/media/giphy.gif")).to eq '<a class="auto-link" href="https://media.giphy.com/media/giphy.gif"><img src="https://media.giphy.com/media/giphy.gif" /></a>'
       end
     end
+    context "hashtag" do
+      it "turns the hashtag into a link" do
+        expect(helper.auto_link("#slacklogo")).to eq '<a class="auto-link" href="https://twitter.com/hashtag/slacklogo">#slacklogo</a>'
+      end
+      it "doesn't go over word boundaries" do
+        expect(helper.auto_link(" #slack logo")).to eq ' <a class="auto-link" href="https://twitter.com/hashtag/slack">#slack</a> logo'
+      end
+      it "ignores hashtags that are part of other words or URLs" do
+        expect(helper.auto_link(".html#anchor")).to eq '.html#anchor'
+      end
+    end
   end
 end
