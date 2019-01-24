@@ -1,6 +1,6 @@
 <%
     date = day[0].to_time
     posts = day[1]
-  %>
-<h3><%= date.strftime("#{date.day.ordinalize} %B %Y") %></h1>
+%>
+<h4><%= date.strftime("#{date.day.ordinalize} %B %Y") %></h1>
 <%= render posts %>
