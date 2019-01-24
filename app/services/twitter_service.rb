@@ -19,7 +19,7 @@ class TwitterService
     post.syndicates.create(silo: twitter_silo, url: response.url.to_str)
   end
 
-  def adjust_tweet_length(tweet)
+  def self.adjust_tweet_length(tweet)
     return tweet if tweet.length <= MAX_TWEET_LENGTH
 
     url = "https://#{ENV['SHORT_URL']}/#{post.id}"
