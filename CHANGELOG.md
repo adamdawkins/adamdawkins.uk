@@ -1,3 +1,11 @@
+## [Version 0.7.12](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.12) (2019-1-24)
+
+### Bug fixes
+
+- 🐞 Fix adjust_tweet_length to be a class method: [`506f3db`](https://github.com/adamdawkins/adamdawkins.uk/commit/506f3db)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.11...v0.7.12)
+
 ## [Version 0.7.11](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.11) (2019-1-24)
 
 ### New features
