@@ -1,3 +1,11 @@
+## [Version 0.7.13](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.13) (2019-1-24)
+
+### New features
+
+- ✅ Auto-link hashtags in notes to Twitter: [`fa7c8af`](https://github.com/adamdawkins/adamdawkins.uk/commit/fa7c8af)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.12...v0.7.13)
+
 ## [Version 0.7.12](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.12) (2019-1-24)
 
 ### Bug fixes
