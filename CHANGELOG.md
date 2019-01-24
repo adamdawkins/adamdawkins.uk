@@ -1,3 +1,12 @@
+## [Version 0.7.14](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.14) (2019-1-24)
+
+### Bug fixes
+
+- 🐞 Output line breaks in Notes: [`56e31a1`](https://github.com/adamdawkins/adamdawkins.uk/commit/56e31a1)
+- ♻️ Change date headings to <h4>: [`5d3318e`](https://github.com/adamdawkins/adamdawkins.uk/commit/5d3318e)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.13...v0.7.14)
+
 ## [Version 0.7.13](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.13) (2019-1-24)
 
 ### New features
