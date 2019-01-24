@@ -1,3 +1,15 @@
+## [Version 0.7.11](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.11) (2019-1-24)
+
+### New features
+
+- ✅ Add notes and articles to header: [`bb8e7a5`](https://github.com/adamdawkins/adamdawkins.uk/commit/bb8e7a5)
+
+### Bug fixes
+
+- 🚀 Add TurboLinks to improve navigation speed: [`5ac0956`](https://github.com/adamdawkins/adamdawkins.uk/commit/5ac0956)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.10...v0.7.11)
+
 ## [Version 0.7.10](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.10) (2019-1-23)
 
 ### Bug fixes
