@@ -1,0 +1,19 @@
+header {
+  display: grid;
+  grid-template-columns: 1fr 2.25rem 2.25rem;
+  grid-gap: 0.25rem;
+  margin-bottom: 2.7rem;
+  align-items: baseline;
+
+  & > h1 {
+    font-size: 3rem;
+    font-weight: 100;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  & > a {
+    text-decoration: none;
+    font-size: 2rem;
+  }
+}

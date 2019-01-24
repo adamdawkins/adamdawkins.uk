@@ -10,11 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag "application" %>
     <link rel="stylesheet" href="https://use.typekit.net/zde4kfh.css">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
       <h1><%= link_to "Adam Dawkins", root_path, class: "quiet" %></h1>
+      <%= link_to "📔", notes_path, class: "header-action", title: "Notes" %>
+      <%= link_to "📄", articles_path, class: "header-action", title: "Articles" %>
     </header>
     <main>
       <%= yield %>

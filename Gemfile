@@ -14,6 +14,7 @@ gem 'puma', '~> 3.11'
 gem 'twitter'
 gem 'sass-rails'
 gem 'simple_form'
+gem 'turbolinks', '~> 5.2.0'
 
 group :development, :test do
   gem 'dotenv-rails'
