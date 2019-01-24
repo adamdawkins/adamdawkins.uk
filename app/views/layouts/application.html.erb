@@ -16,6 +16,8 @@
   <body>
     <header>
       <h1><%= link_to "Adam Dawkins", root_path, class: "quiet" %></h1>
+      <%= link_to "📔", notes_path, class: "header-action", title: "Notes" %>
+      <%= link_to "📄", articles_path, class: "header-action", title: "Articles" %>
     </header>
     <main>
       <%= yield %>
