@@ -8,11 +8,20 @@ end
 MAX_TWEET_LENGTH = 280
 
 class TwitterService
+  def self.status_id_from_tweet_url(url)
+    match = url.match(/twitter.com\/.*\/(\d*)$/)
+    return match[1].to_i unless match.nil?
+  end
   def self.post(post)
     tweet = post.content
     tweet.gsub!('*', '＊')
     tweet = adjust_tweet_length(tweet)
-    response = TwitterClient.update(tweet, tweet_mode: 'extended')
+    if post.is_reply?
+      in_reply_to_status_id = status_id_from_tweet_url(post.in_reply_to)
+    end
+    pp [tweet, in_reply_to_status_id.to_i]
+
+    response = TwitterClient.update(tweet, tweet_mode: 'extended', in_reply_to_status_id: in_reply_to_status_id)
 
     twitter_silo = Silo.find_by(name: "Twitter")
 
