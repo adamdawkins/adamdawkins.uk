@@ -1,3 +1,12 @@
+## [Version 0.7.15](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.15) (2019-1-25)
+
+### New features
+
+- ✅ Add replies and style: [`79cbbb2`](https://github.com/adamdawkins/adamdawkins.uk/commit/79cbbb2)
+- ✅ Tweet replies if from Twitter: [`577acc2`](https://github.com/adamdawkins/adamdawkins.uk/commit/577acc2)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.14...v0.7.15)
+
 ## [Version 0.7.14](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.14) (2019-1-24)
 
 ### Bug fixes
