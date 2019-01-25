@@ -1,5 +1,6 @@
 <%= form_for @note, url: adam_notes_path do |f| %>
   <%= f.text_area :content, autofocus: true, rows: 5, style: "width: 100%;" %>
+  <%= f.text_field :in_reply_to, placeholder: "Reply URL" %>
   <div>
   <%= label_tag :publish do %>
     <%= check_box_tag :publish %>

@@ -37,6 +37,6 @@ class Adam::NotesController < AdamController
     end
 
     def note_params
-      params.require(:note).permit(:content)
+      params.require(:note).permit(:content, :in_reply_to)
     end
 end

@@ -8,4 +8,11 @@ module NotesHelper
   def line_breaks(text)
     text.gsub(/(\r\n)/, '<br/>').html_safe
   end
+
+  def reply_text(link)
+    tweet = link.match(/twitter.com\/(\w*)\//)
+    return link if tweet.nil?
+
+    "@#{tweet[1]}'s tweet"
+  end
 end

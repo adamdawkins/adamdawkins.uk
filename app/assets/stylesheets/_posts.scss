@@ -78,6 +78,9 @@ $article_color: #E96856;
 			content: "📔";
 			box-shadow: 1px 1px 2px $note_color;
 		}
+    &--reply::before {
+      content: "↪"
+    }
 
     &.is-draft {
       &::before {
@@ -95,4 +98,10 @@ $article_color: #E96856;
   line-height: 1.125rem;
   margin: 0;
   color: #666;
+}
+
+.post__reply {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.125rem;
 }
