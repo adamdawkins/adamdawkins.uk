@@ -36,4 +36,25 @@ class TwitterService
 
     "#{tweet[0..(cut_off - 1)]}... #{url}"
   end
+
+  def self.import_tweets(file_name)
+    # TwitterClient.status("1051840319657058305").retweet?
+    @tweets = JSON.parse(File.read(file_name))
+    pp "Importing #{@tweets.length} tweets..."
+    retweets = @tweets.select { |t| t["full_text"].match(/^RT/) }
+    pp "Found #{retweets.length} retweets"
+
+    # ignore replies for now
+    # notes = @tweets.select { |tweet| tweet["in_reply_to_status_id"].nil? }
+    # pp "Importing #{notes.length} notes..."
+    #
+    # # skip anything before 2018
+    # recent_notes = notes.select { |tweet| Time.parse(tweet["created_at"]).year > 2017 }
+    # pp "Found #{recent_notes.length} notes since 2018"
+    # recent_notes.each do |note|
+    #   url = "https://twitter.com/adamdawkins/status/#{note["id"]}"
+    #   pp url
+    # end
+    # return []
+  end
 end
