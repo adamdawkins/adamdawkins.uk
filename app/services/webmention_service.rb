@@ -6,11 +6,19 @@ Parser = URI::Parser.new
 class WebmentionService
   attr_reader :endpoint
 
-  def initialize(url)
-    @url = url
-    @response = HTTParty.get(@url)
-    @endpoint = to_absolute_url(@url, discover_endpoint)
+  def initialize(source, target)
+    @source = source
+    @target = target
+    @response = HTTParty.get(@target)
+    @endpoint = to_absolute_url(@target, discover_endpoint)
   end
+
+  def send
+    return if @endpoint.nil?
+    response = HTTParty.post(@endpoint, { body: {target: @target, source: @source }})
+    pp response
+  end
+
   private
 
   def discover_endpoint
@@ -35,6 +43,7 @@ class WebmentionService
     set_doc
     href = @doc.at_css('[rel~="webmention"][href]').andand[:href]
   end
+
 
   def to_absolute_url(origin, target)
     Parser.parse(origin).merge(Parser.parse(target)).to_s

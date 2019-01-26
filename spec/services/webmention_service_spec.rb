@@ -9,7 +9,7 @@ require "rails_helper"
 def webmention_rocks_endpoint_test(test_numbers = [])
   test_numbers.each do |number|
     expect(
-      WebmentionService.new("https://webmention.rocks/test/#{number}").endpoint
+      WebmentionService.new("adamdawkins.uk/1", "https://webmention.rocks/test/#{number}").endpoint
     ).to eq "https://webmention.rocks/test/#{number}/webmention"
   end
 end
@@ -17,8 +17,9 @@ end
 RSpec.describe WebmentionService do
   describe "Sending Webmentions" do
     describe "Sender discovers receiver Webmention endpoint", :vcr do
+      let(:source) { "http://adamdawkins.uk/1" }
       it "*must* fetch the link" do
-        WebmentionService.new("https://webmention.rocks/test/1")
+        WebmentionService.new(source, "https://webmention.rocks/test/1")
         expect(a_request(:get, "https://webmention.rocks/test/1")).to have_been_made
       end
       it "*must* follow all redirects" do
@@ -68,7 +69,7 @@ RSpec.describe WebmentionService do
 
         # 15. uses a <link> with an empty string, testing that the page itself is the endpoint
         expect(
-          WebmentionService.new("https://webmention.rocks/test/15").endpoint
+          WebmentionService.new(source, "https://webmention.rocks/test/15").endpoint
         ).to eq "https://webmention.rocks/test/15"
       end
 
@@ -103,12 +104,18 @@ RSpec.describe WebmentionService do
     end
 
     describe "Sender notifies receiver", :vcr do
-      it "*must* preserve query string parameters" do
-        https://webmention.rocks/test/21
+      let(:source) { "http://1c011a7e.ngrok.io/2019/1/26/a-test-note-for-webmentionr-cks-https-webmention-rocks-test-1-https-webmention-rocks-test-2-https-webmention-rocks-test-3-https-webment" }
+      let(:target) { "https://webmention.rocks/test/1" }
+      let(:webmention_endpoint) { "https://webmention.rocks/test/1/webmention" }
+
+      it "*must* post x-www-form-urlencoded source and target to endpoint" do
+        WebmentionService.new(source, target).send
+        expect(a_request(:post, webmention_endpoint).with(body: { source: source, target: target }))
       end
-      it "*must* post x-www-form-urlencoded source and target to endpoint"
+
       context "endpoint contains query string parameter" do
         it "*must* preserve query string parameters and not send them in the POST body"
+        # https://webmention.rocks/test/21
       end
 
       it "*must* consider any 2xx responses a success"
