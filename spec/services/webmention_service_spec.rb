@@ -15,9 +15,14 @@ RSpec.describe WebmentionService do
       end
       it "*must* follow all redirects"
       it "*must* check for a header rel value of 'webmention'" do
+        # 2. is rel=webmention
+        # 8. is rel="webmention"
         expect(
           WebmentionService.new("https://webmention.rocks/test/2").endpoint
         ).to eq "https://webmention.rocks/test/2/webmention"
+        expect(
+          WebmentionService.new("https://webmention.rocks/test/8").endpoint
+        ).to eq "https://webmention.rocks/test/8/webmention"
       end
       it "*must* check for a <link> with a rel value of 'webmention'" do
         # 3. has a relative URL
@@ -28,6 +33,12 @@ RSpec.describe WebmentionService do
         expect(
           WebmentionService.new("https://webmention.rocks/test/4").endpoint
         ).to eq "https://webmention.rocks/test/4/webmention"
+      end
+      it "finds a <link> with multiple rel values" do
+        # 9. <link rel="webmention somethingelse" />
+        expect(
+          WebmentionService.new("https://webmention.rocks/test/9").endpoint
+        ).to eq "https://webmention.rocks/test/9/webmention"
       end
       it "*must* check for a <a> with a rel value of 'webmention'" do
         # 5. has a relative URL
