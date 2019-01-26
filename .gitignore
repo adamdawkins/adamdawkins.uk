@@ -27,3 +27,6 @@
 /config/master.key
 .powenv
 .env
+
+# Ignore VCR cassettes for replaying HTTP requests, you can always re-run them
+/fixtures/vcr_cassettes
