@@ -16,15 +16,15 @@ end
 
 RSpec.describe WebmentionService do
   describe "Sending Webmentions" do
-    describe "endpoint discovery", :vcr do
+    describe "Sender discovers receiver Webmention endpoint", :vcr do
       it "*must* fetch the link" do
         WebmentionService.new("https://webmention.rocks/test/1")
         expect(a_request(:get, "https://webmention.rocks/test/1")).to have_been_made
       end
       it "*must* follow all redirects" do
-      # https://webmention.rocks/test/23
-      # tests this, but the redirects are dynamic
-      # TODO: wait until we have the acutal posting working
+        # https://webmention.rocks/test/23
+        # tests this, but the redirects are dynamic
+        # TODO: wait until we have the acutal posting working
       end
       it "*must* check for a header rel value of 'webmention'" do
         # 2. is rel=webmention
@@ -65,7 +65,7 @@ RSpec.describe WebmentionService do
         # 5. uses an <a> tag
         # 22. is relative to the page instead of the host
         webmention_rocks_endpoint_test([1, 3, 5, 22])
-        
+
         # 15. uses a <link> with an empty string, testing that the page itself is the endpoint
         expect(
           WebmentionService.new("https://webmention.rocks/test/15").endpoint
@@ -90,48 +90,47 @@ RSpec.describe WebmentionService do
         #     which should not receive a Webmention since it's inside an HTML comment.
         webmention_rocks_endpoint_test([13])
       end
-       it "ignores escaped code with rel='webmention'" do
+      it "ignores escaped code with rel='webmention'" do
         # 14. This post contains sample code with escaped HTML which should not
         #     be discovered by the Webmention client.
 
         webmention_rocks_endpoint_test([14])
-       end
+      end
 
       # it "*may* make a HEAD request to check for Link header before making a GET request"
       # it "*may* customize the User Agent to include the string 'Webmention'"
       # it "*should* respect the HTTP cache headers"
     end
 
-    # describe  "notifying receiver" do
-    # it "*must* preserve query string parameters" do
-      # https://webmention.rocks/test/21
-    # end
-    #   it "*must* post x-www-form-urlencoded source and target to endpoint"
-    #   context "endpoint contains query string parameter" do
-    #     it "*must* preserve query string parameters and not send them in the POST body"
-    #   end
-    #
-    #   it "*must* consider any 2xx responses a success"
-    #
-    #   context "if localhost or 127.0.0.* endpoint detected" do
-    #     # it "*should not* send the Webmention to that endpoint"
-    #   end
-    # end
+    describe "Sender notifies receiver", :vcr do
+      it "*must* preserve query string parameters" do
+        https://webmention.rocks/test/21
+      end
+      it "*must* post x-www-form-urlencoded source and target to endpoint"
+      context "endpoint contains query string parameter" do
+        it "*must* preserve query string parameters and not send them in the POST body"
+      end
 
-    # describe "sending Webmentions for updated posts" do
-    #   # it "*should* re-send any previously sent Webmentions"
-    #   # it "*should* re-send Webmentions to any URLs that have been removed from the document"
-    #   it "*must* re-discover the Webmention endpoint of each target URL"
-    # end
+      it "*must* consider any 2xx responses a success"
 
-    # describe "sending Webmentions for deleted posts" do
-    #   # it "*should* set a 410 Gone sattus code for the URL"
-    #   # it "*should* display a 'tombstone' represenation of the deleted post"
-    #   # it "*should* re-send Webmentions for every previously sent Webmention for that document"
-    # end
+      context "if localhost or 127.0.0.* endpoint detected" do
+        # it "*should not* send the Webmention to that endpoint"
+      end
+    end
+    describe "Sending Webmentions for updated posts" do
+      # it "*should* re-send any previously sent Webmentions"
+      # it "*should* re-send Webmentions to any URLs that have been removed from the document"
+      it "*must* re-discover the Webmention endpoint of each target URL"
+    end
+
+    describe "Sending Webmentions for deleted posts" do
+      # it "*should* set a 410 Gone sattus code for the URL"
+      # it "*should* display a 'tombstone' represenation of the deleted post"
+      # it "*should* re-send Webmentions for every previously sent Webmention for that document"
+    end
   end
 
-  # describe "receiving" do
+  # describe "Receiving Webmentions" do
   #   it "*should* verify the parameters"
   #   context "receiver does not provide a status URL" do
   #     it "*must* reply with an HTTP 202 Accepted response"
