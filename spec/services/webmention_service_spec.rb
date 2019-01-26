@@ -21,7 +21,11 @@ RSpec.describe WebmentionService do
         WebmentionService.new("https://webmention.rocks/test/1")
         expect(a_request(:get, "https://webmention.rocks/test/1")).to have_been_made
       end
-      it "*must* follow all redirects"
+      it "*must* follow all redirects" do
+      # https://webmention.rocks/test/23
+      # tests this, but the redirects are dynamic
+      # TODO: wait until we have the acutal posting working
+      end
       it "*must* check for a header rel value of 'webmention'" do
         # 2. is rel=webmention
         # 8. is rel="webmention"
@@ -59,8 +63,10 @@ RSpec.describe WebmentionService do
         # 1. Uses Link header
         # 3. uses a <link> tag
         # 5. uses an <a> tag
+        # 22. is relative to the page instead of the host
+        webmention_rocks_endpoint_test([1, 3, 5, 22])
+        
         # 15. uses a <link> with an empty string, testing that the page itself is the endpoint
-        webmention_rocks_endpoint_test([1, 3, 5])
         expect(
           WebmentionService.new("https://webmention.rocks/test/15").endpoint
         ).to eq "https://webmention.rocks/test/15"
@@ -91,13 +97,15 @@ RSpec.describe WebmentionService do
         webmention_rocks_endpoint_test([14])
        end
 
-      it "*must* preserve query string parameters"
       # it "*may* make a HEAD request to check for Link header before making a GET request"
       # it "*may* customize the User Agent to include the string 'Webmention'"
       # it "*should* respect the HTTP cache headers"
     end
 
     # describe  "notifying receiver" do
+    # it "*must* preserve query string parameters" do
+      # https://webmention.rocks/test/21
+    # end
     #   it "*must* post x-www-form-urlencoded source and target to endpoint"
     #   context "endpoint contains query string parameter" do
     #     it "*must* preserve query string parameters and not send them in the POST body"
