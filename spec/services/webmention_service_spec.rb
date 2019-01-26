@@ -6,6 +6,14 @@ require "rails_helper"
 # So we use those and trust they match the right parts of the spec
 # Where a webmention.rocks test covers multiple test cases, I've put it in both.
 
+def webmention_rocks_endpoint_test(test_numbers = [])
+  test_numbers.each do |number|
+    expect(
+      WebmentionService.new("https://webmention.rocks/test/#{number}").endpoint
+    ).to eq "https://webmention.rocks/test/#{number}/webmention"
+  end
+end
+
 RSpec.describe WebmentionService do
   describe "Sending Webmentions" do
     describe "endpoint discovery", :vcr do
@@ -17,53 +25,47 @@ RSpec.describe WebmentionService do
       it "*must* check for a header rel value of 'webmention'" do
         # 2. is rel=webmention
         # 8. is rel="webmention"
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/2").endpoint
-        ).to eq "https://webmention.rocks/test/2/webmention"
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/8").endpoint
-        ).to eq "https://webmention.rocks/test/8/webmention"
+        webmention_rocks_endpoint_test([2, 8])
       end
+
+      it "finds an HTTP Link header with multiple rel values" do
+        webmention_rocks_endpoint_test([10])
+      end
+
       it "*must* check for a <link> with a rel value of 'webmention'" do
         # 3. has a relative URL
         # 4. has an absolute
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/3").endpoint
-        ).to eq "https://webmention.rocks/test/3/webmention"
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/4").endpoint
-        ).to eq "https://webmention.rocks/test/4/webmention"
+        webmention_rocks_endpoint_test([3, 4])
       end
       it "finds a <link> with multiple rel values" do
         # 9. <link rel="webmention somethingelse" />
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/9").endpoint
-        ).to eq "https://webmention.rocks/test/9/webmention"
+        webmention_rocks_endpoint_test([9])
       end
       it "*must* check for a <a> with a rel value of 'webmention'" do
         # 5. has a relative URL
         # 6. has an absolute
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/5").endpoint
-        ).to eq "https://webmention.rocks/test/5/webmention"
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/6").endpoint
-        ).to eq "https://webmention.rocks/test/6/webmention"
+        webmention_rocks_endpoint_test([5, 6])
       end
+
       it "*must* resolves relative endpoint URLs" do
         # 1. Uses Link header
         # 3. uses a <link> tag
         # 5. uses an <a> tag
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/1").endpoint
-        ).to eq "https://webmention.rocks/test/1/webmention"
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/3").endpoint
-        ).to eq "https://webmention.rocks/test/3/webmention"
-        expect(
-          WebmentionService.new("https://webmention.rocks/test/5").endpoint
-        ).to eq "https://webmention.rocks/test/5/webmention"
+        webmention_rocks_endpoint_test([1, 3, 5])
       end
+
+      it "selects endpoint in priority order: HTTP Link header, <link>, <a>" do
+        webmention_rocks_endpoint_test([11])
+      end
+
+      it "does not match the rel tag 'not-webmention'" do
+        # 12. This post contains a link tag with a rel value of "not-webmention",
+        # just to make sure you aren't using naïve string matching to find the endpoint.
+        # There is also a correct endpoint defined, so if your comment appears below,
+        # it means you successfully ignored the false endpoint.
+        webmention_rocks_endpoint_test([12])
+      end
+
       it "*must* preserve query string parameters"
       # it "*may* make a HEAD request to check for Link header before making a GET request"
       # it "*may* customize the User Agent to include the string 'Webmention'"

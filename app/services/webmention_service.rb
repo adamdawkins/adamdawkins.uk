@@ -33,7 +33,7 @@ class WebmentionService
 
   def discover_endpoint_from_document
     set_doc
-    href = @doc.at_css('[rel*="webmention"]').andand[:href]
+    href = @doc.at_css('[rel~="webmention"]').andand[:href]
   end
 
   def to_absolute_url(origin, target)
