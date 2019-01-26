@@ -25,7 +25,9 @@ RSpec.describe WebmentionService do
       it "*must* check for a header rel value of 'webmention'" do
         # 2. is rel=webmention
         # 8. is rel="webmention"
-        webmention_rocks_endpoint_test([2, 8])
+        # 18. parses multiple Link headers, but only one with webmention
+        # 19. provides one Link header, but with mulitple values
+        webmention_rocks_endpoint_test([2, 8, 18, 19])
       end
 
       it "finds an HTTP Link header with multiple rel values" do
@@ -41,6 +43,12 @@ RSpec.describe WebmentionService do
         # 9. <link rel="webmention somethingelse" />
         webmention_rocks_endpoint_test([9])
       end
+
+      it "skips the <link> tag with no href" do
+        # This post has a <link> tag which has no href attribute
+        webmention_rocks_endpoint_test([20])
+      end
+
       it "*must* check for a <a> with a rel value of 'webmention'" do
         # 5. has a relative URL
         # 6. has an absolute
@@ -51,20 +59,37 @@ RSpec.describe WebmentionService do
         # 1. Uses Link header
         # 3. uses a <link> tag
         # 5. uses an <a> tag
+        # 15. uses a <link> with an empty string, testing that the page itself is the endpoint
         webmention_rocks_endpoint_test([1, 3, 5])
+        expect(
+          WebmentionService.new("https://webmention.rocks/test/15").endpoint
+        ).to eq "https://webmention.rocks/test/15"
       end
 
-      it "selects endpoint in priority order: HTTP Link header, <link>, <a>" do
-        webmention_rocks_endpoint_test([11])
+      it "selects endpoint in priority order: HTTP Link header then earliest element" do
+        # 11. contains a Link header (should be chosen), a <link> and an <a>
+        # 16. contains an <a> before a <link>, the <a> should be chosen
+        # 17. contains a <link> before an <a>, the <link> should be chosen
+        webmention_rocks_endpoint_test([11, 16, 17])
       end
 
       it "does not match the rel tag 'not-webmention'" do
         # 12. This post contains a link tag with a rel value of "not-webmention",
-        # just to make sure you aren't using naïve string matching to find the endpoint.
-        # There is also a correct endpoint defined, so if your comment appears below,
-        # it means you successfully ignored the false endpoint.
+        #     just to make sure you aren't using naïve string matching to find the endpoint.
         webmention_rocks_endpoint_test([12])
       end
+
+      it "ignores rel='webmention' links in HTML comments" do
+        # 13. This post contains an HTML comment that contains a rel=webmention element,
+        #     which should not receive a Webmention since it's inside an HTML comment.
+        webmention_rocks_endpoint_test([13])
+      end
+       it "ignores escaped code with rel='webmention'" do
+        # 14. This post contains sample code with escaped HTML which should not
+        #     be discovered by the Webmention client.
+
+        webmention_rocks_endpoint_test([14])
+       end
 
       it "*must* preserve query string parameters"
       # it "*may* make a HEAD request to check for Link header before making a GET request"
