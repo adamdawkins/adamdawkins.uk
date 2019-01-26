@@ -13,6 +13,7 @@ class Post < ApplicationRecord
   validates_with SlugValidator
 
   has_many :syndicates, dependent: :destroy
+  has_many :webmentions, dependent: :destroy
 
   before_validation :generate_slug
 
@@ -30,14 +31,6 @@ class Post < ApplicationRecord
   def publish!
     publish
     save
-  end
-
-  def long_url_params
-    [self.published_at.year,
-     self.published_at.strftime('%m'),
-     self.published_at.strftime('%d'),
-     self.sequence
-    ]
   end
 
   def params
