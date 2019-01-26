@@ -29,16 +29,29 @@ RSpec.describe WebmentionService do
           WebmentionService.new("https://webmention.rocks/test/4").endpoint
         ).to eq "https://webmention.rocks/test/4/webmention"
       end
-      it "*must* check for a <a> with a rel value of 'webmention'"
+      it "*must* check for a <a> with a rel value of 'webmention'" do
+        # 5. has a relative URL
+        # 6. has an absolute
+        expect(
+          WebmentionService.new("https://webmention.rocks/test/5").endpoint
+        ).to eq "https://webmention.rocks/test/5/webmention"
+        expect(
+          WebmentionService.new("https://webmention.rocks/test/6").endpoint
+        ).to eq "https://webmention.rocks/test/6/webmention"
+      end
       it "*must* resolves relative endpoint URLs" do
         # 1. Uses Link header
         # 3. uses a <link> tag
+        # 5. uses an <a> tag
         expect(
           WebmentionService.new("https://webmention.rocks/test/1").endpoint
         ).to eq "https://webmention.rocks/test/1/webmention"
         expect(
           WebmentionService.new("https://webmention.rocks/test/3").endpoint
         ).to eq "https://webmention.rocks/test/3/webmention"
+        expect(
+          WebmentionService.new("https://webmention.rocks/test/5").endpoint
+        ).to eq "https://webmention.rocks/test/5/webmention"
       end
       it "*must* preserve query string parameters"
       # it "*may* make a HEAD request to check for Link header before making a GET request"
