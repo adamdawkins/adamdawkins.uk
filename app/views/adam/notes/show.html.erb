@@ -1,4 +1,5 @@
 <div class="action-bar">
+  <%= link_to "Delete note", adam_note_path(@note), remote: true, method: :delete, data: { confirm: "Are you sure you want to delete this note?" } %>
   <% unless @note.published? %>
     <%= form_tag adam_publish_note_path(@note), method: :put do %>
       <%= label_tag :send_to_twitter do %>
