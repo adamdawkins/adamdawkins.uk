@@ -1,3 +1,16 @@
+## [Version 0.7.16](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.16) (2019-1-27)
+
+### New features
+
+- ✅ Delete associated tweet when a syndicate is deleted: [`3b991db`](https://github.com/adamdawkins/adamdawkins.uk/commit/3b991db)
+- ✅ Enable deleting of notes from admin section: [`6a95823`](https://github.com/adamdawkins/adamdawkins.uk/commit/6a95823)
+
+### Bug fixes
+
+- 🐞 Fix: Find Twitter reply ids from URLs with query strings: [`d522acc`](https://github.com/adamdawkins/adamdawkins.uk/commit/d522acc)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.15...v0.7.16)
+
 ## [Version 0.7.15](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.15) (2019-1-25)
 
 ### New features
