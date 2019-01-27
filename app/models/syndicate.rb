@@ -5,8 +5,6 @@ class Syndicate < ApplicationRecord
 
   validates :url, uniqueness: true, presence: true
 
-  private
-
   def delete_post_from_silo
     pp "Checking for silo posts to destroy"
     TwitterService.destroy(url) if silo.name == "Twitter"

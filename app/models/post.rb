@@ -15,6 +15,7 @@ class Post < ApplicationRecord
   has_many :syndicates, dependent: :destroy
 
   before_validation :generate_slug
+  before_destroy :delete_post_from_silos
 
 
   scope :published, -> { where("published_at IS NOT NULL").order("published_at DESC") }
@@ -82,5 +83,10 @@ class Post < ApplicationRecord
         clean_slug!
       end
       clean_slug!
+    end
+
+    def delete_post_from_silos
+      "Delete post [#{id}]: Checking for syndicates to delete..."
+      syndicates.each { |s| s.delete.post_from_silo }
     end
 end
