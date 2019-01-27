@@ -9,8 +9,12 @@ MAX_TWEET_LENGTH = 280
 
 class TwitterService
   def self.status_id_from_tweet_url(url)
-    match = url.match(/twitter.com\/.*\/(\d*)$/)
+    match = url.match(/twitter.com\/.*\/(\d*)\??.*$/)
     return match[1].to_i unless match.nil?
+  end
+  def self.destroy(url)
+    pp "Deleting tweet at #{url}"
+    TwitterClient.destroy_tweet(url)
   end
   def self.post(post)
     tweet = post.content

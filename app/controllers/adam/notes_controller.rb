@@ -22,6 +22,12 @@ class Adam::NotesController < AdamController
     @notes = Note.all
   end
 
+  def destroy
+    set_note
+    @note.destroy
+    redirect adam_posts_path
+  end
+
   def publish
     set_note
     if @note.publish!
