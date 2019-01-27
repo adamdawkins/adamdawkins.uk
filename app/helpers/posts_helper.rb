@@ -59,6 +59,7 @@ module PostsHelper
   end
 
   def web_address_to_uri(wa)
+    pp wa
     return wa if wa.start_with?('http://') || wa.start_with?('https://')
 
     return "https://twitter.com/#{wa[1..-1]}" if wa[0] == '@'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_25_000038) do
+ActiveRecord::Schema.define(version: 2019_01_26_015405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,17 @@ ActiveRecord::Schema.define(version: 2019_01_25_000038) do
     t.index ["silo_id"], name: "index_syndicates_on_silo_id"
   end
 
+  create_table "webmentions", force: :cascade do |t|
+    t.bigint "post_id"
+    t.string "target"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_webmentions_on_post_id"
+  end
+
   add_foreign_key "indie_mark_items", "indie_mark_levels"
   add_foreign_key "syndicates", "posts"
   add_foreign_key "syndicates", "silos"
+  add_foreign_key "webmentions", "posts"
 end
