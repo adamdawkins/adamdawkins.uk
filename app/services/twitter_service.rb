@@ -12,6 +12,10 @@ class TwitterService
     match = url.match(/twitter.com\/.*\/(\d*)\??.*$/)
     return match[1].to_i unless match.nil?
   end
+  def self.destroy(url)
+    pp "Deleting tweet at #{url}"
+    TwitterClient.destroy_tweet(url)
+  end
   def self.post(post)
     tweet = post.content
     tweet.gsub!('*', '＊')
