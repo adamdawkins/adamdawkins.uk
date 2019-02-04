@@ -7,8 +7,20 @@ gem 'rails', '~> 5.2.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'data_migrate'
 gem 'friendly_id', '~> 5.2.4'
+
+gem 'html-pipeline'
+## HTML Pipeline dependencies
+
+# Autolink filter
+gem 'rinku', '~> 1.7'
+
+# Markdown parser
+gem 'commonmarker', '~> 0.16'
+
+# Hashtag filter
+gem 'html-pipeline-hashtag'
+
 gem 'jbuilder', '~> 2.5'
-gem 'kramdown', '~> 1.17'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'twitter'

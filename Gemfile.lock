@@ -50,6 +50,8 @@ GEM
       msgpack (~> 1.0)
     buftok (0.2.0)
     builder (3.2.3)
+    commonmarker (0.18.2)
+      ruby-enum (~> 0.5)
     concurrent-ruby (1.1.4)
     crass (1.0.4)
     data_migrate (5.3.1)
@@ -76,6 +78,11 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    html-pipeline (2.10.0)
+      activesupport (>= 2)
+      nokogiri (>= 1.4)
+    html-pipeline-hashtag (0.1.2)
+      html-pipeline (>= 2.9.1)
     http (3.3.0)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -91,7 +98,6 @@ GEM
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
-    kramdown (1.17.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -156,6 +162,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    rinku (1.7.3)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)
@@ -184,6 +191,8 @@ GEM
     rubocop-rails_config (0.4.2)
       railties (>= 3.0)
       rubocop (~> 0.58)
+    ruby-enum (0.7.2)
+      i18n
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     sass (3.7.3)
@@ -247,18 +256,21 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
+  commonmarker (~> 0.16)
   data_migrate
   database_cleaner
   dotenv-rails
   factory_bot_rails
   faker
   friendly_id (~> 5.2.4)
+  html-pipeline
+  html-pipeline-hashtag
   jbuilder (~> 2.5)
-  kramdown (~> 1.17)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.2)
+  rinku (~> 1.7)
   rspec-rails
   rubocop-rails_config
   sass-rails
