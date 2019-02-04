@@ -8,10 +8,6 @@ end
 MAX_TWEET_LENGTH = 280
 
 class TwitterService
-  def self.status_id_from_tweet_url(url)
-    match = url.match(/twitter.com\/.*\/(\d*)\??.*$/)
-    return match[1].to_i unless match.nil?
-  end
   def self.destroy(url)
     pp "Deleting tweet at #{url}"
     TwitterClient.destroy_tweet(url)
@@ -32,6 +28,14 @@ class TwitterService
     post.syndicates.create(silo: twitter_silo, url: response.url.to_str)
   end
 
+  def self.fetch_original(url)
+    status_id = status_id_from_tweet_url(url)
+    TwitterClient.status(status_id)
+  end
+
+  protected
+  # helper methods really
+
   def self.adjust_tweet_length(tweet)
     return tweet if tweet.length <= MAX_TWEET_LENGTH
 
@@ -39,5 +43,10 @@ class TwitterService
     cut_off = MAX_TWEET_LENGTH - 23 - 4 - 10 # extra 10, don't know why it's needed yet
 
     "#{tweet[0..(cut_off - 1)]}... #{url}"
+  end
+
+  def self.status_id_from_tweet_url(url)
+    match = url.match(/twitter.com\/.*\/(\d*)\??.*$/)
+    return match[1].to_i unless match.nil?
   end
 end

@@ -1,1 +1,4 @@
+<% if @post.is_reply? %>
+  <%= render partial: "notes/original", tweet: @original %>
+<% end %>
 <%= render @post, as: :note %>

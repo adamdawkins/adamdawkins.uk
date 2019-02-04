@@ -1,0 +1,8 @@
+  <time class="block-time dt-published" datetime="<%= time.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
+    <% if time.today? %>
+      <%= time_ago_in_words(time) %> ago
+      <span style="font-weight: normal; margin-left: 1em;"><%= time.strftime("%R") %></span>
+    <% else %>
+      <%= time.strftime("%a %-d %b %Y %R %Z") %>
+    <% end %>
+  </time>

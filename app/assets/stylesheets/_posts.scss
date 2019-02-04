@@ -1,5 +1,7 @@
 $note_color: #65A2A8;
 $article_color: #E96856;
+$twitter_color: #138BF2;
+$post-icon_box-shadow-size: 1px 1px 2px;
 
 .post {
 	display: flex;
@@ -31,8 +33,15 @@ $article_color: #E96856;
 
 	&--article {
 		border-top: 1px solid $article_color;
-
 	}
+
+  &--tweet {
+		border-top: 1px solid $twitter_color;
+  }
+
+  &__icon {
+    display: none;
+  }
 
 	&--note {
 		border-top: 1px solid $note_color;
@@ -50,36 +59,59 @@ $article_color: #E96856;
 }
 
 @media screen and (min-width: 480px) {
+%post_icon {
+  position: absolute;
+  left: -5rem;
+  border-radius: 50%;
+  background: white;
+  text-align: center;
+  font-size: 2rem;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.post__icon {
+  @extend %post_icon;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 	.post {
 		margin-left: 5rem;
 
-		&::before {
-			position: absolute;
-			left: -5rem;
-			border-radius: 50%;
-			background: white;
-			text-align: center;
-			font-size: 2rem;
-			padding: 1rem;
-			top: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 2rem;
-			width: 2rem;
-		}
+    &:not([class~="tweet"]) {
+      &::before {
+        @extend %post_icon;
+        padding: 1rem;
+      }
+    }
+    
 
 		&--article::before {
 			content: "📄";
-			box-shadow: 1px 1px 2px $article_color;
+			box-shadow: $post-icon_box-shadow-size $article_color;
 		}
 
 		&--note::before {
 			content: "📔";
-			box-shadow: 1px 1px 2px $note_color;
+			box-shadow: $post-icon-box-shadow-size $note_color;
 		}
     &--reply::before {
       content: "↪"
+    }
+
+    &--tweet {
+      .post__icon {
+        box-shadow: $post-icon_box-shadow-size $twitter_color;
+      }
     }
 
     &.is-draft {

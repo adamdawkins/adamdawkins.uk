@@ -1,14 +1,7 @@
 <article class="h-entry post post--note <%= note.is_reply? ? 'post--reply' : '' %>">
   <% if note.published? %>
     <%= link_to long_post_path(note.params), class: "u-url quiet" do %>
-      <time class="block-time dt-published" datetime="<%= note.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
-        <% if note.published_at.today? %>
-          <%= time_ago_in_words(note.published_at) %> ago
-          <span style="font-weight: normal; margin-left: 1em;"><%= note.published_at.strftime("%R") %></span>
-        <% else %>
-          <%= note.published_at.strftime("%a %-d %b %Y %R %Z") %>
-        <% end %>
-      </time>
+      <%= render partial: "posts/time", object: note.published_at %>
     <% end %>
   <% end %>
   <% if note.is_reply? %>

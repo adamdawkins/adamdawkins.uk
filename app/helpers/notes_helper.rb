@@ -1,7 +1,11 @@
 module NotesHelper
   def note_content(note)
+    parse_content(note.content)
+  end
+
+  def parse_content(text)
     line_breaks(
-      auto_link(note.content)
+      auto_link(text)
     )
   end
 

@@ -1,0 +1,7 @@
+<article class="h-entry post post--tweet">
+  <div class="post__icon">
+    <img src="<%= @original.user.profile_image_uri %>" class="u-photo" />
+  </div>
+  <%= render partial: "time", object: @original.created_at %>
+  <%= @original.full_text %>
+</article>
