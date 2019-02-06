@@ -14,7 +14,7 @@
   <% if note.is_reply? %>
     <%= render partial: "notes/reply_to", locals: {note: note} %>
   <% end %>
-  <p class="p-name e-content"><%= note_content(note) %></p>
+  <p class="p-name e-content"><%= note.html_content %></p>
     <% if note.syndicates.any? %>
       <footer>
         <%= render "posts/syndicates", post: note %>

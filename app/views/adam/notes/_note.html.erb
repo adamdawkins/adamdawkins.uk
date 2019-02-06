@@ -1,4 +1,4 @@
 <article class="post post--note <%= !note.published? ? 'is-draft' : '' %>">
-  <div class=""><%= note.content %></div>
+  <div class=""><%= note.html_content %></div>
   <%= link_to "preview", adam_note_path(note), class: "u-url" %>
 </article>
