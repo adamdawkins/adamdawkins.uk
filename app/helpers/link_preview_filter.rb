@@ -12,9 +12,8 @@ class LinkPreviewFilter < HTML::Pipeline::Filter
 
   def call
     last_elem = doc.children.last
-    pp "CALL"
-    pp last_elem.name
-    if last_elem.name() == 'a'
+    pp last_elem
+    if last_elem.andand.name() == 'a'
       url = last_elem[:href]
       response = HTTParty.get(url)
       pp response.headers

@@ -1,8 +1,23 @@
 <div class="link-preview">
-  <img src="https://external.flhr2-1.fna.fbcdn.net/safe_image.php?d=AQAlNTECrXUde83V&w=540&h=282&url=https%3A%2F%2Fichef.bbci.co.uk%2Fnews%2F1024%2Fbranded_news%2FA747%2Fproduction%2F_105432824_620f6b27-13a9-4df4-85e7-0a16814ad6b6.jpg&cfs=1&upscale=1&fallback=news_d_placeholder_publisher&_nc_hash=AQDbFqNwGFkcJhlv" />
+  <% unless preview.image.nil? %>
+    <%= image_tag preview.image %>
+  <% end %>
   <div class="link-preview__content">
-    <span class="link-preview__domain"><a href="https://bbc.co.uk" class="underline">bbc.com</a></span>
-    <h4 class="link-preview__title">The sex slave who refused to be silenced</h4>
-    <p class="link-preview__description">The film, based on a Kevin Grisham novel (John Grisham's brother), revolves around a Southern-born lawyer named Contstance Justice</p>
+    <div class="link-preview__metadata">
+    <span class="link-preview__domain">
+      <%= link_to URI.parse(preview.url).host, preview.url, class: "underline" %>
+    </span>
+    <% if preview.author_name.present? %>
+      <span class="link-preview__author">
+        by <%= preview.author_name %>
+      </span>
+    <% end %>
+    </div>
+    <% unless preview.title === preview.summary %>
+      <h4 class="link-preview__title"><%= preview.title.truncate(140, omission: '...') %></h4>
+    <% end %>
+    <% if preview.summary %>
+      <p class="link-preview__description"><%= preview.summary %></p>
+    <% end %>
   </div>
 </div>

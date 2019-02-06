@@ -3,7 +3,17 @@
   margin: 1em;
   padding-left: 1em;
 
-  &__domain {
+  &__metadata {
     font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
+  &__author {
+    font-weight: bold;
+  }
+
+	p {
+		color: #333;
+	}
 }
