@@ -1,0 +1,9 @@
+.link-preview {
+  border-left: 3px solid $orange;
+  margin: 1em;
+  padding-left: 1em;
+
+  &__domain {
+    font-size: 1rem;
+  }
+}

@@ -10,14 +10,14 @@ NotePipeline = HTML::Pipeline.new [
   HTML::Pipeline::MentionFilter,
   HTML::Pipeline::AutolinkFilter,
   HTML::Pipeline::HashtagFilter,
-  HTML::Pipeline::LineBreakFilter
+  HTML::Pipeline::LineBreakFilter,
 ], context
 
 
 
 module NotesHelper
   def note_content(note)
-      NotePipeline.to_html(note.content).html_safe
+      html = NotePipeline.to_html(note.content).html_safe
   end
 
   def reply_text(link)
