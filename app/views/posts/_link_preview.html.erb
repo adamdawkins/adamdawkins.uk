@@ -1,6 +1,8 @@
 <div class="link-preview">
   <% unless preview.image.nil? %>
-    <%= image_tag preview.image %>
+    <%= link_to preview.url do %>
+      <%= image_tag preview.image %>
+    <% end %>
   <% end %>
   <div class="link-preview__content">
     <div class="link-preview__metadata">
