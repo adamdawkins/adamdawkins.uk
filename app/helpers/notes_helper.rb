@@ -1,4 +1,3 @@
-
 module NotesHelper
   def reply_text(link)
     tweet = link.match(/twitter.com\/(\w*)\//)

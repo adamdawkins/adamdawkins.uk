@@ -1,0 +1,19 @@
+.link-preview {
+  border-left: 3px solid $orange;
+  margin: 1em;
+  padding-left: 1em;
+
+  &__metadata {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__author {
+    font-weight: bold;
+  }
+
+	p {
+		color: #333;
+	}
+}

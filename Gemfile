@@ -4,6 +4,7 @@ ruby '2.5.1'
 
 gem 'rails', '~> 5.2.2'
 
+gem 'andand', git: 'https://github.com/raganwald/andand'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'data_migrate'
 gem 'friendly_id', '~> 5.2.4'
@@ -20,7 +21,9 @@ gem 'commonmarker', '~> 0.16'
 # Hashtag filter
 gem 'html-pipeline-hashtag'
 
+gem 'httparty'
 gem 'jbuilder', '~> 2.5'
+gem 'microformats'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'twitter'

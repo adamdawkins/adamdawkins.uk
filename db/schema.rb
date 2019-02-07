@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_25_000038) do
+ActiveRecord::Schema.define(version: 2019_02_06_192446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,18 @@ ActiveRecord::Schema.define(version: 2019_01_25_000038) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_indie_mark_levels_on_slug", unique: true
+  end
+
+  create_table "link_previews", force: :cascade do |t|
+    t.string "url"
+    t.string "title"
+    t.string "summary"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "author_name"
+    t.string "author_photo"
+    t.string "author_url"
   end
 
   create_table "posts", force: :cascade do |t|
