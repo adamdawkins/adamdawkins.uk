@@ -1,4 +1,4 @@
-class LineBreakFilter < HTML::Pipeline::Filter
+class HTML::Pipeline::LineBreakFilter < HTML::Pipeline::Filter
  def call
    doc.search('.//text()').each do |node|
      content = node.text

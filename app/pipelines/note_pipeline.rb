@@ -1,4 +1,5 @@
 require 'html/pipeline'
+require_relative '../filters/line_break_filter'
 context = {
   base_url: "https://twitter.com",
   username_pattern: /[a-z0-9][a-z0-9_]*/,
