@@ -1,3 +1,17 @@
+## [Version 0.7.18](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.18) (2019-2-7)
+
+### New features
+
+- ✅ Add Link Previews: [`0d60158`](https://github.com/adamdawkins/adamdawkins.uk/commit/0d60158)
+
+### Bug fixes
+
+- 🐞 Match uppercase Twitter handles in auto mentions: [`7613ff0`](https://github.com/adamdawkins/adamdawkins.uk/commit/7613ff0)
+- ♻️  Only hide underline on mentions, not all note links: [`f812327`](https://github.com/adamdawkins/adamdawkins.uk/commit/f812327)
+- 🐞 break long words within posts: [`5277b91`](https://github.com/adamdawkins/adamdawkins.uk/commit/5277b91)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.17...v0.7.18)
+
 ## [Version 0.7.17](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.17) (2019-2-4)
 
 ### Bug fixes
