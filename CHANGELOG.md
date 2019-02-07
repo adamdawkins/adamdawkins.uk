@@ -1,3 +1,11 @@
+## [Version 0.7.19](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.19) (2019-2-7)
+
+### Bug fixes
+
+- 🐞 Fix: Incorrect class on HTML::Pipeline::LineBreakFilter: [`026251d`](https://github.com/adamdawkins/adamdawkins.uk/commit/026251d)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.18...v0.7.19)
+
 ## [Version 0.7.18](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.18) (2019-2-7)
 
 ### New features
