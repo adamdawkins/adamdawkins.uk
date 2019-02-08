@@ -1,6 +1,8 @@
 Rails.application.configure do
   config.action_controller.perform_caching = true
 
+  config.active_job.queue_adapter = :sidekiq
+
   config.action_mailer.perform_caching = false
   config.active_record.dump_schema_after_migration = false
 
