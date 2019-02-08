@@ -9,6 +9,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'puma', '~> 3.11'
 gem 'sidekiq'
 
+# Metrics
+gem 'barnes'
+
 # Database
 gem 'data_migrate'
 gem 'pg', '>= 0.18', '< 2.0'
