@@ -104,7 +104,7 @@ RSpec.describe WebmentionService do
     end
 
     describe "Sender notifies receiver", :vcr do
-      let(:source) { "http://1c011a7e.ngrok.io/2019/1/26/a-test-note-for-webmentionr-cks-https-webmention-rocks-test-1-https-webmention-rocks-test-2-https-webmention-rocks-test-3-https-webment" }
+      let(:source) { "http://19b575f6.ngrok.io/2019/2/8/https-webmention-rocks-test-1-https-webmention-rocks-test-2-https-webmention-rocks-test-3-https-webmention-rocks-test-4-https-webmention" }
       let(:target) { "https://webmention.rocks/test/1" }
       let(:webmention_endpoint) { "https://webmention.rocks/test/1/webmention" }
 
