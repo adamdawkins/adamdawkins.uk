@@ -80,6 +80,6 @@ class Post < ApplicationRecord
 
     def delete_post_from_silos
       "Delete post [#{id}]: Checking for syndicates to delete..."
-      syndicates.each { |s| s.delete.post_from_silo }
+      syndicates.each { |s| s.delete_post_from_silo }
     end
 end
