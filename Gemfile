@@ -4,21 +4,45 @@ ruby '2.5.1'
 
 gem 'rails', '~> 5.2.2'
 
-gem 'andand', git: 'https://github.com/raganwald/andand'
+# Infrastructure
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'data_migrate'
-gem 'friendly_id', '~> 5.2.4'
-gem 'httparty'
-gem 'jbuilder', '~> 2.5'
-gem 'kramdown', '~> 1.17'
-gem 'nitlink', '~> 1.1'
-gem 'nokogiri'
-gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+
+# Database
+gem 'data_migrate'
+gem 'pg', '>= 0.18', '< 2.0'
+
+# Language
+gem 'andand', git: 'https://github.com/raganwald/andand'
+gem 'jbuilder', '~> 2.5'
 gem 'sass-rails'
+
+# Functionality
+gem 'friendly_id', '~> 5.2.4'
+
+## Html Pipeline & Dependencies
+gem 'html-pipeline'
+
+gem 'commonmarker', '~> 0.16' # Markdown Filter
+gem 'html-pipeline-hashtag'   # Hashtag Filter
+gem 'rinku', '~> 1.7'         # Autolink Filter
+
+## HTTP Client
+gem 'httparty'
+
+## Parsing
+gem 'nokogiri'
+gem 'microformats'
+gem 'nitlink', '~> 1.1'
+
+## Third Party APIs
+gem 'twitter'
+
+# UI
 gem 'simple_form'
 gem 'turbolinks', '~> 5.2.0'
-gem 'twitter'
+
+
 
 group :development, :test do
   gem 'dotenv-rails'

@@ -1,3 +1,4 @@
+$orange: #E96856;
 html {
   font-family: "neue-haas-unica", sans-serif;
   font-weight: 400;
@@ -25,7 +26,7 @@ img {
 	max-width: 100%;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   line-height: 1.25;
 }
 
@@ -42,7 +43,7 @@ h3, .sub-title {
   font-size: 1.5rem;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
@@ -66,12 +67,12 @@ figcaption {
 
 section {
   padding: 1.5rem 0;
-  border-top: 5px solid #E96856;
+  border-top: 5px solid $orange;
 }
 
 a {
-	color: #E96856;
-  text-decoration-color: #E96856;
+	color: $orange;
+  text-decoration-color: $orange;
 
 	&.silent {
 		color: inherit;
@@ -83,7 +84,7 @@ a {
 		text-decoration: none;
 
 		&:hover {
-			color: #E96856;
+			color: $orange;
 			text-decoration: underline;
 		}
 	}
@@ -91,7 +92,7 @@ a {
   &.underline {
     color: inherit;
     &:hover {
-			color: #E96856;
+			color: $orange;
     }
   }
 
@@ -108,8 +109,10 @@ blockquote p {
 @import "header";
 @import "posts";
 @import "indiemark";
+@import "link_previews";
+
 
 .turbolinks-progress-bar {
   height: 5px;
-  background-color: #E96856;
+  background-color: $orange;
 }

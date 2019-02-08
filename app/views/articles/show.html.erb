@@ -11,7 +11,7 @@
   <% end %>
   <h1 class="title p-name"><%= @post.title %></h1>
   <div class="e-content">
-    <%= Kramdown::Document.new(@post.content).to_html.html_safe %>
+    <%= article_content(@post.content) %>
   </div>
   <footer>
     <small style="color: #666">

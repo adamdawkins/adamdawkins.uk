@@ -12,7 +12,7 @@
   <div>
     <h3 class="post__title p-name"><%= link_to article.title, long_post_path(article.params), class: "underline" %></h3>
     <p class="p-summary">
-      <%= blurb(article) %>
+      <%= article.blurb %>
     </p>
     <%= link_to "Read on", long_post_path(article.params), class: 'post__cta' %>
   </div>
