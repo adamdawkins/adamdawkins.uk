@@ -9,17 +9,17 @@ require "rails_helper"
 def webmention_rocks_endpoint_test(test_numbers = [])
   test_numbers.each do |number|
     expect(
-      WebmentionService.new("adamdawkins.uk/1", "https://webmention.rocks/test/#{number}").endpoint
+      WebmentionSender.new("adamdawkins.uk/1", "https://webmention.rocks/test/#{number}").endpoint
     ).to eq "https://webmention.rocks/test/#{number}/webmention"
   end
 end
 
-RSpec.describe WebmentionService do
+RSpec.describe WebmentionSender do
   describe "Sending Webmentions" do
     describe "Sender discovers receiver Webmention endpoint", :vcr do
       let(:source) { "http://adamdawkins.uk/1" }
       it "*must* fetch the link" do
-        WebmentionService.new(source, "https://webmention.rocks/test/1")
+        WebmentionSender.new(source, "https://webmention.rocks/test/1")
         expect(a_request(:get, "https://webmention.rocks/test/1")).to have_been_made
       end
       it "*must* follow all redirects" do
@@ -69,7 +69,7 @@ RSpec.describe WebmentionService do
 
         # 15. uses a <link> with an empty string, testing that the page itself is the endpoint
         expect(
-          WebmentionService.new(source, "https://webmention.rocks/test/15").endpoint
+          WebmentionSender.new(source, "https://webmention.rocks/test/15").endpoint
         ).to eq "https://webmention.rocks/test/15"
       end
 
@@ -109,21 +109,73 @@ RSpec.describe WebmentionService do
       let(:webmention_endpoint) { "https://webmention.rocks/test/1/webmention" }
 
       it "*must* post x-www-form-urlencoded source and target to endpoint" do
-        WebmentionService.new(source, target).send
+        WebmentionSender.new(source, target).send
         expect(a_request(:post, webmention_endpoint).with(body: { source: source, target: target }))
       end
 
       context "endpoint contains query string parameter" do
-        it "*must* preserve query string parameters and not send them in the POST body"
-        # https://webmention.rocks/test/21
+        let(:webmention_endpoint) { "https://webmention.rocks/test/21/webmention?query=yes" }
+        let(:target) { "https://webmention.rocks/test/21" }
+
+        it "*must* preserve query string parameters and not send them in the POST body" do
+          WebmentionSender.new(source, target).send
+          expect(a_request(:post, webmention_endpoint).with(body: { source: source, target: target }))
+        end
       end
 
-      it "*must* consider any 2xx responses a success"
+      describe "handling response" do
+        let(:mock_source) { "http://adamdawkinsfake.com/source" }
+        let(:mock_target) { "http://webmentionfake.com/test/1" }
+        let(:mock_endpoint) { "http://webmention.example/test/1/endpoint" }
 
-      context "if localhost or 127.0.0.* endpoint detected" do
-        # it "*should not* send the Webmention to that endpoint"
+        before do
+          stub_request(:get, mock_target).to_return(headers: { "Link" => "<#{mock_endpoint}>; rel=webmention" })
+        end
+
+        it "*must* consider any 2xx responses a success" do
+          # The success range of statuses are 200-208 and 226
+          success_statuses = (200..208).to_a << 226
+
+          success_statuses.each do |status|
+            stub_request(:post, mock_endpoint).to_return(status: status)
+
+            sender = WebmentionSender.new(mock_source, mock_target)
+            sender.send
+
+            expect(sender.success?).to eq true
+          end
+        end
+
+        context "localhost endpoint detected" do
+          let(:mock_endpoint) { "http://localhost/malicious" }
+          before do
+            stub_request(:get, mock_target).to_return(headers: { "Link" => "<#{mock_endpoint}>; rel=webmention" })
+            stub_request(:post, mock_endpoint)
+          end
+
+          it "*should not* send the Webmention to that endpoint" do
+            sender = WebmentionSender.new(mock_source, mock_target)
+            sender.send
+            expect(a_request(:post, mock_endpoint)).not_to have_been_made
+          end
+        end
+
+        context "127.0.0.* endpoint detected" do
+          let(:mock_endpoint) { "http://127.0.0.4/malicious" }
+          before do
+            stub_request(:get, mock_target).to_return(headers: { "Link" => "<#{mock_endpoint}>; rel=webmention" })
+            stub_request(:post, mock_endpoint)
+          end
+
+          it "*should not* send the Webmention to that endpoint" do
+            sender = WebmentionSender.new(mock_source, mock_target)
+            sender.send
+            expect(a_request(:post, mock_endpoint)).not_to have_been_made
+          end
+        end
       end
     end
+
     describe "Sending Webmentions for updated posts" do
       # it "*should* re-send any previously sent Webmentions"
       # it "*should* re-send Webmentions to any URLs that have been removed from the document"

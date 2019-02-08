@@ -15,6 +15,6 @@ class Webmention < ApplicationRecord
   end
 
   def send_webmention
-    WebmentionService.new(source, target)
+    SendWebmentionJob.perform_later(self)
   end
 end

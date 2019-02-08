@@ -3,20 +3,26 @@ require 'nitlink/response'
 
 Parser = URI::Parser.new
 
-class WebmentionService
-  attr_reader :endpoint
+class WebmentionSender
+  attr_reader :endpoint, :status
 
   def initialize(source, target)
     @source = source
     @target = target
     @response = HTTParty.get(@target)
-    @endpoint = to_absolute_url(@target, discover_endpoint)
+    set_endpoint
+    @status = "intialized"
   end
 
+  def success?
+    @status == "success"
+  end
+
+
   def send
-    return if @endpoint.nil?
+    return @status = "no_endpoint" if @endpoint.nil?
     response = HTTParty.post(@endpoint, { body: {target: @target, source: @source }})
-    pp response
+    @status = "success" if response.code.between?(200, 299)
   end
 
   private
@@ -30,10 +36,10 @@ class WebmentionService
 
   def discover_endpoint_from_http_header
     header_link = @response.links.by_rel('webmention')
-
     res = header_link.andand.target.andand.to_s
     res
   end
+
 
   def set_doc
     @doc = Nokogiri::HTML(@response.body)
@@ -47,5 +53,19 @@ class WebmentionService
 
   def to_absolute_url(origin, target)
     Parser.parse(origin).merge(Parser.parse(target)).to_s
+  rescue
+    nil
+  end
+
+  def endpoint_valid?(endpoint)
+    host = Parser.parse(endpoint).andand.host
+    !(host.andand.match(/127\.0\.0\..*/) || host == 'localhost')
+  rescue
+    false
+  end
+
+  def set_endpoint
+    discovered_endpoint = discover_endpoint
+    @endpoint = to_absolute_url(@target, discovered_endpoint) if endpoint_valid?(discovered_endpoint) 
   end
 end
