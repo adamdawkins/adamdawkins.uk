@@ -21,7 +21,9 @@ class WebmentionSender
 
   def send
     return @status = "no_endpoint" if @endpoint.nil?
+    pp "endpoint found", @endpoint
     response = HTTParty.post(@endpoint, { body: {target: @target, source: @source }})
+    pp "response", response.code
     @status = "success" if response.code.between?(200, 299)
   end
 

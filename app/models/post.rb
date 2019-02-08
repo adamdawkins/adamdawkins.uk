@@ -16,6 +16,7 @@ class Post < ApplicationRecord
   has_many :webmentions, dependent: :destroy
 
   before_validation :generate_slug
+  after_save :create_webmentions
   before_destroy :delete_post_from_silos
 
 
@@ -48,8 +49,17 @@ class Post < ApplicationRecord
 
   def slug_already_exists?
     unless published_at.nil?
-      Post.where(published_at: published_at.all_day, slug: slug).exists?
+      existing_post = Post.where(published_at: published_at.all_day, slug: slug).first
+      existing_post.present? && existing_post.id != id
     end
+  end
+
+  def links
+    URI.extract(content)
+  end
+
+  def full_url
+    Rails.application.routes.url_helpers.long_post_url(params)
   end
 
   private
@@ -81,5 +91,13 @@ class Post < ApplicationRecord
     def delete_post_from_silos
       "Delete post [#{id}]: Checking for syndicates to delete..."
       syndicates.each { |s| s.delete_post_from_silo }
+    end
+
+    def create_webmentions
+      links.each do |link|
+        Webmention.where(post_id: id, target: link).first_or_initialize.tap do |wm|
+          wm.save
+        end
+      end
     end
 end

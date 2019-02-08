@@ -1,6 +1,8 @@
 class Webmention < ApplicationRecord
   belongs_to :post
-  validates_presence_of :target
+
+  validates :target, presence: true, uniqueness: { scope: :post_id }
+
   before_create :set_pending_status
   after_create :send_webmention
 
