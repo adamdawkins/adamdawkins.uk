@@ -8,4 +8,4 @@
 </div>
 <%= render "adam/syndicates/syndicates", post: @article %>
 <h1 class="title"><%= @article.title %></h1>
-<%= Kramdown::Document.new(@article.content).to_html.html_safe %>
+<%= @article.html_content %>
