@@ -1,8 +1,8 @@
----
-:verbose: false
-:concurrency: 5
-:queues:
-- [main, 5]
+:verbose: true
+development:
+  :concurrency: 1
 production:
+  :concurrency: 5
 :queues:
-- [main, 5]
+  - default
+:timeout: 60
