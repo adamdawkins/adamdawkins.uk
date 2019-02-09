@@ -1,3 +1,23 @@
+## [Version 0.7.20](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.20) (2019-2-9)
+
+### New features
+
+- Send webmention successfully: [`4e27f7f`](https://github.com/adamdawkins/adamdawkins.uk/commit/4e27f7f)
+- ✅ Webmention Sender matches W3C spec: [`1feae4f`](https://github.com/adamdawkins/adamdawkins.uk/commit/1feae4f)
+- Send webmentions on post creation: [`784d576`](https://github.com/adamdawkins/adamdawkins.uk/commit/784d576)
+
+### Bug fixes
+
+- 🐞 Update auto-link regular expression: [`c9b28fd`](https://github.com/adamdawkins/adamdawkins.uk/commit/c9b28fd)
+- 🐞 Add a link to the image in a link preview: [`c63233f`](https://github.com/adamdawkins/adamdawkins.uk/commit/c63233f)
+- 🐞 Match mixed-case @mentions: [`f2a16e1`](https://github.com/adamdawkins/adamdawkins.uk/commit/f2a16e1)
+- 🐞 Fix call to delete_note_from_silo on Post delete: [`9feb5f6`](https://github.com/adamdawkins/adamdawkins.uk/commit/9feb5f6)
+- Add Sidekiq and Procfile: [`a19a2ba`](https://github.com/adamdawkins/adamdawkins.uk/commit/a19a2ba)
+- 🚀 Enable Heroku Ruby Metrics: [`79a87d4`](https://github.com/adamdawkins/adamdawkins.uk/commit/79a87d4)
+- 🐞 Fix the hexes that have been added to all slugs: [`5e22176`](https://github.com/adamdawkins/adamdawkins.uk/commit/5e22176)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.19...v0.7.20)
+
 ## [Version 0.7.19](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.19) (2019-2-7)
 
 ### Bug fixes
