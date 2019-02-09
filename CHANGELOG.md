@@ -1,3 +1,11 @@
+## [Version 0.7.21](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.21) (2019-2-9)
+
+### Bug fixes
+
+- 🐞 Fix article output: [`260e12a`](https://github.com/adamdawkins/adamdawkins.uk/commit/260e12a)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.20...v0.7.21)
+
 ## [Version 0.7.20](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.20) (2019-2-9)
 
 ### New features
