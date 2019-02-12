@@ -2,8 +2,11 @@ class PostsController < ApplicationController
   before_action :set_published_date, only: :show
   def show
     @post = Post.where(published_at: @published_date.all_day, slug: params[:slug]).first
-
-    render "#{@post.type.downcase.pluralize}/show"
+    if @post.nil?
+      redirect_to "/404", status: 404
+    else
+      render "#{@post.type.downcase.pluralize}/show"
+    end
   end
 
   def index
