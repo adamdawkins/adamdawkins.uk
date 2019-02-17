@@ -10,7 +10,7 @@ class FetchMentionContentJob < ApplicationJob
     
     mention.update(
       title: collection.entry.try("name"),
-      content: collection.entry.try("content").try("value")
+      content: collection.entry.try("content").to_hash[:value]
     )
   end
 end

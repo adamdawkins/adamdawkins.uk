@@ -1,0 +1,18 @@
+<article class="h-entry post post--mention">
+  <%= link_to mention.source, class: "u-url quiet" do %>
+  <time class="block-time dt-published" datetime="<%= mention.created_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
+    <% if mention.created_at.today? %>
+      <%= time_ago_in_words(mention.created_at) %> ago
+      <span style="font-weight: normal; margin-left: 1em;"><%= mention.created_at.strftime("%R") %></span>
+    <% else %>
+      <%= mention.created_at.strftime("%a %-d %b %Y %R %Z") %>
+    <% end %>
+  </time>
+  <% end %>
+  <% unless mention.title.blank? %>
+    <h3><%= mention.title %></h3>
+  <% end %>
+  <p class="p-name e-content"><%= mention.content %></p>
+  <a class="u-author" href="/"></a>
+</article>
+
