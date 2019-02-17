@@ -8,5 +8,7 @@ class Syndicate < ApplicationRecord
   def delete_post_from_silo
     pp "Checking for silo posts to destroy"
     TwitterService.destroy(url) if silo.name == "Twitter"
+  rescue
+    pp "Tweet already gone probably"
   end
 end
