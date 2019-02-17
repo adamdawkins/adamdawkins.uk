@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get 'login', to: 'sessions#new'
     get 'adam', to: 'adam/posts#index'
 
+    post 'webmentions', to: 'webmentions#create'
+
     namespace :adam do
       resources :syndicates, only: :destroy
       resources :posts do

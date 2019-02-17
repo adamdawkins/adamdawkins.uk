@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_192446) do
+ActiveRecord::Schema.define(version: 2019_02_17_004007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,18 @@ ActiveRecord::Schema.define(version: 2019_02_06_192446) do
     t.string "author_url"
   end
 
+  create_table "mentions", force: :cascade do |t|
+    t.bigint "post_id"
+    t.string "source"
+    t.string "title"
+    t.string "content"
+    t.string "in_reply_to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "target"
+    t.index ["post_id"], name: "index_mentions_on_post_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "type"
     t.text "content"
@@ -71,6 +83,15 @@ ActiveRecord::Schema.define(version: 2019_02_06_192446) do
     t.string "title"
     t.string "slug"
     t.string "in_reply_to"
+  end
+
+  create_table "sent_mentions", force: :cascade do |t|
+    t.bigint "post_id"
+    t.string "target"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_sent_mentions_on_post_id"
   end
 
   create_table "silos", force: :cascade do |t|
@@ -90,17 +111,9 @@ ActiveRecord::Schema.define(version: 2019_02_06_192446) do
     t.index ["silo_id"], name: "index_syndicates_on_silo_id"
   end
 
-  create_table "webmentions", force: :cascade do |t|
-    t.bigint "post_id"
-    t.string "target"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_webmentions_on_post_id"
-  end
-
   add_foreign_key "indie_mark_items", "indie_mark_levels"
+  add_foreign_key "mentions", "posts"
+  add_foreign_key "sent_mentions", "posts"
   add_foreign_key "syndicates", "posts"
   add_foreign_key "syndicates", "silos"
-  add_foreign_key "webmentions", "posts"
 end

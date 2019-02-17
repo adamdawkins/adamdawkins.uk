@@ -1,4 +1,4 @@
-class Webmention < ApplicationRecord
+class SentMention < ApplicationRecord
   belongs_to :post
 
   validates :target, presence: true, uniqueness: { scope: :post_id }

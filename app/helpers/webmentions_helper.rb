@@ -1,0 +1,2 @@
+module WebmentionsHelper
+end

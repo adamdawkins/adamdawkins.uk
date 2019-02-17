@@ -23,6 +23,7 @@ gem 'sass-rails'
 
 # Functionality
 gem 'friendly_id', '~> 5.2.4'
+gem 'webmention-verification'
 
 ## Html Pipeline & Dependencies
 gem 'html-pipeline'
@@ -45,7 +46,6 @@ gem 'twitter'
 # UI
 gem 'simple_form'
 gem 'turbolinks', '~> 5.2.0'
-
 
 
 group :development, :test do

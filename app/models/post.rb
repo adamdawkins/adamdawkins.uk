@@ -14,6 +14,7 @@ class Post < ApplicationRecord
 
   has_many :syndicates, dependent: :destroy
   has_many :webmentions, dependent: :destroy
+  has_many :mentions, dependent: :destroy
 
   before_validation :generate_slug
   after_save :create_webmentions
