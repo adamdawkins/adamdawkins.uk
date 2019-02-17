@@ -1,3 +1,16 @@
+## [Version 0.7.22](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.22) (2019-2-17)
+
+### New features
+
+- ✅ Receive web mentions: [`c6c2655`](https://github.com/adamdawkins/adamdawkins.uk/commit/c6c2655)
+- ✅ Primitively display mentions: [`c8ac035`](https://github.com/adamdawkins/adamdawkins.uk/commit/c8ac035)
+
+### Bug fixes
+
+- 🐞 Redirect to 404 if post not found: [`fdcc8a8`](https://github.com/adamdawkins/adamdawkins.uk/commit/fdcc8a8)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.21...v0.7.22)
+
 ## [Version 0.7.21](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.21) (2019-2-9)
 
 ### Bug fixes
