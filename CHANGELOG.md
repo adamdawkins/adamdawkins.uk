@@ -1,3 +1,11 @@
+## [Version 0.7.23](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.23) (2019-2-17)
+
+### Bug fixes
+
+- 🐞 Rescue delete of Silo post on delete of Syndicate: [`48440d1`](https://github.com/adamdawkins/adamdawkins.uk/commit/48440d1)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.22...v0.7.23)
+
 ## [Version 0.7.22](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.22) (2019-2-17)
 
 ### New features
