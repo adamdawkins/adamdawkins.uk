@@ -2,15 +2,24 @@ class FetchMentionContentJob < ApplicationJob
   queue_as :default
 
   def perform(mention)
-    url = mention.source
-    html = HTTParty.get(url).andand.body
+    html = HTTParty.get(mention.source).andand.body
     collection = Microformats.parse(html)
 
-    pp "No h-entry found at #{url}" and return unless collection.respond_to?(:entry)
-    
+    if collection.respond_to?(:entry)
+      entry = collection.entry
+
+      if entry["properties"]["like-of"].andand.include?(mention.target)
+        mention.update(is_like: true)
+      else
+        update_with_content(mention, entry)
+      end
+    end
+  end
+
+  def update_with_content(mention, entry)
     mention.update(
-      title: collection.entry.try("name"),
-      content: collection.entry.try("content").to_hash[:value]
+      title: entry.try("name"),
+      content: entry.try("content").andand.to_hash[:value]
     )
   end
 end
