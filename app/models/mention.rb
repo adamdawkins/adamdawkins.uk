@@ -1,5 +1,5 @@
 class Mention < ApplicationRecord
-  belongs_to :post
+  belongs_to :post, :author
 
   before_validation(on: :create) { find_post_from_target }
   after_create :fetch_mention_content
