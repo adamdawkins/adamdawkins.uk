@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( adam.css )
+Rails.application.config.assets.precompile += %w( print.css adam.css )

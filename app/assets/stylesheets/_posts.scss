@@ -1,5 +1,7 @@
 $note_color: #65A2A8;
 $article_color: #E96856;
+$project_color: #56E9A3;
+
 
 .post {
 	display: flex;
@@ -44,7 +46,10 @@ $article_color: #E96856;
 
 	&--article {
 		border-top: 1px solid $article_color;
+	}
 
+	&--project {
+		border-top: 1px solid $project_color;
 	}
 
 	&--note {
@@ -91,6 +96,12 @@ $article_color: #E96856;
 			content: "📔";
 			box-shadow: 1px 1px 2px $note_color;
 		}
+
+		&--project::before {
+			content: "🚀";
+			box-shadow: 1px 1px 2px $project_color;
+		}
+
     &--reply::before {
       content: "↪"
     }

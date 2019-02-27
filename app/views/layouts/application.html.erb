@@ -8,7 +8,8 @@
     <%= csp_meta_tag %>
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "application", media: "screen" %>
+    <%= stylesheet_link_tag "print", media: "print" %>
     <link rel="stylesheet" href="https://use.typekit.net/zde4kfh.css">
     <link href="https://adamdawkins.uk/webmentions" rel="webmention" />
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
