@@ -1,3 +1,12 @@
+## [Version 0.7.24](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.24) (2019-2-27)
+
+### New features
+
+- ✅ Collect likes from mentions: [`2352616`](https://github.com/adamdawkins/adamdawkins.uk/commit/2352616)
+- ✅ Add CV page: [`dccf5db`](https://github.com/adamdawkins/adamdawkins.uk/commit/dccf5db)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.23...v0.7.24)
+
 ## [Version 0.7.23](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.23) (2019-2-17)
 
 ### Bug fixes
