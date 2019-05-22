@@ -1,3 +1,15 @@
+## [Version 0.7.25](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.25) (2019-5-22)
+
+### New features
+
+- ✅ Add "I am not ok" article: [`74d630d`](https://github.com/adamdawkins/adamdawkins.uk/commit/74d630d)
+
+### Bug fixes
+
+- 🐞 Fix heading spacing: [`ba3720c`](https://github.com/adamdawkins/adamdawkins.uk/commit/ba3720c)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.24...v0.7.25)
+
 ## [Version 0.7.24](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.24) (2019-2-27)
 
 ### New features
