@@ -1,3 +1,11 @@
+## [Version 0.7.26](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.26) (2019-5-22)
+
+### Bug fixes
+
+- 🐞 Fix iframe max-width to 100%: [`a669229`](https://github.com/adamdawkins/adamdawkins.uk/commit/a669229)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.25...v0.7.26)
+
 ## [Version 0.7.25](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.25) (2019-5-22)
 
 ### New features
