@@ -1,3 +1,11 @@
+## [Version 0.7.27](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.27) (2019-6-5)
+
+### New features
+
+- ✅ Add <pre> styling: [`9f48c91`](https://github.com/adamdawkins/adamdawkins.uk/commit/9f48c91)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.26...v0.7.27)
+
 ## [Version 0.7.26](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.26) (2019-5-22)
 
 ### Bug fixes
