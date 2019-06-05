@@ -122,3 +122,9 @@ blockquote p {
 }
 
 .print-only { display: none }
+
+pre {
+	background: white;
+	padding: 1rem;
+	white-space: pre-wrap;       /* css-3 */
+}
