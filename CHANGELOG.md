@@ -1,3 +1,11 @@
+## [Version 0.7.28](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.28) (2019-6-7)
+
+### Bug fixes
+
+- 🐞 Truncate previews from og:description to max 300 characters: [`4da3179`](https://github.com/adamdawkins/adamdawkins.uk/commit/4da3179)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.27...v0.7.28)
+
 ## [Version 0.7.27](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.27) (2019-6-5)
 
 ### New features
