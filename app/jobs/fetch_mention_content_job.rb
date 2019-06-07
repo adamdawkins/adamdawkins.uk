@@ -7,19 +7,16 @@ class FetchMentionContentJob < ApplicationJob
 
     if collection.respond_to?(:entry)
       entry = collection.entry
-
-      if entry["properties"]["like-of"].andand.include?(mention.target)
-        mention.update(is_like: true)
-      else
-        update_with_content(mention, entry)
-      end
+      update_with_content(mention, entry)
+      mention.update(is_like: true) if entry["properties"]["like-of"].andand.include?(mention.target)
     end
   end
 
   def update_with_content(mention, entry)
     mention.update(
       title: entry.try("name"),
-      content: entry.try("content").andand.to_hash[:value]
+      photo: entry.try("author").try("photo"),
+      content: entry.try("content").try('value')
     )
   end
 end

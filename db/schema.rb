@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_20_192056) do
+ActiveRecord::Schema.define(version: 2019_06_07_205712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_192056) do
     t.datetime "updated_at", null: false
     t.string "target"
     t.boolean "is_like", default: false
+    t.string "photo"
     t.index ["post_id"], name: "index_mentions_on_post_id"
   end
 
