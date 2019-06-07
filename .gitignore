@@ -26,7 +26,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 .powenv
-.env
+.env.*
 
 # Ignore VCR cassettes for replaying HTTP requests, you can always re-run them
 /fixtures/vcr_cassettes
