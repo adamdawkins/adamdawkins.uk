@@ -27,6 +27,10 @@ class Post < ApplicationRecord
     published_at.present?
   end
 
+  def likes
+    mentions.where(is_like: true)
+  end
+
   def publish
     self.published_at = Time.now
   end

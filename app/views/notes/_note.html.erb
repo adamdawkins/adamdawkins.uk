@@ -18,10 +18,22 @@
   <% if note.has_link_to_preview? %>
     <%= render "posts/link_preview", preview: note.link_preview %>
   <% end %>
-  <% if note.syndicates.any? %>
-      <footer>
-        <%= render "posts/syndicates", post: note %>
-      </footer>
+  <footer>
+    <% if note.likes.any? %>
+      <div class="likes">
+        <div class="likes__count">
+          ❤️  <%= note.likes.count %>
+        </div>
+        <div class="face-pile">
+          <% note.likes.each do |like| %>
+            <img class="face" src="<%= like.photo %>" />
+          <% end %>
+        </div>
+      </div>
     <% end %>
+    <% if note.syndicates.any? %>
+      <%= render "posts/syndicates", post: note %>
+    <% end %>
+  </footer>
     <a class="u-author" href="/"></a>
 </article>
