@@ -10,7 +10,7 @@ class LinkPreviewGenerator
   def to_hash
     # Given a URL, we try and find a preview by:
     # [x] Checking for microformats on the page
-    # [ ] Checking for opengraph
+    # [x] Checking for opengraph
     # [ ] checking for Twitter card?
     # [ ] checking for oEmbed?
    
