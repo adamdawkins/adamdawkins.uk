@@ -13,6 +13,7 @@ class LinkPreviewGenerator
     # [ ] Checking for opengraph
     # [ ] checking for Twitter card?
     # [ ] checking for oEmbed?
+   
     # Microformats takes precedent over Open Graph
     microformat_response.reverse_merge(opengraph_response)
   end
