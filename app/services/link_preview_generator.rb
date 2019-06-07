@@ -47,7 +47,7 @@ class LinkPreviewGenerator
     # (We've already stripped the `og:`)
     { title: og["title"],
       image: og["image"],
-      summary: og["description"],
+      summary: og["description"].truncate(300),
       author_name: og["article:author"] }
   end
 end
