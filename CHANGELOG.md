@@ -1,3 +1,16 @@
+## [Version 0.7.29](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.29) (2019-6-7)
+
+### New features
+
+- ✅  Store author photos on likes and mentions: [`252f760`](https://github.com/adamdawkins/adamdawkins.uk/commit/252f760)
+- ✅ Display like count and avatars of likers on notes: [`3f364ae`](https://github.com/adamdawkins/adamdawkins.uk/commit/3f364ae)
+
+### Bug fixes
+
+- 🐞 Remove old reference to has_many :webmentions in Post model: [`7732a10`](https://github.com/adamdawkins/adamdawkins.uk/commit/7732a10)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.28...v0.7.29)
+
 ## [Version 0.7.28](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.28) (2019-6-7)
 
 ### Bug fixes
