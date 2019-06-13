@@ -1,4 +1,4 @@
-foo
+bar
 ## URL Structure
 
 Lifting heavily from the work of darkmatterapp:
