@@ -1,3 +1,15 @@
+## [Version 0.8.0](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.0) (2019-6-13)
+
+### Breaking changes
+
+- foo: [`95aedd8`](https://github.com/adamdawkins/adamdawkins.uk/commit/95aedd8)
+
+### Bug fixes
+
+-  bar: [`a20d68e`](https://github.com/adamdawkins/adamdawkins.uk/commit/a20d68e)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.7.29...v0.8.0)
+
 ## [Version 0.7.29](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.7.29) (2019-6-7)
 
 ### New features
