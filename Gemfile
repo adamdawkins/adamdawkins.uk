@@ -36,7 +36,7 @@ gem 'rinku', '~> 1.7'         # Autolink Filter
 gem 'httparty'
 
 ## Parsing
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.10.4'
 gem 'microformats'
 gem 'nitlink', '~> 1.1'
 
