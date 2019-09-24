@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/micropub', to: 'micropub#create'
   constraints host: ENV['SHORT_URL'] do
     get '/:id' => 'short_domains#post'
     match "/(*path)", to: redirect {|p, req| "//#{ENV['FULL_URL']}#{req.fullpath}"}, via: [:get, :head]
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
     get 'adam', to: 'adam/posts#index'
 
     post 'webmentions', to: 'webmentions#create'
+
 
     namespace :adam do
       resources :syndicates, only: :destroy
