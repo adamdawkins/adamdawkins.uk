@@ -19,6 +19,7 @@ class MicropubController < ApplicationController
   end
 
   def authorize_request
+    logger.info '~> Authorizing micropub request'
     token = request.headers['Authorization']
 
     render plain: '401 Not authorized', status: :unauthorized and return if
@@ -29,6 +30,7 @@ class MicropubController < ApplicationController
     indieauth_params = Rack::Utils.parse_nested_query(
       CGI.unescape(response.body)
     )
+    logger.info ['Micropub response', indieauth_params]
 
     return if URI.parse(indieauth_params['me']).host == ENV['FULL_URL']
 
