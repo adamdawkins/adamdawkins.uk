@@ -1,3 +1,11 @@
+## [Version 0.8.2](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.2) (2019-10-1)
+
+### New features
+
+- ✅ Add Aperture microsub endpoint: [`66467d4`](https://github.com/adamdawkins/adamdawkins.uk/commit/66467d4)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.1...v0.8.2)
+
 ## [Version 0.8.1](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.1) (2019-10-1)
 
 ### New features
