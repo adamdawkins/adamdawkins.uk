@@ -2,5 +2,5 @@ class Silo < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :url, uniqueness: true, presence: true
 
-  has_many :syndicates
+  has_many :syndicates, dependent: :destroy
 end

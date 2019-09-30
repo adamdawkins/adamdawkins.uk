@@ -1,7 +1,8 @@
 ArticlePipeline = HTML::Pipeline.new [
-  HTML::Pipeline::MarkdownFilter,
+  HTML::Pipeline::MarkdownFilter
 ]
 
+# rubocop:disable Rails/OutputSafety
 class Article < Post
   validates :title, presence: true
 
@@ -9,7 +10,8 @@ class Article < Post
     ArticlePipeline.to_html(content).html_safe
   end
 
-  def blurb(length: 280)
+  def blurb
     Nokogiri::HTML(html_content).css('p').first.andand.to_html.andand.html_safe
   end
 end
+# rubocop:enable Rails/OutputSafety

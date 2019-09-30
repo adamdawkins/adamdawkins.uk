@@ -7,9 +7,11 @@ class Note < Post
     in_reply_to.present?
   end
 
+  # rubocop:disable Rails/OutputSafety
   def html_content
     NotePipeline.to_html(content).html_safe
   end
+  # rubocop:enable Rails/OutputSafety
 
   def has_link_to_preview?
     link_to_preview.present? && link_preview.present?
@@ -28,6 +30,7 @@ class Note < Post
   private
 
   def generate_link_previews
-    GenerateLinkPreviewJob.perform_later(link_to_preview) if link_to_preview.present?
+    GenerateLinkPreviewJob.perform_later(link_to_preview) if
+    link_to_preview.present?
   end
 end

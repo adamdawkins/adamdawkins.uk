@@ -9,7 +9,7 @@ class SentMention < ApplicationRecord
   private
 
   def set_pending_status
-    self.status = "pending"
+    self.status = 'pending'
   end
 
   def source
