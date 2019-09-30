@@ -1,3 +1,22 @@
+## [Version 0.8.1](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.1) (2019-10-1)
+
+### New features
+
+- ✅ Add IndieAuth token and auth endpoints: [`fc0da16`](https://github.com/adamdawkins/adamdawkins.uk/commit/fc0da16)
+- ✅  Micropub: 100: Create an h-entry post (form-encoded): [`b3915dc`](https://github.com/adamdawkins/adamdawkins.uk/commit/b3915dc)
+- ✅ Micropub: 200: Create an h-entry post (JSON): [`93a95ee`](https://github.com/adamdawkins/adamdawkins.uk/commit/93a95ee)
+- ✅ Add Micropub authentication and basic posts: [`ef8e184`](https://github.com/adamdawkins/adamdawkins.uk/commit/ef8e184)
+
+### Bug fixes
+
+- Update Gems, move past critical issues in Nokogiri version: [`eebfa7c`](https://github.com/adamdawkins/adamdawkins.uk/commit/eebfa7c)
+- ♻️ Remove unused test files: [`fe2d93c`](https://github.com/adamdawkins/adamdawkins.uk/commit/fe2d93c)
+- ♻️ Add logging to micropub authentication: [`c187dce`](https://github.com/adamdawkins/adamdawkins.uk/commit/c187dce)
+- 🐞 Use env var instead of hardcoding ngrok.io into public website: [`68e7ffd`](https://github.com/adamdawkins/adamdawkins.uk/commit/68e7ffd)
+- ♻️ Add CORS to allow /micropub requests: [`99124ed`](https://github.com/adamdawkins/adamdawkins.uk/commit/99124ed)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.0...v0.8.1)
+
 ## [Version 0.8.0](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.0) (2019-6-13)
 
 ### Breaking changes
