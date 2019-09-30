@@ -4,6 +4,8 @@ Rails/HasAndBelongsToMany:
   Enabled: false
 Rails/InverseOf:
   Enabled: false
+Style/AndOr:
+  EnforcedStyle: conditionals
 Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
