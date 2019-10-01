@@ -45,7 +45,7 @@ gem 'nitlink', '~> 1.1'
 gem 'twitter'
 
 # UI
-gem 'simple_form'
+gem 'simple_form', '~> 5.0.0'
 gem 'turbolinks', '~> 5.2.0'
 
 
