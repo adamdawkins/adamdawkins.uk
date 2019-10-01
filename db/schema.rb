@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_07_205712) do
+ActiveRecord::Schema.define(version: 2019_10_01_201706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2019_06_07_205712) do
     t.string "title"
     t.string "slug"
     t.string "in_reply_to"
+    t.string "repost_of"
   end
 
   create_table "sent_mentions", force: :cascade do |t|
