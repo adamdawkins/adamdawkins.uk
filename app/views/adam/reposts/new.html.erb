@@ -1,0 +1,20 @@
+<%= form_for @repost, url: adam_reposts_path do |f| %>
+  <%= f.text_area :content, autofocus: true, rows: 5, style: "width: 100%;" %>
+  <%= f.text_field :repost_of, placeholder: "Repost URL" %>
+  <div>
+  <%= label_tag :publish do %>
+    <%= check_box_tag :publish %>
+    Publish
+  <% end %>
+  </div>
+
+  <div>
+  <%= label_tag :send_to_twitter do %>
+    <%= check_box_tag :send_to_twitter %>
+    Send to Twitter?
+  <% end %>
+  </div>
+  <div style="margin-top: 1em">
+    <%= f.submit %>
+  </div>
+<% end %>

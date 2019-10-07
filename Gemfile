@@ -64,6 +64,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'faker'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'vcr'

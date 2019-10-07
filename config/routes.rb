@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   post '/micropub', to: 'micropub#create'
+  concern :publishable do
+    member do 
+      put "/publish", action: 'publish'
+    end
+  end
   constraints host: ENV['SHORT_URL'] do
     get '/:id' => 'short_domains#post'
     match "/(*path)", to: redirect {|p, req| "//#{ENV['FULL_URL']}#{req.fullpath}"}, via: [:get, :head]
@@ -21,6 +26,7 @@ Rails.application.routes.draw do
       end
       resources :notes
       resources :articles
+      resources :reposts, concerns: :publishable
       put "notes/:id/publish", to: "notes#publish", as: "publish_note"
       put "articles/:id/publish", to: "articles#publish", as: "publish_article"
     end
