@@ -13,6 +13,8 @@ class TwitterService
     return match[1].to_i unless match.nil?
   end
   def self.destroy(url)
+    return logger.info 'Not deleting tweet in dev' unless Rails.env == 'production'
+
     pp "Deleting tweet at #{url}"
     TwitterClient.destroy_tweet(url)
   end
