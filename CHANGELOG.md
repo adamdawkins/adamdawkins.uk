@@ -1,3 +1,16 @@
+## [Version 0.8.4](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.4) (2019-10-7)
+
+### New features
+
+- ✅ Add Syntax highlighting to articles: [`fdcc648`](https://github.com/adamdawkins/adamdawkins.uk/commit/fdcc648)
+
+### Bug fixes
+
+- ♻️ Expand body to 45rem to let code fit: [`7148ad8`](https://github.com/adamdawkins/adamdawkins.uk/commit/7148ad8)
+- ♻️ Add margin-bottom to ol>li: [`715be5d`](https://github.com/adamdawkins/adamdawkins.uk/commit/715be5d)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.3...v0.8.4)
+
 ## [Version 0.8.3](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.3) (2019-10-7)
 
 ### Bug fixes
