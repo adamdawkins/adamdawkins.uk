@@ -1,5 +1,6 @@
 ArticlePipeline = HTML::Pipeline.new [
-  HTML::Pipeline::MarkdownFilter
+  HTML::Pipeline::MarkdownFilter,
+  HTML::Pipeline::SyntaxHighlightFilter
 ]
 
 # rubocop:disable Rails/OutputSafety

@@ -32,6 +32,7 @@ gem 'html-pipeline'
 gem 'commonmarker', '~> 0.16' # Markdown Filter
 gem 'html-pipeline-hashtag'   # Hashtag Filter
 gem 'rinku', '~> 1.7'         # Autolink Filter
+gem 'rouge'                   # Used by SyntaxHighlightFilter 
 
 ## HTTP Client
 gem 'httparty'

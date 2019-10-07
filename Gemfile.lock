@@ -190,6 +190,7 @@ GEM
       ffi (~> 1.0)
     redis (4.1.2)
     rinku (1.7.3)
+    rouge (3.11.1)
     rspec-core (3.8.2)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.4)
@@ -325,6 +326,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 5.2.2)
   rinku (~> 1.7)
+  rouge
   rspec-rails
   rubocop-rails_config
   sass-rails
