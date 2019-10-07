@@ -1,3 +1,12 @@
+## [Version 0.8.3](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.3) (2019-10-7)
+
+### Bug fixes
+
+- 🚨 Upgrade SimpleForm for security fix: [`3846ca7`](https://github.com/adamdawkins/adamdawkins.uk/commit/3846ca7)
+- 🐞 Only delete tweets in production: [`c9d2955`](https://github.com/adamdawkins/adamdawkins.uk/commit/c9d2955)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.2...v0.8.3)
+
 ## [Version 0.8.2](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.2) (2019-10-1)
 
 ### New features
