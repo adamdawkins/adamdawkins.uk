@@ -1,3 +1,11 @@
+## [Version 0.8.5](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.5) (2019-10-8)
+
+### Bug fixes
+
+- 🐞 Update line-height to 1.5: [`4514ae7`](https://github.com/adamdawkins/adamdawkins.uk/commit/4514ae7)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.4...v0.8.5)
+
 ## [Version 0.8.4](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.4) (2019-10-7)
 
 ### New features
