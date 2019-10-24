@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     get 'login', to: 'sessions#new'
     get 'adam', to: 'adam/posts#index'
+    get 'randomword', to: 'development#randomword'
 
     post 'webmentions', to: 'webmentions#create'
 
