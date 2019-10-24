@@ -1,3 +1,11 @@
+## [Version 0.8.6](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.6) (2019-10-24)
+
+### New features
+
+- ✅ Add /randomword route: [`1ebc3ae`](https://github.com/adamdawkins/adamdawkins.uk/commit/1ebc3ae)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.5...v0.8.6)
+
 ## [Version 0.8.5](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.5) (2019-10-8)
 
 ### Bug fixes
