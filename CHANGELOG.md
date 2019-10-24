@@ -1,3 +1,11 @@
+## [Version 0.8.7](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.7) (2019-10-24)
+
+### Bug fixes
+
+- ♻️ Add CORS permissions for /randomword: [`0e4bf0b`](https://github.com/adamdawkins/adamdawkins.uk/commit/0e4bf0b)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.6...v0.8.7)
+
 ## [Version 0.8.6](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.6) (2019-10-24)
 
 ### New features
