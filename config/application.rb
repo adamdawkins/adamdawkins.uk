@@ -18,6 +18,7 @@ module Adamdawkins
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
+        resource '/randomword', headers: :any, methods: :get
         resource '/micropub', headers: :any, methods: [:get, :post, :options]
       end
     end
