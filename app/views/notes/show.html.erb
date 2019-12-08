@@ -1,5 +1,5 @@
 <%= render @post, as: :note %>
 <% if @post.mentions.any? %>
   <h3>Mentions</h3>
-  <%= render @post.mentions %>
+  <%= render @post.replies %>
 <% end %>

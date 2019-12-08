@@ -33,6 +33,10 @@ class Post < ApplicationRecord
     mentions.where(is_like: true)
   end
 
+  def replies
+    mentions.where(is_like: false)
+  end
+
   def publish
     self.published_at = Time.zone.now
   end
