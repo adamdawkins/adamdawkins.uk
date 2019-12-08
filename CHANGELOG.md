@@ -1,3 +1,12 @@
+## [Version 0.8.8](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.8) (2019-12-8)
+
+### Bug fixes
+
+- 🐞 Actually allow CORS for /randomword.json: [`9d6cd7f`](https://github.com/adamdawkins/adamdawkins.uk/commit/9d6cd7f)
+- 🐞 Hide likes from mentions on note page: [`2f6fc4b`](https://github.com/adamdawkins/adamdawkins.uk/commit/2f6fc4b)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.7...v0.8.8)
+
 ## [Version 0.8.7](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.7) (2019-10-24)
 
 ### Bug fixes
