@@ -1,3 +1,11 @@
+## [Version 0.8.9](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.9) (2019-12-20)
+
+### Bug fixes
+
+- 👮‍♀️: [`5d458fd`](https://github.com/adamdawkins/adamdawkins.uk/commit/5d458fd)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.8...v0.8.9)
+
 ## [Version 0.8.8](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.8) (2019-12-8)
 
 ### Bug fixes
