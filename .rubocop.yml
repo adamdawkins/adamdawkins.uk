@@ -1,15 +1,36 @@
 require: rubocop-rails
 
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'features/support/env.rb'
+    - 'lib/**/*'
+    - 'Rakefile'
+    - 'script/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/routes.rb'
+
+Metrics/LineLength:
+  Exclude:
+    - 'spec/**/*'
 Rails/HasAndBelongsToMany:
   Enabled: false
 Rails/InverseOf:
   Enabled: false
 Style/AndOr:
   EnforcedStyle: conditionals
+Style/AsciiComments:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/Lambda:
   EnforcedStyle: literal
-

@@ -1,4 +1,4 @@
-<article class="h-entry post post--note <%= note.is_reply? ? 'post--reply' : '' %>">
+<article class="h-entry post post--note <%= note.reply? ? 'post--reply' : '' %>">
   <% if note.published? %>
     <%= link_to long_post_path(note.params), class: "u-url quiet" do %>
       <time class="block-time dt-published" datetime="<%= note.published_at.strftime('%Y-%m-%dT%H:%M:%S.%L%z') %>">
@@ -11,11 +11,11 @@
       </time>
     <% end %>
   <% end %>
-  <% if note.is_reply? %>
+  <% if note.reply? %>
     <%= render partial: "notes/reply_to", locals: {note: note} %>
   <% end %>
   <p class="p-name e-content"><%= note.html_content %></p>
-  <% if note.has_link_to_preview? %>
+  <% if note.link_to_preview? %>
     <%= render "posts/link_preview", preview: note.link_preview %>
   <% end %>
   <footer>

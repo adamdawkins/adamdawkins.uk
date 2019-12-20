@@ -1,8 +1,8 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "Notes Requests", type: :request do
-  describe "The homepage" do
-    it "cannot be tested due to route host constraints"
+RSpec.describe 'Notes Requests', type: :request do
+  describe 'The homepage' do
+    it 'cannot be tested due to route host constraints'
     #
     # it "renders a Notes heading" do
     #   get "/"

@@ -18,22 +18,28 @@ class MicropubController < ApplicationController
     @note = Note.create(content: params[:properties][:content])
   end
 
+  def set_token
+    @token = request.headers['Authorization']
+  end
+
+  def render_401
+    render plain: '401 Not authorized', status: :unauthorized
+  end
+
   def authorize_request
     logger.info '~> Authorizing micropub request'
-    token = request.headers['Authorization']
+    set_token
 
-    render plain: '401 Not authorized', status: :unauthorized and return if
-      token.nil?
+    render_401 and return if @token.nil?
 
     response = HTTParty.get('https://tokens.indieauth.com/token',
-                            headers: { 'Authorization' => token })
+                            headers: { 'Authorization' => @token })
     indieauth_params = Rack::Utils.parse_nested_query(
       CGI.unescape(response.body)
     )
-    logger.info ['Micropub response', indieauth_params]
 
     return if URI.parse(indieauth_params['me']).host == ENV['FULL_URL']
 
-    render plain: '401 Not authorized', status: :unauthorized
+    render_401
   end
 end

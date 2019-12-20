@@ -14,12 +14,12 @@
 #       # it "*should* be handled asynchronously to prevent DoS attacks"
 #       # ^^ We'll do this by calling the service from a job, no need to build it in.
 #       it "*must* perform an HTTP GET request on the source" do
-#         WebmentionReceiver.new(source, target) 
+#         WebmentionReceiver.new(source, target)
 #         expect(a_request(:get, source)).to have_been_made.once
 #       end
 #       it "*must* follow any redirects"
 #       # it "*should* limit the number of redirects it follows"
-#       # describe "it *must* confirm the source actually mentions the target" do 
+#       # describe "it *must* confirm the source actually mentions the target" do
 #       #   it "returns a 202 if the source mentinos the target" do
 #       # end
 #       # end

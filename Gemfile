@@ -32,15 +32,15 @@ gem 'html-pipeline'
 gem 'commonmarker', '~> 0.16' # Markdown Filter
 gem 'html-pipeline-hashtag'   # Hashtag Filter
 gem 'rinku', '~> 1.7'         # Autolink Filter
-gem 'rouge'                   # Used by SyntaxHighlightFilter 
+gem 'rouge'                   # Used by SyntaxHighlightFilter
 
 ## HTTP Client
 gem 'httparty'
 
 ## Parsing
-gem 'nokogiri', '>= 1.10.4'
 gem 'microformats'
 gem 'nitlink', '~> 1.1'
+gem 'nokogiri', '>= 1.10.4'
 
 ## Third Party APIs
 gem 'twitter'
@@ -48,7 +48,6 @@ gem 'twitter'
 # UI
 gem 'simple_form', '~> 5.0.0'
 gem 'turbolinks', '~> 5.2.0'
-
 
 group :development, :test do
   gem 'dotenv-rails'

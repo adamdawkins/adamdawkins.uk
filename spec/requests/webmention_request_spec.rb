@@ -1,8 +1,8 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "Webmention receiver", type: :request do
-  describe "verifying the request" do
-    it "cannot be tested due to route host constraints"
+RSpec.describe 'Webmention receiver', type: :request do
+  describe 'verifying the request' do
+    it 'cannot be tested due to route host constraints'
     # it "must reject the request if the source URL is malformed" do
     #   post "http://localhost:3000/webmentions", { params: { source: "mailto:adam@dragondrop.uk", target: "http://adam.example" } }
     #   expect(response).to_not be_successful

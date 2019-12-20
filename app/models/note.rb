@@ -3,7 +3,7 @@ class Note < Post
 
   after_save :generate_link_previews
 
-  def is_reply?
+  def reply?
     in_reply_to.present?
   end
 
@@ -13,7 +13,7 @@ class Note < Post
   end
   # rubocop:enable Rails/OutputSafety
 
-  def has_link_to_preview?
+  def link_to_preview?
     link_to_preview.present? && link_preview.present?
   end
 

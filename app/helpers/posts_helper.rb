@@ -1,3 +1,4 @@
+# rubocop:disable Rails/OutputSafety
 module PostsHelper
   def auto_link_regex
     # Taken from https://github.com/kylewm/cassis-autolink-py/blob/master/cassis.py#L19
@@ -24,10 +25,10 @@ module PostsHelper
 
   def replace_address(content, parsed_address)
     address, uri, display_text, extension = parsed_address
-    if [".gif", ".jpg", ".jpeg", ".png", ".svg"].include?(extension)
+    if ['.gif', '.jpg', '.jpeg', '.png', '.svg'].include?(extension)
       display_text = ('<img src="' << address << '" />').html_safe
-    elsif address[0] == "@"
-      classes = "h-x-username"
+    elsif address[0] == '@'
+      classes = 'h-x-username'
     else
       display_text = strip_protocol(display_text)
     end
@@ -49,21 +50,21 @@ module PostsHelper
   end
 
   def strip_protocol(url)
-    url.gsub(/http(s)?:\/\//, '')
+    url.gsub(%r{http(s)?://}, '')
   end
 
   def autolink_tag(url, text, classes = nil)
-    html_class = "auto-link"
+    html_class = 'auto-link'
     html_class << " #{classes}" if classes
     content_tag :a, text, class: html_class, href: url
   end
 
-  def web_address_to_uri(wa)
-    pp wa
-    return wa if wa.start_with?('http://') || wa.start_with?('https://')
+  def web_address_to_uri(addr)
+    return addr if addr.start_with?('http://') || addr.start_with?('https://')
 
-    return "https://twitter.com/#{wa[1..-1]}" if wa[0] == '@'
+    return "https://twitter.com/#{addr[1..-1]}" if addr[0] == '@'
 
-    "http://" + wa
+    'http://' + addr
   end
 end
+# rubocop:enable Rails/OutputSafety

@@ -1,9 +1,9 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe "Articles Requests", type: :request do
-  describe "get /articles" do
-  it "cannot be tested due to route host constraints"
+RSpec.describe 'Articles Requests', type: :request do
+  describe 'get /articles' do
+    it 'cannot be tested due to route host constraints'
     #   before do
     #     create(:article)
     #     get articles_url

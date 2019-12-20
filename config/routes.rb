@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   post '/micropub', to: 'micropub#create'
   constraints host: ENV['SHORT_URL'] do
     get '/:id' => 'short_domains#post'
-    match "/(*path)", to: redirect {|p, req| "//#{ENV['FULL_URL']}#{req.fullpath}"}, via: [:get, :head]
+    match '/(*path)',
+          to: redirect { |_, req| "//#{ENV['FULL_URL']}#{req.fullpath}" },
+          via: %i[get head]
   end
 
   constraints host: ENV['FULL_URL'] do
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
 
     post 'webmentions', to: 'webmentions#create'
 
-
     namespace :adam do
       resources :syndicates, only: :destroy
       resources :posts do
@@ -22,11 +23,11 @@ Rails.application.routes.draw do
       end
       resources :notes
       resources :articles
-      put "notes/:id/publish", to: "notes#publish", as: "publish_note"
-      put "articles/:id/publish", to: "articles#publish", as: "publish_article"
+      put 'notes/:id/publish', to: 'notes#publish', as: 'publish_note'
+      put 'articles/:id/publish', to: 'articles#publish', as: 'publish_article'
     end
 
-    resources :sessions, only: [:new, :create, :destroy]
+    resources :sessions, only: %i[new create destroy]
 
     get ':year/:month/:day/:slug', to: 'posts#show', as: :long_post
     get 'indiemark', to: 'indiemarks#index'

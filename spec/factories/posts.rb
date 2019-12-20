@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :post do
-    content { "Text" }
+    content { 'Text' }
     type { Note }
     trait :published do
-      published_at { Time.now }
+      published_at { Time.zone.now }
     end
   end
 end

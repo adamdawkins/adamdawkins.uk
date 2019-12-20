@@ -4,6 +4,7 @@ class WebmentionReceiver
     @source = source
     @target = target
     @source_doc = HTTParty.get(source)
-    pp HTTParty.head(@target)
+
+    logger.info HTTParty.head(@target)
   end
 end

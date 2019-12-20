@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_published_date, only: :show
   def show
-    @post = Post.where(published_at: @published_date.all_day, slug: params[:slug]).first
-    if @post.nil?
-      redirect_to "/404", status: 404
-    else
-      render "#{@post.type.downcase.pluralize}/show"
-    end
+    @post = Post.find_by(published_at: @published_date.all_day,
+                         slug: params[:slug])
+    redirect_to '/404', status: :not_found if @post.nil?
+
+    render "#{@post.type.downcase.pluralize}/show"
   end
 
   def index
@@ -16,10 +15,9 @@ class PostsController < ApplicationController
 
   private
 
-    def set_published_date
-      @published_date = Date.new(params[:year].to_i,
-                                 params[:month].to_i,
-                                 params[:day].to_i
-                                )
-    end
+  def set_published_date
+    @published_date = Date.new(params[:year].to_i,
+                               params[:month].to_i,
+                               params[:day].to_i)
+  end
 end
