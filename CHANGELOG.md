@@ -1,3 +1,11 @@
+## [Version 0.8.10](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.10) (2020-2-22)
+
+### Bug fixes
+
+- 🐞 Close the <h4> with an </h4> (not </h1>): [`ef84468`](https://github.com/adamdawkins/adamdawkins.uk/commit/ef84468)
+
+[...full changes](https://github.com/adamdawkins/adamdawkins.uk/compare/v0.8.9...v0.8.10)
+
 ## [Version 0.8.9](https://github.com/adamdawkins/adamdawkins.uk/releases/tag/v0.8.9) (2019-12-20)
 
 ### Bug fixes
